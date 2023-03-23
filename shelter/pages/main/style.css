@@ -111,6 +111,7 @@ body {
   color: #f1cdb3;
   line-height: 110%;
   letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 
 .header__subtitle {
@@ -531,4 +532,98 @@ body {
 
 .block-help__card img {
   margin-bottom: 30px;
+}
+
+/* --------block-donat--------- */
+
+.block-donat {
+  display: flex;
+  background: #f6f6f6;
+}
+
+.block-donat__content {
+  display: flex;
+  column-gap: 30px;
+  margin: 0px auto;
+  padding: 0 0 100px 0px;
+}
+
+.block-donat__image {
+  padding-top: 91px;
+}
+.block-donat__image img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.block-donat__info {
+  padding-top: 80px;
+  max-width: 380px;
+}
+
+.block-donat__title-text {
+  padding-bottom: 20px;
+  max-width: 400px;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  color: #545454;
+  letter-spacing: 0.06em;
+}
+
+.block-donat__subtitle-text {
+  padding-bottom: 20px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 110%;
+  color: #545454;
+}
+
+.block-donat__requis {
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+  padding: 10px 15px 10px 15px;
+  margin-bottom: 20px;
+  width: 349px;
+  height: 43px;
+  background: #f1cdb3;
+  border-radius: 9px;
+}
+
+.block-donat__requis p {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 115%;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.block-donat__text p {
+  font-family: "Arial";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+  color: #b2b2b2;
+}
+
+.block-donat__requis-img {
+}
+
+.block-donat__requis-number {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  color: #545454;
 }
