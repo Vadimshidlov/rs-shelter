@@ -1,0 +1,163 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  font-size: 14px;
+  background: #fafafa;
+  color: #252b42;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 500;
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Техничесский класс, ограничевающий контейнер */
+._container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+._ibg {
+  position: relative;
+}
+
+._ibg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* right: 0; */
+  object-fit: cover;
+}
+
+/* ----header----- */
+
+.header {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 50;
+  background: #ffffff;
+}
+
+@media (max-width: 768.98px) {
+  .header {
+    padding-top: 30px;
+  }
+}
+
+.header_content {
+  display: flex;
+  column-gap: 573px;
+  padding-top: 30px;
+}
+
+@media (max-width: 768.98px) {
+  .header_content {
+    display: flex;
+    align-items: center;
+    column-gap: 81px;
+  }
+}
+
+.header__logo {
+}
+
+.header__title {
+  padding-bottom: 10px;
+  font-family: "Georgia", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 110%;
+  letter-spacing: 0.06em;
+  color: #545454;
+}
+
+.header__subtitle {
+  font-family: "Arial", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 0.1em;
+  color: #292929;
+  padding-bottom: 30px;
+}
+
+.header__menu {
+}
+
+.header__menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 35px;
+  padding-top: 16px;
+}
+
+.header__menu-item {
+  font-family: "Arial", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #cdcdcd;
+}
+
+.header__menu-item a {
+  font-family: "Arial", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  color: #cdcdcd;
+}
+
+.header__menu-item a:visited {
+  color: #cdcdcd;
+}
+
+.header__menu-item_active {
+  padding-bottom: 7px;
+  border-bottom: 3px solid #f1cdb3;
+}
