@@ -627,3 +627,96 @@ body {
   line-height: 115%;
   color: #545454;
 }
+
+/* ---footer---- */
+
+.footer {
+  position: relative;
+  z-index: 2;
+}
+
+.footer__content {
+}
+
+.footer__cards {
+  display: flex;
+  column-gap: 160px;
+  padding-top: 40px;
+}
+
+.footer__card {
+}
+
+.footer__card_bottom {
+}
+
+.card {
+}
+
+.card__title {
+  margin-bottom: 40px;
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 130%;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+}
+
+.card__title_right {
+  margin-bottom: 34px;
+}
+
+.card__item {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  margin-bottom: 40px;
+}
+
+.card__item_right {
+  margin-bottom: 32px;
+}
+
+.card__mail {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+
+.card__phone {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+
+.card__adress {
+  font-family: "Georgia";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 115%;
+  letter-spacing: 0.06em;
+  color: #f1cdb3;
+}
+
+.card__adress_right {
+}
+
+.footer__background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
