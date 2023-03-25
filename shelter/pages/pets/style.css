@@ -116,6 +116,11 @@ body {
     color: #545454;
 }
 
+.header__title a:visited {
+    color: inherit;
+}
+
+
 .header__subtitle {
     font-family: "Arial", serif;
     font-style: normal;
@@ -150,14 +155,19 @@ body {
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
-    color: #cdcdcd;
+    color: #545454;
 }
 
 .header__menu-item a:visited {
-    color: #cdcdcd;
+    color: #545454;
+}
+
+.header__menu-item a:hover {
+    color: #292929;
 }
 
 .header__menu-item_active {
+    color: #545454;
     padding-bottom: 7px;
     border-bottom: 3px solid #f1cdb3;
 }
@@ -209,10 +219,17 @@ body {
     justify-content: center;
     background: #fafafa;
     cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+
 }
 
-.block-friends__card:hover  .block-friends__card-btn{
+.block-friends__card:hover .block-friends__card-btn {
     background: #FDDCC4;
+
+}
+
+.block-friends__card:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 .block-friends__card img {
@@ -243,10 +260,13 @@ body {
     color: #292929;
     border-radius: 100px;
     border: 2px solid #f1cdb3;
+    transition: .5s ease-in-out;
 }
 
 .block-friends__card-btn:hover {
     background: #fddcc4;
+    border-top-left-radius: 100% 20px;
+    border-bottom-right-radius: 100% 20px;
 }
 
 .block-friends__button {
@@ -417,6 +437,10 @@ body {
     margin-bottom: 40px;
 }
 
+.card__item:first-child {
+    display: block;
+}
+
 .card__item_right {
     margin-bottom: 33px;
 }
@@ -431,6 +455,20 @@ body {
     color: #f1cdb3;
 }
 
+.card__mail a {
+    color: #f1cdb3;
+}
+
+.card__mail a:hover {
+    text-decoration: underline;
+    color: black;
+
+}
+
+.card__mail a:visited {
+    color: #f1cdb3;
+}
+
 .card__phone {
     font-family: "Georgia", serif;
     font-style: normal;
@@ -441,6 +479,19 @@ body {
     color: #f1cdb3;
 }
 
+.card__phone a {
+    color: #f1cdb3;
+}
+
+.card__phone a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.card__phone a:visited {
+    color: #f1cdb3;
+}
+
 .card__adress {
     font-family: "Georgia", serif;
     font-style: normal;
@@ -448,6 +499,16 @@ body {
     font-size: 20px;
     color: #f1cdb3;
 }
+
+.card__adress a {
+    color: #f1cdb3;
+}
+
+.card__adress a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
 
 .footer__background {
     position: absolute;

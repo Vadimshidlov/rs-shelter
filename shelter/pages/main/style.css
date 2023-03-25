@@ -43,6 +43,12 @@ body {
     font-weight: 500;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+
+
 .wrapper {
     min-height: 100%;
     overflow: hidden;
@@ -71,14 +77,10 @@ body {
 
 
 
-.header__title a:visited {
-    color: inherit;
-}
 
 a {
     color: #CDCDCD;
 }
-
 
 
 /* ----header----- */
@@ -90,6 +92,7 @@ a {
     top: 0;
     z-index: 50;
     padding-top: 30px;
+    scroll-behavior: smooth;
 }
 
 @media (max-width: 768.98px) {
@@ -126,6 +129,14 @@ a {
     white-space: nowrap;
 }
 
+.header__title a {
+    color: #F1CDB3;
+}
+
+.header__title a:visited {
+    color: #F1CDB3;
+}
+
 .header__subtitle {
     font-family: "Arial";
     font-style: normal;
@@ -153,9 +164,11 @@ a {
     color: #cdcdcd;
 }
 
-.header__menu-item a{
+.header__menu-item a {
     color: #cdcdcd;
-}.header__menu-item a:hover{
+}
+
+.header__menu-item a:hover {
     color: #FAFAFA;
 }
 
@@ -237,11 +250,16 @@ a {
     border-radius: 100px;
     letter-spacing: 0.06em;
     white-space: nowrap;
+    transition: .5s ease-in-out;
 }
 
 .block-house__btn:hover {
     background: #fddcc4;
+
+    border-top-left-radius: 100% 20px;
+    border-bottom-right-radius: 100% 20px;
 }
+
 
 @media (max-width: 768.98px) {
     .block-house__btn {
@@ -424,8 +442,14 @@ a {
     justify-content: center;
     background: #fafafa;
     cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
 }
-.block-friends__card:hover  .block-friends__card-btn{
+
+.block-friends__card:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+
+.block-friends__card:hover .block-friends__card-btn {
     background: #FDDCC4;
 }
 
@@ -461,10 +485,14 @@ a {
     border-radius: 100px;
     border: 2px solid #f1cdb3;
     cursor: pointer;
+    transition: .5s ease-in-out;
+
 }
 
 .block-friends__card-btn:hover {
     background: #fddcc4;
+    border-top-left-radius: 100% 20px;
+    border-bottom-right-radius: 100% 20px;
 }
 
 .block-friends__button {
@@ -482,16 +510,26 @@ a {
     line-height: 130%;
     letter-spacing: 0.06em;
     white-space: nowrap;
+    transition: .5s ease-in-out;
+
 }
 
 .block-friends__button:hover {
     background: #fddcc4;
+    border-top-left-radius: 100% 20px;
+    border-bottom-right-radius: 100% 20px;
 }
 
 /* ------block-help------- */
 
 .block-help {
     background: #ffffff;
+
+}
+
+#block-help {
+    scroll-behavior: smooth;
+
 }
 
 .block-help__container {
@@ -617,6 +655,10 @@ a {
     border-radius: 9px;
 }
 
+.block-donat__requis:hover {
+    background: #FDDCC4;
+}
+
 .block-donat__requis p {
     font-family: "Georgia";
     font-style: normal;
@@ -628,6 +670,16 @@ a {
     letter-spacing: 0.06em;
     color: #545454;
 }
+
+.block-donat__requis p a {
+    color: #545454;
+}
+
+
+.block-donat__requis p a:visited {
+    color: #545454;
+}
+
 
 .block-donat__text p {
     font-family: "Arial";
@@ -650,7 +702,8 @@ a {
     color: #545454;
 }
 
-.block-donat__requis-number a:visited{
+
+.block-donat__requis-number a:visited {
     color: #545454;
 }
 
@@ -716,11 +769,17 @@ a {
     color: #f1cdb3;
 }
 
-.card__mail a{
+.card__mail a {
     color: #f1cdb3;
 }
 
-.card__mail a:visited{
+.card__mail a:hover {
+    text-decoration: underline;
+    color: black;
+
+}
+
+.card__mail a:visited {
     color: #f1cdb3;
 }
 
@@ -733,14 +792,21 @@ a {
     letter-spacing: 0.06em;
     color: #f1cdb3;
 }
-.card__phone a{
-    color: #f1cdb3;
-}
-.card__phone a:visited{
+
+.card__phone a {
     color: #f1cdb3;
 }
 
-.card__adress {
+.card__phone a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+.card__phone a:visited {
+    color: #f1cdb3;
+}
+
+.card__adress a {
     font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
@@ -749,6 +815,13 @@ a {
     letter-spacing: 0.06em;
     color: #f1cdb3;
     white-space: nowrap;
+    text-decoration: none;
+}
+
+.card__adress a:hover {
+    text-decoration: underline;
+    color: black;
+
 }
 
 .card__adress_right {
@@ -762,3 +835,5 @@ a {
     left: 0;
     z-index: -1;
 }
+
+
