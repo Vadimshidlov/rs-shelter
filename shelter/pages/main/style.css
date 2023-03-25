@@ -31,6 +31,10 @@ h6 {
     font-size: inherit;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     width: 100%;
@@ -43,9 +47,8 @@ body {
     font-weight: 500;
 }
 
-html{
-    scroll-behavior: smooth;
-}
+
+
 
 
 
@@ -74,8 +77,6 @@ html{
     left: 0;
     object-fit: cover;
 }
-
-
 
 
 a {
@@ -138,7 +139,7 @@ a {
 }
 
 .header__subtitle {
-    font-family: "Arial";
+    font-family: "Arial", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
