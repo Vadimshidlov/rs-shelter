@@ -466,7 +466,7 @@ body {
 
 .card__mail a:hover {
     text-decoration: underline;
-    color: black;
+    color: #e56b3b;
 
 }
 
@@ -490,7 +490,7 @@ body {
 
 .card__phone a:hover {
     text-decoration: underline;
-    color: black;
+    color: #e56b3b;
 }
 
 .card__phone a:visited {
@@ -510,7 +510,7 @@ body {
 }
 
 .card__adress a:hover {
-    color: black;
+    color: #e56b3b;
     text-decoration: underline;
 }
 

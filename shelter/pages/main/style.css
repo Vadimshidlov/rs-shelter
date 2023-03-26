@@ -177,7 +177,6 @@ a {
 }
 
 
-
 .header__menu-item a:hover {
     color: #FAFAFA;
 }
@@ -785,7 +784,7 @@ a {
 
 .card__mail a:hover {
     text-decoration: underline;
-    color: black;
+    color: #e56b3b;
 
 }
 
@@ -809,7 +808,8 @@ a {
 
 .card__phone a:hover {
     text-decoration: underline;
-    color: black;
+    color: #e56b3b;
+
 }
 
 .card__phone a:visited {
@@ -830,8 +830,7 @@ a {
 
 .card__adress a:hover {
     text-decoration: underline;
-    color: black;
-
+    color: #e56b3b;
 }
 
 .card__adress_right {
