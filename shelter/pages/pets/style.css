@@ -405,16 +405,17 @@ body {
 .footer__content {
 }
 
-._container {
-}
-
 .footer__cards {
     display: flex;
     column-gap: 160px;
-    padding-top: 40px;
+    padding-top: 56px;
 }
 
 .footer__card {
+    width: 278px;
+}
+
+.footer__card_bottom {
 }
 
 .card {
@@ -422,17 +423,17 @@ body {
 
 .card__title {
     margin-bottom: 40px;
-    font-family: "Georgia", serif;
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
-    font-size: 35px;
+    font-size: 34px;
     line-height: 130%;
     letter-spacing: 0.06em;
     color: #ffffff;
 }
 
 .card__title_right {
-    margin-bottom: 33px;
+    margin-bottom: 34px;
 }
 
 .card__item {
@@ -442,16 +443,12 @@ body {
     margin-bottom: 40px;
 }
 
-.card__item:first-child {
-    display: block;
-}
-
 .card__item_right {
-    margin-bottom: 33px;
+    margin-bottom: 32px;
 }
 
 .card__mail {
-    font-family: "Georgia", serif;
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -475,7 +472,7 @@ body {
 }
 
 .card__phone {
-    font-family: "Georgia", serif;
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -491,29 +488,32 @@ body {
 .card__phone a:hover {
     text-decoration: underline;
     color: #e56b3b;
+
 }
 
 .card__phone a:visited {
     color: #f1cdb3;
 }
 
-.card__adress {
-    font-family: "Georgia", serif;
+.card__adress a {
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
     color: #f1cdb3;
-}
-
-.card__adress a {
-    color: #f1cdb3;
+    white-space: nowrap;
+    text-decoration: none;
 }
 
 .card__adress a:hover {
-    color: #e56b3b;
     text-decoration: underline;
+    color: #e56b3b;
 }
 
+.card__adress_right {
+}
 
 .footer__background {
     position: absolute;
