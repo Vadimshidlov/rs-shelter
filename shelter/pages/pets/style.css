@@ -158,6 +158,11 @@ body {
     color: #545454;
 }
 
+.header__menu-item a:active {
+    padding-bottom: 7px;
+    border-bottom: 3px solid #f1cdb3;
+}
+
 .header__menu-item a:visited {
     color: #545454;
 }

@@ -31,7 +31,7 @@ h6 {
     font-size: inherit;
 }
 
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -46,10 +46,6 @@ body {
     font-family: Georgia, sans-serif;
     font-weight: 500;
 }
-
-
-
-
 
 
 .wrapper {
@@ -168,6 +164,19 @@ a {
 .header__menu-item a {
     color: #cdcdcd;
 }
+
+.header__menu-item a:active {
+    padding-bottom: 7px;
+    border-bottom: 3px solid #f1cdb3;
+}
+
+.header__menu-item.header__menu-item_active a:active,
+.header__menu-item.header__menu-item_active a:hover,
+.header__menu-item.header__menu-item_active a {
+    color: #FAFAFA;
+}
+
+
 
 .header__menu-item a:hover {
     color: #FAFAFA;
