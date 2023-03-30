@@ -67,6 +67,7 @@ body {
         padding: 0 15px;
     }
 }
+
 @media (max-width: 320px) {
     ._container {
         max-width: 300px;
@@ -125,6 +126,7 @@ a {
         column-gap: 500px;
     }
 }
+
 @media (max-width: 1210px) {
     .header_content {
         display: flex;
@@ -132,6 +134,7 @@ a {
         column-gap: 400px;
     }
 }
+
 @media (max-width: 1110px) {
     .header_content {
         display: flex;
@@ -139,6 +142,7 @@ a {
         column-gap: 320px;
     }
 }
+
 @media (max-width: 1030px) {
     .header_content {
         display: flex;
@@ -146,6 +150,7 @@ a {
         column-gap: 270px;
     }
 }
+
 @media (max-width: 910px) {
     .header_content {
         display: flex;
@@ -166,6 +171,7 @@ a {
     visibility: visible;
     transition: visibility;
 }
+
 .header__logo_disable {
     visibility: hidden;
     transition: visibility 0.2s ease;
@@ -205,6 +211,7 @@ a {
     position: absolute;
     visibility: hidden;
 }
+
 .header__burger-menu-btn {
     visibility: hidden;
     transform: rotateY(90deg);
@@ -216,10 +223,12 @@ a {
     row-gap: 10px;
     transition: transform 1s;
 }
+
 .header__burger-button_active {
     transform: rotate(-90deg);
     transition: all 1s ease;
 }
+
 .header__burger-button div {
     width: 30px;
     height: 2px;
@@ -257,6 +266,7 @@ a {
     background-color: rgba(41, 41, 41, 0.6);
     transition: opacity 0.5s;
 }
+
 .burger_opacity-default {
     opacity: 1;
     transition: opacity 0.5s;
@@ -459,11 +469,13 @@ a {
         /* font-size: 33px; */
     }
 }
+
 @media (min-width: 956px) {
     .block-house__title {
         white-space: nowrap;
     }
 }
+
 @media (min-width: 400px) {
     .block-house__title {
         white-space: nowrap;
@@ -497,6 +509,7 @@ a {
         letter-spacing: 0.06em;
         color: #ffffff;
     }
+
     .block-house__text {
         padding-bottom: 42px;
         text-align: center;
@@ -520,6 +533,25 @@ a {
     transition: 0.5s ease-in-out;
 }
 
+@media (max-width: 768px) {
+    .block-house__btn {
+        display: inline-block;
+        padding: 15px 45px;
+        max-width: 207px;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 17px;
+        background: #f1cdb3;
+        color: #292929;
+        border-radius: 100px;
+        letter-spacing: 0.06em;
+        line-height: 130%;
+        white-space: nowrap;
+        transition: 0.5s ease-in-out;
+    }
+}
+
 .block-house__btn:hover {
     background: #fddcc4;
 }
@@ -529,6 +561,7 @@ a {
         margin: 0px auto;
     }
 }
+
 @media (max-width: 320.98px) {
     .block-house__btn {
         margin: 0px auto;
@@ -540,6 +573,7 @@ a {
     max-width: 698px;
     padding-top: 180px;
 }
+
 .block-house__image img {
     max-width: 100%;
     object-fit: cover;
@@ -547,6 +581,7 @@ a {
 
 @media (max-width: 768.98px) {
     .block-house__image {
+        align-self: flex-end;
         padding-top: 100px;
     }
 }
@@ -565,6 +600,7 @@ a {
         object-fit: cover;
     }
 }
+
 @media (max-width: 320.98px) {
     .block-house__image img {
         max-width: 260px;
@@ -643,6 +679,7 @@ a {
     .block-about__image {
         /* padding: 0px 20px 0px 20px; */
     }
+
     .block-about__image img {
         max-width: 260px;
         max-height: 353px;
@@ -764,24 +801,36 @@ a {
     overflow: hidden;
 }
 
+@media (max-width: 768px) {
+    .block-friends__cards_wrapper {
+        position: relative;
+        max-width: 990px;
+        margin: 0 auto 0px;
+        overflow: hidden;
+    }
+}
+
 @media (max-width: 1150px) {
     .block-friends__cards_wrapper {
         max-width: 850px;
     }
 }
+
 @media (max-width: 900px) {
     .block-friends__cards_wrapper {
         max-width: 560px;
     }
 }
+
 @media (max-width: 768.98px) {
     .block-friends__cards_wrapper {
         max-width: 580px;
         /* margin-left: 64px; */
-        margin-bottom: 60px;
+        /*margin-bottom: 60px;*/
         overflow: hidden;
     }
 }
+
 @media (max-width: 600px) {
     .block-friends__cards_wrapper {
         max-width: 270px;
@@ -802,6 +851,7 @@ a {
     .block-friends__cards {
         column-gap: 20px;
     }
+
     .block-friends__cards {
         left: -850px;
     }
@@ -981,7 +1031,8 @@ a {
         position: absolute;
         margin-left: 15px;
         left: 0;
-        top: 50%;
+        top: 48%;
+
     }
 
     .block-friends__arrow_right {
@@ -989,7 +1040,8 @@ a {
         position: absolute;
         margin-right: 15px;
         right: 0;
-        top: 50%;
+        top: 48%;
+
     }
 }
 
@@ -1009,6 +1061,7 @@ a {
         top: 75%;
     }
 }
+
 @media (max-width: 600px) {
     .block-friends__arrow {
         position: absolute;
@@ -1025,6 +1078,7 @@ a {
         top: 50%;
     }
 }
+
 @media (max-width: 420px) {
     .block-friends__arrow {
         position: absolute;
@@ -1234,6 +1288,7 @@ a {
         row-gap: 55px;
         margin-bottom: 100px;
     }
+
     .block-help__cards :nth-child(6) {
         margin-left: 50px;
     }
@@ -1244,15 +1299,18 @@ a {
         column-gap: 60px;
         row-gap: 55px;
     }
+
     .block-help__cards :nth-child(6) {
         margin-left: 50px;
     }
 }
+
 @media (max-width: 870px) {
     .block-help__cards {
         column-gap: 30px;
         row-gap: 55px;
     }
+
     .block-help__cards :nth-child(6) {
         margin-left: 30px;
     }
@@ -1272,6 +1330,7 @@ a {
         row-gap: 55px;
     }
 }
+
 @media (max-width: 640px) {
     .block-help__cards :nth-child(6) {
         margin-left: 0;
@@ -1286,10 +1345,12 @@ a {
         row-gap: 25px;
     }
 }
+
 @media (max-width: 550px) {
     .block-help__cards :nth-child(6) {
         margin-left: 0;
     }
+
     .block-help__cards {
         /* margin-left: 87px; */
         max-width: 1100px;
@@ -1352,6 +1413,7 @@ a {
         column-gap: 30px;
     }
 }
+
 @media (max-width: 768.98px) {
     .block-donat__content {
         display: flex;
@@ -1387,6 +1449,18 @@ a {
     .block-donat__image {
         padding-top: 42px;
     }
+
+    .block-donat__info {
+        padding-top: 40px;
+        max-width: 380px;
+    }
+}
+
+@media (max-width: 768px) {
+    .block-donat__image {
+        padding-top: 60px;
+    }
+
     .block-donat__info {
         padding-top: 40px;
         max-width: 380px;
@@ -1470,6 +1544,8 @@ a {
     transition: 0.4s;
     cursor: pointer;
 }
+
+
 
 .block-donat__requis:hover {
     background: #fddcc4;
@@ -1580,8 +1656,14 @@ a {
     padding-top: 40px;
 }
 
-.footer__card-image img{
+.footer__card-image img {
     padding-left: 21px;
+}
+
+@media (max-width: 768px) {
+    .footer__card-image img {
+        padding-left: 0px;
+    }
 }
 
 @media (max-width: 1250px) {
@@ -1591,6 +1673,7 @@ a {
         padding-top: 40px;
     }
 }
+
 @media (max-width: 1130px) {
     .footer__cards {
         display: flex;
@@ -1626,6 +1709,7 @@ a {
         grid-column-end: 3;
         text-align: center;
     }
+
     .footer__card-image img {
         max-width: 100%;
         height: 100%;
@@ -1639,22 +1723,27 @@ a {
 
 @media (max-width: 768.98px) {
     .footer__cards {
-        display: grid;
+        /*display: grid;
         grid-template-columns: repeat(2, 302px);
-        grid-template-rows: repeat(2, 0.5fr);
+        grid-template-rows: repeat(2, 0.5fr);*/
+        display: flex;
+        flex-wrap: wrap;
         column-gap: 60px;
-        justify-items: center;
+
+        justify-content: flex-start;
         padding: 0px 34px;
     }
 
     .footer__card-image {
-        grid-column-start: 1;
-        grid-column-end: 3;
-        text-align: center;
+        /*grid-column-start: 1;
+        grid-column-end: 3;*/
+        margin: 0px auto;
     }
+
     .footer__card-image img {
         max-width: 100%;
         height: 100%;
+        padding-top: 25px;
     }
 
     .footer__cards {
@@ -1677,6 +1766,7 @@ a {
         grid-column-end: 3;
         text-align: center;
     }
+
     .footer__card-image img {
         max-width: 100%;
         height: 100%;
@@ -1724,6 +1814,7 @@ a {
         flex-direction: column;
         align-items: center;
     }
+
     .footer__card_bottom {
         display: flex;
         flex-direction: column;
@@ -1748,6 +1839,21 @@ a {
     letter-spacing: 0.06em;
     color: #ffffff;
     white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .card__title {
+        margin-bottom: 40px;
+        padding-top: 0px;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 34px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #ffffff;
+        white-space: nowrap;
+    }
 }
 
 .card__title_right {
@@ -1858,6 +1964,7 @@ a {
         color: #ffffff;
     }
 }
+
 @media (max-width: 550px) {
     .card__title {
         max-width: 270px;
