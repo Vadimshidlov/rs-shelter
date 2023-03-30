@@ -172,7 +172,7 @@ body {
 
 .header__burger-menu-btn {
   visibility: hidden;
-  transform: rotateY(deg(90));
+  /*transform: rotateY(deg(90));*/
 }
 
 .header__burger-button {
@@ -353,14 +353,27 @@ body {
 
 /* ---BLOCK-FRIENDS--- */
 .block-friends {
+  position: relative;
+  z-index: 2;
   background: #f6f6f6;
 }
 
 .block-friends__content {
+  position: relative;
   display: flex;
   flex-direction: column;
   padding-top: 200px;
   padding-bottom: 100px;
+}
+
+@media (max-width: 400px) {
+  .block-friends__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 162px;
+    padding-bottom: 42px;
+  }
 }
 
 .block-friends__text {
@@ -381,14 +394,69 @@ body {
   letter-spacing: 0.06em;
 }
 
+@media (max-width: 768px) {
+  .block-friends__title {
+    padding-bottom: 15px;
+    max-width: 400px;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+    color: #545454;
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (max-width: 400px) {
+  .block-friends__title {
+    padding-bottom: 27px;
+    max-width: 400px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.06em;
+    color: #545454;
+  }
+}
+
+.block-friends__wrapper {
+}
+
+@media (max-width: 768px) {
+  .block-friends__wrapper {
+    /*max-height: 1371px;*/
+    overflow: hidden;
+    margin-bottom: 25px;
+  }
+}
+
 .block-friends__cards {
   display: flex;
   flex-wrap: wrap;
   column-gap: 40px;
   row-gap: 30px;
+  justify-content: center;
   /* margin-left: 105px; */
   padding: 15px 0;
   margin-bottom: 45px;
+}
+
+@media (max-width: 768px) {
+  .block-friends__cards {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 40px;
+    row-gap: 30px;
+    justify-content: center;
+    /* margin-left: 105px; */
+    padding: 15px 0;
+    margin-bottom: 0;
+  }
 }
 
 .block-friends__card {
@@ -469,6 +537,14 @@ body {
   display: flex;
   column-gap: 20px;
   margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+  .block-friends__pagination-buttons {
+    display: flex;
+    column-gap: 10px;
+    margin: 0 auto;
+  }
 }
 
 .pagination-buttons__btn {
