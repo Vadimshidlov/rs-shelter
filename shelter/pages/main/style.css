@@ -227,6 +227,7 @@ a {
 }
 
 .header__subtitle {
+    padding-left: 4px;
     font-family: "Arial", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -326,7 +327,7 @@ a {
 
 .header__menu-item_active {
     padding-bottom: 7px;
-    border-bottom: 3px solid #f1cdb3;
+    /*border-bottom: 3px solid #f1cdb3;*/
     pointer-events: none;
 }
 
@@ -423,7 +424,7 @@ a {
 
 .block-house__info {
     max-width: 460px;
-    padding-top: 28%;
+    padding-top: 28.58%;
 }
 
 @media (max-width: 956px) {
@@ -504,7 +505,7 @@ a {
 
 .block-house__btn {
     display: inline-block;
-    padding: 15px 45px;
+    padding: 17px 45px;
     max-width: 207px;
     font-family: "Georgia";
     font-style: normal;
@@ -514,6 +515,7 @@ a {
     color: #292929;
     border-radius: 100px;
     letter-spacing: 0.06em;
+    line-height: 130%;
     white-space: nowrap;
     transition: 0.5s ease-in-out;
 }
@@ -1098,6 +1100,7 @@ a {
     font-weight: 400;
     font-size: 17px;
     line-height: 130%;
+    letter-spacing: 0.06em;
     color: #292929;
     border-radius: 100px;
     border: 2px solid #f1cdb3;
@@ -1371,7 +1374,7 @@ a {
 
 .block-donat__image img {
     max-width: 100%;
-    height: 100%;
+    max-height: 100%;
 }
 
 @media (max-width: 768.98px) {
@@ -1439,6 +1442,7 @@ a {
     font-weight: 400;
     font-size: 15px;
     line-height: 110%;
+    letter-spacing: 0.06em;
     color: #545454;
 }
 
@@ -1459,7 +1463,7 @@ a {
     column-gap: 15px;
     padding: 10px 15px 10px 15px;
     margin-bottom: 20px;
-    width: 349px;
+    width: 350px;
     height: 43px;
     background: #f1cdb3;
     border-radius: 9px;
@@ -1471,7 +1475,7 @@ a {
     background: #fddcc4;
 }
 
-.block-donat__requis p {
+/*.block-donat__requis p {
     font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
@@ -1481,9 +1485,15 @@ a {
     align-items: center;
     letter-spacing: 0.06em;
     color: #545454;
-}
+}*/
 
 .block-donat__requis p a {
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
     color: #545454;
 }
 
@@ -1540,11 +1550,12 @@ a {
 }
 
 .block-donat__requis-number {
-    font-family: "Georgia";
+    font-family: 'Georgia';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 115%;
+    letter-spacing: 0.06em;
     color: #545454;
 }
 
@@ -1564,8 +1575,13 @@ a {
 
 .footer__cards {
     display: flex;
+    /*justify-content: space-between;*/
     column-gap: 160px;
-    padding-top: 56px;
+    padding-top: 40px;
+}
+
+.footer__card-image img{
+    padding-left: 21px;
 }
 
 @media (max-width: 1250px) {
@@ -1723,6 +1739,7 @@ a {
 
 .card__title {
     margin-bottom: 40px;
+    padding-top: 16px;
     font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
