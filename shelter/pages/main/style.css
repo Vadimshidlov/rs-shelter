@@ -616,6 +616,15 @@ a {
     }
 }
 
+/*.block-house__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}*/
+
 .block-house__background {
     position: absolute;
     width: 100%;
@@ -623,6 +632,7 @@ a {
     top: 0;
     left: 0;
     z-index: -1;
+    background: url(../../assets/images/noise_transparent@2x.png), radial-gradient(100% 215.42% at 0% 0%, #5B483A 0%, #262425 100%) , #211F20;
 }
 
 .block-house__picture {
@@ -2016,6 +2026,15 @@ a {
 .card__adress_right {
 }
 
+/*.footer__background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}*/
+
 .footer__background {
     position: absolute;
     width: 100%;
@@ -2023,6 +2042,7 @@ a {
     top: 0;
     left: 0;
     z-index: -1;
+    background: url('../../assets/images/noise_transparent@2x.png'), radial-gradient(110.67% 538.64% at 5.73% 50%, #513D2F 0%, #1A1A1C 100%), #211F20;
 }
 
 @media (max-width: 660px) {
