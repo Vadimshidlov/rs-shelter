@@ -459,3 +459,28 @@ function getRandomCards() {
        return res;
     }
  }
+
+
+
+//  slider go
+
+const arrOfRandomPetsNumbers = getRandomCards();
+
+// reload page unique pets
+active.innerHTML = arrOfRandomPetsNumbers[1].innerHTML;
+itemLeft.innerHTML = arrOfRandomPetsNumbers[0].innerHTML;
+itemRight.innerHTML = arrOfRandomPetsNumbers[2].innerHTML;
+const moveLeft = () => {
+   slider.classList.add('transition-left');
+   btnLeft.removeEventListener('click', moveLeft);
+   btnRight.removeEventListener('click', moveRight);
+};
+
+const moveRight = () => {
+   slider.classList.add('transition-right');
+   btnLeft.removeEventListener('click', moveLeft);
+   btnRight.removeEventListener('click', moveRight);
+};
+
+
+
