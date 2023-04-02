@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c30c927e-b1dd-4785-aa77-2e3899c69361" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="c30c927e-b1dd-4785-aa77-2e3899c69361" name="Changes" comment="fix: fixed valid of html markup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/main/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/pets/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/pets/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/pets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/pets/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/pages/main/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +49,7 @@
       <workItem from="1680282344174" duration="6350000" />
       <workItem from="1680370145208" duration="5349000" />
       <workItem from="1680422905994" duration="3211000" />
-      <workItem from="1680426260698" duration="1003000" />
+      <workItem from="1680426260698" duration="1467000" />
     </task>
     <servers />
   </component>
@@ -70,5 +66,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: fixed valid of html markup" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: fixed valid of html markup" />
   </component>
 </project>
