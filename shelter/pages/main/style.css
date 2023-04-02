@@ -147,7 +147,7 @@ a {
     .header_content {
         display: flex;
         align-items: center;
-        column-gap: 270px;
+        column-gap: 205px;
     }
 }
 
@@ -155,7 +155,7 @@ a {
     .header_content {
         display: flex;
         align-items: center;
-        column-gap: 81px;
+        column-gap: 56px;
     }
 }
 
@@ -1029,6 +1029,13 @@ a {
     .block-friends__cards_active-part {
         display: flex;
         column-gap: 20px;
+    }
+}
+
+@media (max-width: 768.98px) {
+    .block-friends__cards_active-part {
+        display: flex;
+        column-gap: 40px;
     }
 }
 
