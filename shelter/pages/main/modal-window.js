@@ -13,10 +13,10 @@ function showBurger() {
     burgerBody.classList.toggle('header__menu-item_active');
 }
 function hideBurger() {
-    blockHouse.classList.toggle('burger_opacity');
-    burgerBody.classList.toggle('header__menu-item_active');
+    blockHouse.classList.remove('burger_opacity');
+    burgerBody.classList.remove('header__menu-item_active');
     burgerBtn.classList.toggle('header__burger-button_active');
-    document.body.classList.toggle('stop-scrolling');
+    document.body.classList.remove('stop-scrolling');
 }
 
 burgerBtn.addEventListener('click', () => {
@@ -30,14 +30,20 @@ window.addEventListener('click', e => {
         console.log(blockHouse);
         blockHouse.childNodes.forEach(el => {
             el.addEventListener('click', () => {
-                hideBurger();
-            });
-        });
-
-        headerLinks.forEach(el => {
-            el.addEventListener('click', () => {
-                hideBurger();
+                document.body.classList.toggle('stop-scrolling');
+                blockHouse.classList.toggle('burger_opacity');
+                burgerBtn.classList.toggle('header__burger-button_active');
+                burgerBody.classList.toggle('header__menu-item_active');
             });
         });
     }
+});
+
+headerLinks.forEach(el => {
+    el.addEventListener('click', () => {
+        burgerBody.classList.remove('header__menu-item_active');
+        burgerBtn.classList.remove('header__burger-button_active');
+        blockHouse.classList.toggle('burger_opacity');
+        document.body.classList.toggle('stop-scrolling');
+    });
 });
