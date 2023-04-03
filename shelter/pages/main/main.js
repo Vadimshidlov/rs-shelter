@@ -790,5 +790,106 @@ slider.addEventListener("animationend", (animationEvent) => {
         // console.log(getRandomCard());
         // console.log(window.innerWidth);
     } else {
+        slider.classList.remove("transition-right");
+        document.querySelector("#left-part").innerHTML =
+            document.querySelector("#active-part").innerHTML;
+        document.querySelector("#active-part").innerHTML = itemRight.innerHTML;
+
+        function careteArrPrintId() {
+            if (window.innerWidth <= 900) {
+                const res = [];
+                res.push(
+                    document.querySelector("#active-part").childNodes[0].id
+                );
+                res.push(
+                    document.querySelector("#active-part").childNodes[1].id
+                );
+                return res;
+            }
+            if (window.innerWidth > 900) {
+                const res = [];
+                res.push(
+                    document.querySelector("#active-part").childNodes[0].id
+                );
+                res.push(
+                    document.querySelector("#active-part").childNodes[1].id
+                );
+                res.push(
+                    document.querySelector("#active-part").childNodes[2].id
+                );
+                return res;
+            }
+        }
+
+        const arrPrintId = careteArrPrintId();
+        for (let i = 0; i < arrPrintId.length; i++) {
+            let currId = arrPrintId[i];
+            for (let j = 0; j < dataPetsSlider.length; j++) {
+                if (dataPetsSlider[j].id === Number(currId)) {
+                    dataPetsSlider[j].isPrint = true;
+                }
+            }
+        }
+
+        /* console.log(document.querySelector('#active-part').childNodes[0].id);
+        console.log(document.querySelector('#active-part').childNodes[1].id);
+        console.log(document.querySelector('#active-part').childNodes[2].id); */
+
+        itemRight.innerHTML = "";
+        itemRight.innerHTML = getRandomCard().innerHTML;
+
+        function careteArrPrintIdTwo() {
+            if (window.innerWidth <= 900) {
+                const res = [];
+                res.push(
+                    document.querySelector("#right-part").childNodes[0].id
+                );
+                res.push(
+                    document.querySelector("#right-part").childNodes[1].id
+                );
+                return res;
+            }
+            if (window.innerWidth > 900) {
+                const res = [];
+                res.push(
+                    document.querySelector("#right-part").childNodes[0].id
+                );
+                res.push(
+                    document.querySelector("#right-part").childNodes[1].id
+                );
+                res.push(
+                    document.querySelector("#right-part").childNodes[2].id
+                );
+                return res;
+            }
+        }
+
+        const arrPrintIdTwo = careteArrPrintIdTwo();
+        console.log(arrPrintIdTwo);
+        if (window.innerWidth <= 900) {
+            for (let i = 0; i < arrPrintIdTwo.length; i++) {
+                let currId = arrPrintIdTwo[i];
+                for (let j = 0; j < dataPetsSlider.length; j++) {
+                    if (dataPetsSlider[j].id === Number(currId)) {
+                        dataPetsSlider[j].isPrint = true;
+                    }
+                }
+            }
+        }
+        if (window.innerWidth > 900) {
+            for (let i = 0; i < arrPrintIdTwo.length; i++) {
+                let currId = arrPrintIdTwo[i];
+                for (let j = 0; j < dataPetsSlider.length; j++) {
+                    if (dataPetsSlider[j].id === Number(currId)) {
+                        dataPetsSlider[j].isPrint = true;
+                    }
+                }
+            }
+        }
     }
+    console.log(dataPetsSlider);
+    dataPetsSlider.map((el) => (el.isPrint = false));
+
+    btnLeft.addEventListener("click", moveLeft);
+    btnRight.addEventListener("click", moveRight);
 });
