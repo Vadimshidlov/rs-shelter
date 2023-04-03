@@ -939,14 +939,14 @@ a {
     }
 
     .block-friends__cards {
-        left: -850px;
+        left: -870px;
     }
 }
 
 @media (max-width: 900px) {
     .block-friends__cards {
         position: relative;
-        left: -560px;
+        left: -580px;
         display: flex;
         column-gap: 20px;
         /*margin-left: 105px;
@@ -1036,15 +1036,26 @@ a {
 @media (max-width: 1150px) {
     @keyframes move-right {
         from {
-            left: -850px;
+            left: -870px;
         }
         to {
-            left: -1700px;
+            left: -1740px;
         }
     }
 }
 
 @media (max-width: 900px) {
+    @keyframes move-right {
+        from {
+            left: -580px;
+        }
+        to {
+            left: -1160px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
     @keyframes move-right {
         from {
             left: -620px;
@@ -1072,7 +1083,7 @@ a {
 @media (max-width: 1150px) {
     @keyframes move-left {
         from {
-            left: -850px;
+            left: -870px;
         }
         to {
             left: 0px;
@@ -1095,6 +1106,16 @@ a {
     }
  } */
 @media (max-width: 900px) {
+    @keyframes move-left {
+        from {
+            left: -580px;
+        }
+        to {
+            left: 0px;
+        }
+    }
+}
+@media (max-width: 768px) {
     @keyframes move-left {
         from {
             left: -620px;
@@ -1130,8 +1151,6 @@ a {
     }
 }
 
-
-
 @media (max-width: 1151px) {
     .block-friends__cards_active-part {
         display: flex;
@@ -1145,8 +1164,6 @@ a {
         column-gap: 40px;
     }
 }
-
-
 
 .block-friends__arrow {
     position: absolute;
