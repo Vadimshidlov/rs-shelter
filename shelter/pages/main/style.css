@@ -1245,9 +1245,11 @@ a {
     transition: 0.4s;
 }
 
-.block-friends__arrow_right:hover,
-.block-friends__arrow:hover {
-    background: #fddcc4;
+@media (min-width: 769px) {
+    .block-friends__arrow_right:hover,
+    .block-friends__arrow:hover {
+        background: #fddcc4;
+    }
 }
 
 @media (max-width: 1180px) {
@@ -1352,9 +1354,11 @@ a {
     }
 }
 
-.block-friends__arrow_right:hover,
-.block-friends__arrow:hover {
-    background: #fddcc4;
+@media (min-width: 769px) {
+    .block-friends__arrow_right:hover,
+    .block-friends__arrow:hover {
+        background: #fddcc4;
+    }
 }
 
 .block-friends__card {
