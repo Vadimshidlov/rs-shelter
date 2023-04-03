@@ -496,6 +496,92 @@ function getRandomCards() {
         res.push(newCardRightWrapper);
         return res;
     }
+    if (window.innerWidth <= 600) {
+        //----------------------
+        //left_1
+        const newCardLeftWrapper = document.createElement('div');
+        newCardLeftWrapper.classList.add('block-friends__cards_left-part');
+        newCardLeftWrapper.id = 'left-part';
+
+        const newCardLeft1 = document.createElement('div');
+        newCardLeft1.classList.add('block-friends__card');
+        newCardLeft1.id = `${dataPetsSlider[arrays[0][0]].id}`;
+        const img1_1 = document.createElement('img');
+        img1_1.src = `${dataPetsSlider[arrays[0][0]]['img']}`;
+        img1_1.classList.add('block-friends__card-picture');
+        const div1_1 = document.createElement('div');
+        div1_1.innerText = `${dataPetsSlider[arrays[0][0]].name}`;
+        div1_1.id = `${dataPetsSlider[arrays[0][0]].id}`;
+        div1_1.classList.add('block-friends__card-text');
+
+        const btn1_1 = document.createElement('button');
+        btn1_1.id = `${dataPetsSlider[arrays[0][0]].id}`;
+        btn1_1.innerText = 'Learn more';
+        btn1_1.classList.add('block-friends__card-btn'); //! --------------------------
+        newCardLeft1.appendChild(img1_1);
+        newCardLeft1.appendChild(div1_1);
+        newCardLeft1.appendChild(btn1_1);
+        newCardLeftWrapper.appendChild(newCardLeft1);
+
+        //active_part
+        //active_1
+        const newCardACtiveWrapper = document.createElement('div');
+        newCardACtiveWrapper.classList.add('block-friends__cards_active-part');
+        newCardACtiveWrapper.id = 'active-part';
+
+        const newCardActive1 = document.createElement('div');
+        newCardActive1.classList.add('block-friends__card');
+        newCardActive1.id = `${dataPetsSlider[arrays[1][0]].id}`; //!-------------
+
+        const img2_1 = document.createElement('img');
+        img2_1.classList.add('block-friends__card-picture');
+        img2_1.src = `${dataPetsSlider[arrays[1][0]]['img']}`;
+
+        const div2_1 = document.createElement('div');
+        div2_1.innerText = `${dataPetsSlider[arrays[1][0]].name}`;
+        div2_1.classList.add('block-friends__card-text');
+
+        const btn2_1 = document.createElement('button');
+        btn2_1.innerText = 'Learn more';
+        btn2_1.classList.add('block-friends__card-btn');
+        newCardActive1.appendChild(img2_1);
+        newCardActive1.appendChild(div2_1);
+        newCardActive1.appendChild(btn2_1);
+        newCardACtiveWrapper.appendChild(newCardActive1);
+
+        //right_part
+        //right_1
+        const newCardRightWrapper = document.createElement('div');
+        newCardRightWrapper.classList.add('block-friends__cards_right-part');
+        newCardRightWrapper.id = 'right-part';
+
+        const newCardARight1 = document.createElement('div');
+        newCardARight1.classList.add('block-friends__card');
+        newCardARight1.id = `${dataPetsSlider[arrays[2][0]].id}`; //!-------------
+
+        const img3_1 = document.createElement('img');
+        img3_1.classList.add('block-friends__card-picture');
+
+        img3_1.src = `${dataPetsSlider[arrays[2][0]]['img']}`;
+
+        const div3_1 = document.createElement('div');
+        div3_1.innerText = `${dataPetsSlider[arrays[2][0]].name}`;
+        div3_1.classList.add('block-friends__card-text');
+
+        const btn3_1 = document.createElement('button');
+        btn3_1.innerText = 'Learn more';
+        btn3_1.classList.add('block-friends__card-btn');
+        newCardARight1.appendChild(img3_1);
+        newCardARight1.appendChild(div3_1);
+        newCardARight1.appendChild(btn3_1);
+        newCardRightWrapper.appendChild(newCardARight1);
+
+        const res = [];
+        res.push(newCardLeftWrapper);
+        res.push(newCardACtiveWrapper);
+        res.push(newCardRightWrapper);
+        return res;
+    }
 }
 
 //  slider go
@@ -540,10 +626,22 @@ function getRandomNumbers() {
 
         return res;
     }
-    if (window.innerWidth <= 900) {
+    if (window.innerWidth <= 900 && window.innerWidth > 600) {
         const res = [];
 
         while (res.length < 2) {
+            let num = Math.floor(Math.random() * 8);
+            if (dataPetsSlider[num].isPrint === false && res.indexOf(num) === -1) {
+                res.push(num);
+            }
+        }
+
+        return res;
+    }
+    if (window.innerWidth <= 600) {
+        const res = [];
+
+        while (res.length < 1) {
             let num = Math.floor(Math.random() * 8);
             if (dataPetsSlider[num].isPrint === false && res.indexOf(num) === -1) {
                 res.push(num);
@@ -634,7 +732,7 @@ function getRandomCard() {
         return cards;
     }
 
-    if (window.innerWidth <= 900) {
+    if (window.innerWidth <= 900 && window.innerWidth > 600) {
         const cards = document.createElement('div');
         cards.classList.add('block-friends__cards_left-part');
         const newCard1 = document.createElement('div');
@@ -685,6 +783,32 @@ function getRandomCard() {
 
         return cards;
     }
+    if (window.innerWidth <= 600) {
+        const cards = document.createElement('div');
+        cards.classList.add('block-friends__cards_left-part');
+        const newCard1 = document.createElement('div');
+        newCard1.classList.add('block-friends__card');
+        newCard1.id = `${dataPetsSlider[randomNumbers[0]].id}`;
+
+        const img = document.createElement('img');
+        img.classList.add('block-friends__card-picture');
+
+        img.src = `${dataPetsSlider[randomNumbers[0]]['img']}`;
+
+        const div = document.createElement('div');
+        div.innerText = `${dataPetsSlider[randomNumbers[0]].name}`;
+        div.classList.add('block-friends__card-text');
+
+        const btn = document.createElement('button');
+        btn.innerText = 'Learn more';
+        btn.classList.add('block-friends__card-btn');
+        newCard1.appendChild(img);
+        newCard1.appendChild(div);
+        newCard1.appendChild(btn);
+        cards.appendChild(newCard1);
+
+        return cards;
+    }
 }
 
 slider.addEventListener('animationend', animationEvent => {
@@ -702,10 +826,15 @@ slider.addEventListener('animationend', animationEvent => {
                 res.push(document.querySelector('#active-part').childNodes[2].id);
                 return res;
             }
-            if (window.innerWidth <= 900) {
+            if (window.innerWidth <= 900 && window.innerWidth > 600) {
                 const res = [];
                 res.push(document.querySelector('#active-part').childNodes[0].id);
                 res.push(document.querySelector('#active-part').childNodes[1].id);
+                return res;
+            }
+            if (window.innerWidth <= 600) {
+                const res = [];
+                res.push(document.querySelector('#active-part').childNodes[0].id);
                 return res;
             }
         }
@@ -726,7 +855,13 @@ slider.addEventListener('animationend', animationEvent => {
         itemLeft.innerHTML = getRandomCard().innerHTML;
         console.log(document.querySelector('#left-part').childNodes[1]);
         function careteArrPrintIdTwo() {
-            if (window.innerWidth <= 900) {
+            if (window.innerWidth <= 600) {
+                const res = [];
+
+                res.push(document.querySelector('#left-part').childNodes[0].id);
+                return res;
+            }
+            if (window.innerWidth <= 900 && window.innerWidth > 600) {
                 const res = [];
 
                 res.push(document.querySelector('#left-part').childNodes[0].id);
@@ -772,7 +907,12 @@ slider.addEventListener('animationend', animationEvent => {
         document.querySelector('#active-part').innerHTML = itemRight.innerHTML;
 
         function careteArrPrintId() {
-            if (window.innerWidth <= 900) {
+            if (window.innerWidth <= 600) {
+                const res = [];
+                res.push(document.querySelector('#active-part').childNodes[0].id);
+                return res;
+            }
+            if (window.innerWidth <= 900 && window.innerWidth > 600) {
                 const res = [];
                 res.push(document.querySelector('#active-part').childNodes[0].id);
                 res.push(document.querySelector('#active-part').childNodes[1].id);
@@ -805,7 +945,12 @@ slider.addEventListener('animationend', animationEvent => {
         itemRight.innerHTML = getRandomCard().innerHTML;
 
         function careteArrPrintIdTwo() {
-            if (window.innerWidth <= 900) {
+            if (window.innerWidth <= 600) {
+                const res = [];
+                res.push(document.querySelector('#right-part').childNodes[0].id);
+                return res;
+            }
+            if (window.innerWidth <= 900 && window.innerWidth > 600) {
                 const res = [];
                 res.push(document.querySelector('#right-part').childNodes[0].id);
                 res.push(document.querySelector('#right-part').childNodes[1].id);

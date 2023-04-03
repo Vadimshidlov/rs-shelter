@@ -964,6 +964,16 @@ a {
            margin-bottom: 60px;*/
     }
 }
+@media (max-width: 600px) {
+    .block-friends__cards {
+        position: relative;
+        left: -310px;
+        display: flex;
+        column-gap: 40px;
+        /*margin-left: 105px;
+           margin-bottom: 60px;*/
+    }
+}
 
 @media (max-width: 320.98px) {
     .block-friends__cards {
@@ -1066,9 +1076,27 @@ a {
     }
 }
 
+@media (max-width: 600px) {
+    @keyframes move-right {
+        from {
+            left: -310px;
+        }
+        to {
+            left: -620px;
+        }
+    }
+}
+
 .transition-right {
     animation-name: move-right;
     animation-duration: 1.5s;
+}
+
+@media (max-width: 600px) {
+    .transition-right {
+        animation-name: move-right;
+        animation-duration: 1.3s;
+    }
 }
 
 @keyframes move-left {
@@ -1125,10 +1153,27 @@ a {
         }
     }
 }
+@media (max-width: 600px) {
+    @keyframes move-left {
+        from {
+            left: -310px;
+        }
+        to {
+            left: 0px;
+        }
+    }
+}
 
 .transition-left {
     animation-name: move-left;
     animation-duration: 1.5s;
+}
+
+@media (max-width: 600px) {
+    .transition-left {
+        animation-name: move-left;
+        animation-duration: 1.3s;
+    }
 }
 
 @media (max-width: 768px) {
