@@ -568,3 +568,203 @@ function getRandomNumbers() {
 
 btnLeft.addEventListener("click", moveLeft);
 btnRight.addEventListener("click", moveRight);
+
+function getRandomCard() {
+    const randomNumbers = getRandomNumbers();
+
+    if (window.innerWidth > 900) {
+        const cards = document.createElement("div");
+        cards.classList.add("block-friends__cards_left-part");
+        const newCard1 = document.createElement("div");
+        newCard1.classList.add("block-friends__card");
+        newCard1.id = `${dataPetsSlider[randomNumbers[0]].id}`;
+
+        const img = document.createElement("img");
+        img.classList.add("block-friends__card-picture");
+
+        img.src = `${dataPetsSlider[randomNumbers[0]]["img"]}`;
+
+        const div = document.createElement("div");
+        div.innerText = `${dataPetsSlider[randomNumbers[0]].name}`;
+        div.classList.add("block-friends__card-text");
+
+        const btn = document.createElement("button");
+        btn.innerText = "Learn more";
+        btn.classList.add("block-friends__card-btn");
+        newCard1.appendChild(img);
+        newCard1.appendChild(div);
+        newCard1.appendChild(btn);
+
+        // console.log(newCard1);
+
+        //card_2
+        const newCard2 = document.createElement("div");
+        newCard2.classList.add("block-friends__card");
+        newCard2.id = `${dataPetsSlider[randomNumbers[1]].id}`;
+
+        const img2 = document.createElement("img");
+        img2.classList.add("block-friends__card-picture");
+
+        img2.src = `${dataPetsSlider[randomNumbers[1]]["img"]}`;
+
+        const div2 = document.createElement("div");
+        div2.innerText = `${dataPetsSlider[randomNumbers[1]].name}`;
+        div2.classList.add("block-friends__card-text");
+
+        const btn2 = document.createElement("button");
+        btn2.innerText = "Learn more";
+        btn2.classList.add("block-friends__card-btn");
+        newCard2.appendChild(img2);
+        newCard2.appendChild(div2);
+        newCard2.appendChild(btn2);
+
+        //card_3
+        const newCard3 = document.createElement("div");
+        newCard3.classList.add("block-friends__card");
+        newCard3.id = `${dataPetsSlider[randomNumbers[2]].id}`;
+
+        const img3 = document.createElement("img");
+        img3.classList.add("block-friends__card-picture");
+
+        img3.src = `${dataPetsSlider[randomNumbers[2]]["img"]}`;
+
+        const div3 = document.createElement("div");
+        div3.innerText = `${dataPetsSlider[randomNumbers[2]].name}`;
+        div3.classList.add("block-friends__card-text");
+
+        const btn3 = document.createElement("button");
+        btn3.innerText = "Learn more";
+        btn3.classList.add("block-friends__card-btn");
+        newCard3.appendChild(img3);
+        newCard3.appendChild(div3);
+        newCard3.appendChild(btn3);
+
+        cards.appendChild(newCard1);
+        cards.appendChild(newCard2);
+        cards.appendChild(newCard3);
+
+        return cards;
+    }
+
+    if (window.innerWidth <= 900) {
+        const cards = document.createElement("div");
+        cards.classList.add("block-friends__cards_left-part");
+        const newCard1 = document.createElement("div");
+        newCard1.classList.add("block-friends__card");
+        newCard1.id = `${dataPetsSlider[randomNumbers[0]].id}`;
+
+        const img = document.createElement("img");
+        img.classList.add("block-friends__card-picture");
+
+        img.src = `${dataPetsSlider[randomNumbers[0]]["img"]}`;
+
+        const div = document.createElement("div");
+        div.innerText = `${dataPetsSlider[randomNumbers[0]].name}`;
+        div.classList.add("block-friends__card-text");
+
+        const btn = document.createElement("button");
+        btn.innerText = "Learn more";
+        btn.classList.add("block-friends__card-btn");
+        newCard1.appendChild(img);
+        newCard1.appendChild(div);
+        newCard1.appendChild(btn);
+
+        // console.log(newCard1);
+
+        //card_2
+        const newCard2 = document.createElement("div");
+        newCard2.classList.add("block-friends__card");
+        newCard2.id = `${dataPetsSlider[randomNumbers[1]].id}`;
+
+        const img2 = document.createElement("img");
+        img2.classList.add("block-friends__card-picture");
+
+        img2.src = `${dataPetsSlider[randomNumbers[1]]["img"]}`;
+
+        const div2 = document.createElement("div");
+        div2.innerText = `${dataPetsSlider[randomNumbers[1]].name}`;
+        div2.classList.add("block-friends__card-text");
+
+        const btn2 = document.createElement("button");
+        btn2.innerText = "Learn more";
+        btn2.classList.add("block-friends__card-btn");
+        newCard2.appendChild(img2);
+        newCard2.appendChild(div2);
+        newCard2.appendChild(btn2);
+
+        cards.appendChild(newCard1);
+        cards.appendChild(newCard2);
+
+        return cards;
+    }
+}
+
+slider.addEventListener("animationend", (animationEvent) => {
+    if (animationEvent.animationName === "move-left") {
+        slider.classList.remove("transition-left");
+
+        document.querySelector("#right-part").innerHTML =
+            document.querySelector("#active-part").innerHTML;
+        document.querySelector("#active-part").innerHTML = itemLeft.innerHTML;
+
+        function careteArrPrintId() {
+            if (window.innerWidth > 900) {
+                const res = [];
+                res.push(
+                    document.querySelector("#active-part").childNodes[0].id
+                );
+                res.push(
+                    document.querySelector("#active-part").childNodes[1].id
+                );
+                res.push(
+                    document.querySelector("#active-part").childNodes[2].id
+                );
+                return res;
+            }
+            if (window.innerWidth <= 900) {
+                const res = [];
+                res.push(
+                    document.querySelector("#active-part").childNodes[0].id
+                );
+                res.push(
+                    document.querySelector("#active-part").childNodes[1].id
+                );
+                return res;
+            }
+        }
+        const arrPrintId = careteArrPrintId();
+        for (let i = 0; i < arrPrintId.length; i++) {
+            let currId = arrPrintId[i];
+            for (let j = 0; j < dataPetsSlider.length; j++) {
+                if (dataPetsSlider[j].id === Number(currId)) {
+                    dataPetsSlider[j].isPrint = true;
+                }
+            }
+        }
+        console.log(dataPetsSlider);
+
+        console.log(getRandomNumbers());
+
+        itemLeft.innerHTML = "";
+        itemLeft.innerHTML = getRandomCard().innerHTML;
+        console.log(document.querySelector("#left-part").childNodes[1]);
+        function careteArrPrintIdTwo() {
+            if (window.innerWidth <= 900) {
+                const res = [];
+
+                res.push(document.querySelector("#left-part").childNodes[0].id);
+                res.push(document.querySelector("#left-part").childNodes[1].id);
+                return res;
+            }
+
+            if (window.innerWidth > 900) {
+                const res = [];
+
+                res.push(document.querySelector("#left-part").childNodes[0].id);
+                res.push(document.querySelector("#left-part").childNodes[1].id);
+                res.push(document.querySelector("#left-part").childNodes[2].id);
+                return res;
+            }
+        }
+    }
+});
