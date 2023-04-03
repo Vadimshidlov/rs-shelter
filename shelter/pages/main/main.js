@@ -766,5 +766,29 @@ slider.addEventListener("animationend", (animationEvent) => {
                 return res;
             }
         }
+
+        console.log(careteArrPrintIdTwo());
+
+        console.log(document.querySelector("#left-part").childNodes);
+
+        const arrPrintIdTwo = careteArrPrintIdTwo();
+        console.log(arrPrintIdTwo);
+        if (window.innerWidth <= 900) {
+            for (let i = 0; i < arrPrintIdTwo.length; i++) {
+                let currId = arrPrintIdTwo[i];
+                for (let j = 0; j < dataPetsSlider.length; j++) {
+                    if (dataPetsSlider[j].id === Number(currId)) {
+                        dataPetsSlider[j].isPrint = true;
+                    }
+                }
+            }
+        }
+
+        console.log(dataPetsSlider);
+        dataPetsSlider.map((el) => (el.isPrint = false));
+
+        // console.log(getRandomCard());
+        // console.log(window.innerWidth);
+    } else {
     }
 });
