@@ -1369,6 +1369,8 @@ a {
     background: #fafafa;
     cursor: pointer;
     transition: box-shadow 0.3s ease-in-out;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
 }
 
 @media (max-width: 768.98px) {
@@ -1391,6 +1393,9 @@ a {
     margin-bottom: 30px;
     width: 270px;
     height: 270px;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+
 }
 
 .block-friends__card-text {
