@@ -152,3 +152,45 @@ const dataModalTwo = [
 
 const modalWindow = document.querySelector(".block-friends__modal-window");
 const petCard = document.querySelector("#active-part");
+
+// function getModalWindow
+
+function getModal(id) {
+    console.log("No body believe in you");
+    modalWindow.classList.add("block-friends__modal-window_active");
+    document.body.classList.add("stop-scrolling");
+    modalWindow.innerHTML = `
+       <div class="modal-window__wrapper">
+          <div class="modal-window__content">
+             <button class="modal-window__button">X</button>
+             <div class="modal-window__image">
+                <img src=${dataModalTwo[id].img} alt="" />
+             </div>
+             <div class="modal-window__info">
+                <h3 class="modal-window__title">${dataModalTwo[id].name}</h3>
+                <h4 class="modal-window__subtitle">${dataModalTwo[id].type} - ${dataModalTwo[id].breed}</h4>
+                <div class="modal-window__text">
+                ${dataModalTwo[id].description}
+                </div>
+                <div class="modal-window__description">
+                   <ul class="modal-window__list">
+                      <li class="modal-window__item">Age: ${dataModalTwo[id].age}</li>
+                      <li class="modal-window__item">Inoculations: ${dataModalTwo[id].inoculations}</li>
+                      <li class="modal-window__item">Diseases: ${dataModalTwo[id].diseases}</li>
+                      <li class="modal-window__item">Parasites: ${dataModalTwo[id].parasites}</li>
+                   </ul>
+                </div>
+             </div>
+          </div>
+       </div>
+       `;
+    const hideModalBtn = document.querySelector(".modal-window__button");
+    hideModalBtn.addEventListener("click", () => {
+        hideModal();
+    });
+}
+
+function hideModal() {
+    modalWindow.classList.remove("block-friends__modal-window_active");
+    document.body.classList.remove("stop-scrolling");
+}
