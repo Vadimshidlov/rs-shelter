@@ -24,3 +24,27 @@ burgerBtn.addEventListener('click', () => {
     console.log('hello');
     showBurger();
 });
+
+window.addEventListener('click', e => {
+    console.log(e.target);
+    if (burgerBody.classList.contains('header__menu-item_active')) {
+        console.log(blockHouse);
+        blockHouse.childNodes.forEach(el => {
+            el.addEventListener('click', () => {
+                document.body.classList.toggle('stop-scrolling');
+                blockHouse.classList.toggle('burger_opacity');
+                burgerBtn.classList.toggle('header__burger-button_active');
+                burgerBody.classList.toggle('header__menu-item_active');
+            });
+        });
+    }
+});
+
+headerLinks.forEach(el => {
+    el.addEventListener('click', () => {
+        burgerBody.classList.remove('header__menu-item_active');
+        burgerBtn.classList.remove('header__burger-button_active');
+        blockHouse.classList.toggle('burger_opacity');
+        document.body.classList.toggle('stop-scrolling');
+    });
+});
