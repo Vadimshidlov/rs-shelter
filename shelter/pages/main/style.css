@@ -249,7 +249,7 @@ a {
 
 .header__subtitle {
     padding-left: 4px;
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
@@ -298,7 +298,7 @@ a {
 }
 
 .header__menu-item {
-    font-family: 'Arial', serif;
+    font-family: "Arial", serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -328,7 +328,7 @@ a {
 
 @media (min-width: 768px) {
     .header__menu-item a {
-        font-family: 'Arial', serif;
+        font-family: "Arial", serif;
         white-space: nowrap;
         font-style: normal;
         font-weight: 400;
@@ -342,7 +342,7 @@ a {
     }
 
     .header__menu-item_active a {
-        font-family: 'Arial', serif;
+        font-family: "Arial", serif;
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -374,7 +374,7 @@ a {
         justify-content: center;
         right: 0%;
         transition: all 1s ease;
-        font-family: 'Arial', serif;
+        font-family: "Arial", serif;
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -389,7 +389,7 @@ a {
         justify-content: center;
         right: 0%;
         transition: all 1s ease;
-        font-family: 'Arial', serif;
+        font-family: "Arial", serif;
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -439,7 +439,7 @@ a {
     }
 
     .header__menu-item a {
-        font-family: 'Arial';
+        font-family: "Arial";
         font-style: normal;
         font-weight: 400;
         font-size: 32px;
@@ -496,7 +496,7 @@ a {
 .block-house__title {
     max-width: 310px;
     padding-bottom: 42px;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 44px;
@@ -526,7 +526,7 @@ a {
     display: inline-block;
     max-width: 460px;
     padding-bottom: 42px;
-    font-family: 'Arial';
+    font-family: "Arial";
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -540,7 +540,7 @@ a {
         max-width: 250px;
         max-height: 64px;
         margin-bottom: 42px;
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
@@ -560,7 +560,7 @@ a {
     display: inline-block;
     padding: 17px 45px;
     max-width: 207px;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -578,7 +578,7 @@ a {
         display: inline-block;
         padding: 15px 45px;
         max-width: 207px;
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 17px;
@@ -666,7 +666,8 @@ a {
     left: 0;
     z-index: -1;
     background: url(../../assets/images/noise_transparent@2x.png),
-        radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%), #211f20;
+        radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%),
+        #211f20;
 }
 
 .block-house__picture {
@@ -770,7 +771,7 @@ a {
 
 .block-about__title {
     padding-bottom: 25px;
-    font-family: 'Georgia', serif;
+    font-family: "Georgia", serif;
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
@@ -781,7 +782,7 @@ a {
 
 @media (max-width: 420px) {
     .block-about__title {
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
@@ -793,7 +794,7 @@ a {
 }
 
 .block-about__text {
-    font-family: 'Arial', sans-serif;
+    font-family: "Arial", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -803,7 +804,7 @@ a {
 
 @media (max-width: 420px) {
     .block-about__text {
-        font-family: 'Arial';
+        font-family: "Arial";
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -857,7 +858,7 @@ a {
     padding-bottom: 60px;
     max-width: 400px;
     text-align: center;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
@@ -869,7 +870,7 @@ a {
 @media (max-width: 320px) {
     .block-friends__title {
         padding-bottom: 42px;
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
@@ -1395,7 +1396,7 @@ a {
 .block-friends__card-text {
     padding-bottom: 30px;
     text-align: center;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -1409,7 +1410,7 @@ a {
     margin-bottom: 30px;
     width: 187px;
     height: 52px;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -1433,7 +1434,7 @@ a {
     max-height: 52px;
     padding: 15px 45px;
     border-radius: 100px;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
@@ -1473,7 +1474,7 @@ a {
     padding-bottom: 60px;
     max-width: 400px;
     text-align: center;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
@@ -1486,7 +1487,7 @@ a {
     .block-help__text-title {
         padding: 42px 0px 42px 0px;
         max-width: 220px;
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
@@ -1498,7 +1499,7 @@ a {
 }
 
 .block-help__text {
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -1512,7 +1513,7 @@ a {
 
 @media (max-width: 550px) {
     .block-help__text {
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -1747,7 +1748,7 @@ a {
 .block-donat__title-text {
     padding-bottom: 20px;
     max-width: 400px;
-    font-family: 'Georgia', serif;
+    font-family: "Georgia", serif;
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
@@ -1758,7 +1759,7 @@ a {
 
 @media (max-width: 420px) {
     .block-donat__title-text {
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
@@ -1776,7 +1777,7 @@ a {
 
 .block-donat__subtitle-text {
     padding-bottom: 20px;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -1787,7 +1788,7 @@ a {
 
 @media (max-width: 420px) {
     .block-donat__subtitle-text {
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 13px;
@@ -1828,7 +1829,7 @@ a {
 }*/
 
 .block-donat__requis p a {
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -1839,7 +1840,7 @@ a {
 
 @media (max-width: 420px) {
     .block-donat__requis p a {
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -1854,7 +1855,7 @@ a {
 }
 
 .block-donat__text p {
-    font-family: 'Arial';
+    font-family: "Arial";
     font-style: italic;
     font-weight: 400;
     font-size: 12px;
@@ -1877,7 +1878,7 @@ a {
     }
 
     .block-donat__requis p {
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
@@ -1889,7 +1890,7 @@ a {
     }
 
     .block-donat__text p {
-        font-family: 'Arial';
+        font-family: "Arial";
         font-style: italic;
         font-weight: 400;
         font-size: 12px;
@@ -1903,7 +1904,7 @@ a {
 }
 
 .block-donat__requis-number {
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -2110,7 +2111,7 @@ a {
     width: 278px;
     margin-bottom: 40px;
     padding-top: 16px;
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 35px;
@@ -2124,7 +2125,7 @@ a {
     .card__title {
         margin-bottom: 40px;
         padding-top: 0px;
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 35px;
@@ -2179,13 +2180,18 @@ a {
         margin-bottom: 40px;
     }
 
-    #footer > div.footer__content._container > div > div:nth-child(2) > div:nth-child(3) > p {
+    #footer
+        > div.footer__content._container
+        > div
+        > div:nth-child(2)
+        > div:nth-child(3)
+        > p {
         margin-right: 20px;
     }
 }
 
 .card__mail {
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -2208,7 +2214,7 @@ a {
 }
 
 .card__phone {
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -2231,7 +2237,7 @@ a {
 }
 
 .card__adress a {
-    font-family: 'Georgia';
+    font-family: "Georgia";
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -2266,15 +2272,16 @@ a {
     top: 0;
     left: 0;
     z-index: -1;
-    background: url('../../assets/images/noise_transparent@2x.png'),
-        radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%), #211f20;
+    background: url("../../assets/images/noise_transparent@2x.png"),
+        radial-gradient(110.67% 538.64% at 5.73% 50%, #513d2f 0%, #1a1a1c 100%),
+        #211f20;
 }
 
 @media (max-width: 660px) {
     .card__title {
         margin-bottom: 40px;
         text-align: center;
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 30px;
@@ -2289,7 +2296,7 @@ a {
         max-width: 278px;
         text-align: center;
         margin-bottom: 40px;
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
@@ -2305,7 +2312,7 @@ a {
         max-width: 278px;
         text-align: center;
         margin-bottom: 40px;
-        font-family: 'Georgia';
+        font-family: "Georgia";
         font-style: normal;
         font-weight: 400;
         font-size: 25px;
@@ -2314,5 +2321,224 @@ a {
         color: #ffffff;
         align-self: center;
         /*white-space: nowrap;*/
+    }
+}
+
+/* ---------MODAL-WNDOW-STYLES--------- */
+
+.block-friends__modal-window {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s, visibility 0s 1s;
+}
+
+.block-friends__modal-window_active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s, visibility 0s;
+}
+
+.modal-window {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 878px;
+    background: rgba(41, 41, 41, 0.6);
+}
+
+.modal-window__wrapper {
+    max-width: 900px;
+    margin: 0px auto;
+}
+
+.modal-window__content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0px auto;
+    margin-top: 18%;
+    display: flex;
+    column-gap: 30px;
+    background: #fafafa;
+    border-radius: 9px;
+}
+
+@media (max-width: 768px) {
+    .modal-window__content {
+        position: relative;
+        z-index: 3;
+        max-width: 630px;
+        margin: 0px auto;
+        margin-top: 18%;
+        display: flex;
+        column-gap: 10px;
+        background: #fafafa;
+        border-radius: 9px;
+    }
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.block-friends__card-picture {
+}
+
+.modal-window__image img {
+    width: 500px;
+    height: 500px;
+    border-radius: 9px;
+}
+
+@media (max-width: 768px) {
+    .modal-window__image img {
+        width: 350px;
+        height: 350px;
+        border-radius: 9px;
+    }
+}
+
+.modal-window__button {
+    position: absolute;
+    top: -53px;
+    left: 99.5%;
+    width: 52px;
+    height: 52px;
+    border: 2px solid #f1cdb3;
+    border-radius: 100px;
+    cursor: pointer;
+    background: rgba(41, 41, 41, 0);
+}
+
+/* .modal-window__content::after {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    content: 'x';
+    width: 52px;
+    height: 52px;
+    border: 2px solid #f1cdb3;
+    border-radius: 100px;
+    cursor: pointer;
+ } */
+
+.modal-window__image {
+}
+
+/* .modal-window__image img {
+    max-width: 500px;
+    max-height: 500px;
+ } */
+.modal-window__info {
+}
+
+.modal-window__title {
+    padding-top: 50px;
+    margin-bottom: 10px;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+
+    letter-spacing: 0.06em;
+
+    color: #000000;
+}
+
+.modal-window__subtitle {
+    margin-bottom: 40px;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.modal-window__text {
+    margin-bottom: 40px;
+    margin-right: 20px;
+
+    max-width: 350px;
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.modal-window__description {
+}
+
+.modal-window__list {
+}
+
+.modal-window__item {
+    font-family: "Georgia";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.modal-window__item:not(:last-child) {
+    margin-bottom: 11px;
+}
+
+@media (max-width: 768px) {
+    .modal-window__title {
+        padding-top: 10px;
+        margin-bottom: 10px;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #000000;
+    }
+
+    .modal-window__subtitle {
+        margin-bottom: 20px;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: #000000;
+    }
+    .modal-window__text {
+        margin-bottom: 20px;
+        margin-right: 10px;
+
+        max-width: 260px;
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #000000;
+    }
+
+    .modal-window__item {
+        font-family: "Georgia";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #000000;
     }
 }
