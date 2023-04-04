@@ -153,6 +153,27 @@ const dataModalTwo = [
 const modalWindow = document.querySelector(".block-friends__modal-window");
 const petCard = document.querySelector("#active-part");
 
+petCard.addEventListener("click", (e) => {
+    if (e.target.className === "block-friends__card") {
+        console.log("Click!");
+        console.log(e.target.id);
+
+        getModal(e.target.id);
+    }
+    if (e.target.className === "block-friends__card-text") {
+        console.log("Click!", e.target.closest(".block-friends__card").id);
+        getModal(e.target.closest(".block-friends__card").id);
+    }
+    if (e.target.className === "block-friends__card-btn") {
+        console.log("Click!", e.target.closest(".block-friends__card").id);
+        getModal(e.target.closest(".block-friends__card").id);
+    }
+    if (e.target.className === "block-friends__card-picture") {
+        console.log("Click!", e.target.closest(".block-friends__card").id);
+        getModal(e.target.closest(".block-friends__card").id);
+    }
+});
+
 // function getModalWindow
 
 function getModal(id) {
