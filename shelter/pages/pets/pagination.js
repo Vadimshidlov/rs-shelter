@@ -261,3 +261,54 @@ function getPaginaionCardsHtml(pages, count) {
     }
     //    }
 }
+
+//firstrenderofpagination(first page)
+function firstRender() {
+    if (window.innerWidth >= 768) {
+        getPaginaionCardsHtml(getCountOfPageElements(), 1);
+    }
+    if (window.innerWidth >= 640 && window.innerWidth < 768) {
+        getPaginaionCardsHtml(getCountOfPageElements(), 1);
+    }
+    if (window.innerWidth < 640) {
+        getPaginaionCardsHtml(getCountOfPageElements(), 1);
+    }
+}
+
+firstRender();
+
+function getPages() {
+    let countOfPages;
+    if (window.innerWidth >= 768) {
+        countOfPages = 6;
+        return countOfPages;
+    }
+
+    if (window.innerWidth < 640) {
+        countOfPages = 16;
+        return countOfPages;
+    }
+
+    if (window.innerWidth > 640 && window.innerWidth < 768) {
+        countOfPages = 8;
+        return countOfPages;
+    }
+}
+
+function getCountOfPageElements() {
+    let count;
+    if (window.innerWidth >= 768) {
+        count = 8;
+        return count;
+    }
+
+    if (window.innerWidth < 640) {
+        count = 3;
+        return count;
+    }
+
+    if (window.innerWidth >= 640 && window.innerWidth < 768) {
+        count = 6;
+        return count;
+    }
+}
