@@ -190,3 +190,74 @@ const btnRightEnd = document.querySelector("#btn-page-right-end");
 const btnLeftOne = document.querySelector("#btn-page-left");
 const btnLeftEnd = document.querySelector("#btn-page-left-start");
 const btnPageNumber = document.querySelector("#btn-page-count");
+
+function getPaginaionCardsHtml(pages, count) {
+    console.log("go", pages, count);
+    const paginationBody = document.querySelector(".block-friends__cards");
+    //    if (window.innerWidth > 1280) {
+    /*let pages = pages
+          let count = count*/
+    let start = count * pages - pages;
+    let end = count * pages;
+    console.log(arrOfIndexesPets);
+    paginationBody.innerHTML = "";
+
+    for (let i = start; i < end; i++) {
+        // for (let i = 8; i < 16; i++) {
+        const blockFriendCard = document.createElement("div");
+        blockFriendCard.classList.add("block-friends__card");
+        // console.log(dataPaginationTwo[arrOfIndexesPets[i] - 1].id);
+        blockFriendCard.id = dataPaginationTwo[arrOfIndexesPets[i] - 1].id;
+        const blockFriendImg = document.createElement("img");
+        blockFriendImg.classList.add("block-friends__card-picture");
+
+        console.log(arrOfIndexesPets[i] - 1);
+        blockFriendImg.src = `${
+            dataPaginationTwo[arrOfIndexesPets[i] - 1].img
+        }`;
+        const blockFriendCardName = document.createElement("div");
+        blockFriendCardName.classList.add("block-friends__card-text");
+        blockFriendCardName.innerText = `${
+            dataPaginationTwo[arrOfIndexesPets[i] - 1].name
+        }`;
+        const blockFriendCardButton = document.createElement("button");
+        blockFriendCardButton.classList.add("block-friends__card-btn");
+        blockFriendCardButton.innerText = "Learn more";
+        blockFriendCard.appendChild(blockFriendImg);
+        blockFriendCard.appendChild(blockFriendCardName);
+        blockFriendCard.appendChild(blockFriendCardButton);
+        paginationBody.appendChild(blockFriendCard);
+
+        blockFriendCard.addEventListener("click", (e) => {
+            console.log("hello");
+            if (e.target.className === "block-friends__card") {
+                console.log("Click!");
+                console.log(e.target.id);
+
+                getModal(e.target.id);
+            }
+            if (e.target.className === "block-friends__card-text") {
+                console.log(
+                    "Click!",
+                    e.target.closest(".block-friends__card").id
+                );
+                getModal(e.target.closest(".block-friends__card").id);
+            }
+            if (e.target.className === "block-friends__card-btn") {
+                console.log(
+                    "Click!",
+                    e.target.closest(".block-friends__card").id
+                );
+                getModal(e.target.closest(".block-friends__card").id);
+            }
+            if (e.target.className === "block-friends__card-picture") {
+                console.log(
+                    "Click!",
+                    e.target.closest(".block-friends__card").id
+                );
+                getModal(e.target.closest(".block-friends__card").id);
+            }
+        });
+    }
+    //    }
+}
