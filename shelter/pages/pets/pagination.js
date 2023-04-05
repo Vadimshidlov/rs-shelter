@@ -166,3 +166,27 @@ function goMobileThreePets(arr) {
         ? goMobileThreePets(getArrayOfPageArray(petCards))
         : arr;
 }
+
+function getStartArrayOfPets() {
+    if (window.innerWidth >= 768) {
+        const arr = getArrayOfPageArray(petCards);
+        return arr;
+    }
+    if (window.innerWidth >= 640 && window.innerWidth < 768) {
+        const arr = goTabletSixPets(getArrayOfPageArray(petCards));
+        return arr;
+    }
+    if (window.innerWidth < 640) {
+        const arr = goMobileThreePets(getArrayOfPageArray(petCards));
+        return arr;
+    }
+}
+
+const arrOfIndexesPets = getStartArrayOfPets();
+console.log(arrOfIndexesPets);
+
+const btnRightOne = document.querySelector("#btn-page-right");
+const btnRightEnd = document.querySelector("#btn-page-right-end");
+const btnLeftOne = document.querySelector("#btn-page-left");
+const btnLeftEnd = document.querySelector("#btn-page-left-start");
+const btnPageNumber = document.querySelector("#btn-page-count");
