@@ -534,3 +534,20 @@ function getModal(id) {
         hideModal();
     });
 }
+
+function hideModal() {
+    modalWindow.classList.remove('block-friends__modal-window_active');
+    document.body.classList.remove('stop-scrolling');
+}
+
+window.addEventListener('click', e => {
+    console.log(e.target);
+    if (e.target === modalWindow) {
+        hideModal();
+    }
+});
+window.addEventListener('keydown', e => {
+    if (e.keyCode === 27) {
+        hideModal();
+    }
+});
