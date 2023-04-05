@@ -321,8 +321,8 @@ a {
 }
 
 .header__menu-item_active-link {
-    padding-bottom: 7px;
-    /*border-bottom: 3px solid #f1cdb3;*/
+    padding-bottom: 4px;
+    border-bottom: 3px solid #f1cdb3;
     pointer-events: none;
 }
 
