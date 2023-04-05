@@ -1184,3 +1184,299 @@ body {
 }
 
 /*-----------------*/
+
+
+/*-----------MODAL-WINDOW-------------*/
+
+.block-friends__modal-window {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s, visibility 0s 1s;
+}
+
+.block-friends__modal-window_active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 1s, visibility 0s;
+}
+
+/*.modal-window {
+    position: absolute;
+    z-index: 2;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 41, 41, 0.6);
+}*/
+
+.modal-window {
+    position: fixed;
+    z-index: 60;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 41, 41, 0.6);
+}
+
+.modal-window__wrapper {
+    max-width: 900px;
+    margin: 0px auto;
+}
+
+.modal-window__content {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0px auto;
+    margin-top: calc(30vh);
+    display: flex;
+    column-gap: 30px;
+    background: #fafafa;
+    border-radius: 9px;
+}
+
+@media (max-width: 768px) {
+    .modal-window__content {
+        position: relative;
+        z-index: 3;
+        max-width: 630px;
+        margin: 0px auto;
+        margin-top: calc(30vh);
+        display: flex;
+        column-gap: 10px;
+        background: #fafafa;
+        border-radius: 9px;
+    }
+}
+@media (max-width: 320px) {
+    .modal-window__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 3;
+        max-width: 240px;
+        margin: 0px auto;
+        margin-top: calc(30vh);
+        column-gap: 10px;
+        background: #fafafa;
+        border-radius: 9px;
+        padding: 10px;
+    }
+}
+
+.stop-scrolling {
+    height: 100%;
+    overflow: hidden;
+}
+
+.block-friends__card-picture {
+}
+
+.modal-window__image img {
+    width: 500px;
+    height: 500px;
+    border-radius: 9px;
+}
+
+@media (max-width: 768px) {
+    .modal-window__image img {
+        width: 350px;
+        height: 350px;
+        border-radius: 9px;
+    }
+}
+
+.modal-window__button {
+    position: absolute;
+    top: -53px;
+    left: 99.5%;
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+    border: 2px solid #f1cdb3;
+    border-radius: 100px;
+    cursor: pointer;
+    background: rgba(41, 41, 41, 0);
+}
+
+@media (max-width: 320px) {
+    .modal-window__button {
+        position: absolute;
+        top: -53px;
+        left: 90.5%;
+        width: 52px;
+        height: 52px;
+        font-size: 18px;
+        border: 2px solid #f1cdb3;
+        border-radius: 100px;
+        cursor: pointer;
+        background: rgba(41, 41, 41, 0);
+    }
+}
+
+/* .modal-window__content::after {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 18px;
+   content: 'x';
+   width: 52px;
+   height: 52px;
+   border: 2px solid #f1cdb3;
+   border-radius: 100px;
+   cursor: pointer;
+} */
+
+.modal-window__image {
+}
+
+/* .modal-window__image img {
+   max-width: 500px;
+   max-height: 500px;
+} */
+.modal-window__info {
+}
+
+.modal-window__title {
+    padding-top: 50px;
+    margin-bottom: 10px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 130%;
+
+    letter-spacing: 0.06em;
+
+    color: #000000;
+}
+
+.modal-window__subtitle {
+    margin-bottom: 40px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 115%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.modal-window__text {
+    margin-bottom: 40px;
+    margin-right: 20px;
+
+    max-width: 350px;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+}
+
+.modal-window__description {
+}
+
+.modal-window__list {
+}
+
+.modal-window__item {
+    position: relative;
+    font-family: 'Georgia';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 110%;
+    letter-spacing: 0.06em;
+    color: #000000;
+    padding-left: 14px;
+}
+
+.modal-window__item::before {
+    position: absolute;
+    content: url('../../assets/images/friends/modal/dot.svg');
+    left: 0;
+    top: -17%;
+}
+
+.modal-window__item:not(:last-child) {
+    margin-bottom: 11px;
+}
+
+@media (max-width: 768px) {
+    .modal-window__text {
+        margin-bottom: 20px;
+        margin-right: 10px;
+
+        max-width: 260px;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #000000;
+    }
+
+    .modal-window__item {
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #000000;
+    }
+}
+
+@media (max-width: 320px) {
+    .modal-window__item:not(:last-child) {
+        margin-bottom: 6px;
+    }
+
+    .modal-window__title {
+        padding-top: 10px;
+        margin-bottom: 10px;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 35px;
+        line-height: 130%;
+        letter-spacing: 0.06em;
+        color: #000000;
+        text-align: center;
+    }
+
+    .modal-window__subtitle {
+        margin-bottom: 20px;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 115%;
+        letter-spacing: 0.06em;
+        color: #000000;
+        text-align: center;
+    }
+    .modal-window__text {
+        margin-bottom: 24px;
+        margin-right: 10px;
+        text-align: justify;
+        max-width: 260px;
+        font-family: 'Georgia';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 110%;
+        letter-spacing: 0.06em;
+        color: #000000;
+    }
+}
+
+/*-----------------*/
