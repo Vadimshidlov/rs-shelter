@@ -109,3 +109,60 @@ const dataPaginationTwo = [
 const petCards = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const count = 8;
+
+// function create array of 48pets and used for desktop
+
+function getArrayOfPageArray(arr) {
+    const res = [];
+    for (let i = 0; i < 6; i++) {
+        res.push(
+            ...arr.sort(function () {
+                return Math.random() - 0.5;
+            })
+        );
+    }
+    return res;
+}
+
+// tabletsArrayOfIdValidSort 48 pets for tablet
+function goTabletSixPets(arr) {
+    const boolArr = [];
+    for (let i = 0; i < arr.length; i += 6) {
+        const curArr = [];
+        for (let j = i; j < i + 6; j++) {
+            curArr.push(arr[j]);
+        }
+        if ([...new Set(curArr)].length === 6) {
+            boolArr.push(1);
+        } else {
+            boolArr.push(0);
+        }
+    }
+
+    return boolArr.includes(0)
+        ? goTabletSixPets(getArrayOfPageArray(petCards, count))
+        : arr;
+}
+
+// 48pets array for mobile
+
+function goMobileThreePets(arr) {
+    console.log("i'm working now");
+    const res = [];
+    for (let i = 0; i < arr.length; i += 6) {
+        if (
+            arr[i] !== arr[i + 1] &&
+            arr[i] !== arr[i + 2] &&
+            arr[i + 1] !== arr[i] &&
+            arr[i + 1] !== arr[i + 2]
+        ) {
+            res.push(1);
+        } else {
+            res.push(0);
+        }
+    }
+
+    return res.includes(0)
+        ? goMobileThreePets(getArrayOfPageArray(petCards))
+        : arr;
+}
