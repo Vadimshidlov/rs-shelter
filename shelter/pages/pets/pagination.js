@@ -312,3 +312,27 @@ function getCountOfPageElements() {
         return count;
     }
 }
+
+let pageNumber = 1;
+let pagesCount = getPages();
+let countOfPageElements = getCountOfPageElements();
+console.log(pagesCount);
+btnRightOne.addEventListener("click", () => {
+    console.log("hello, i'm currectlyBtn");
+    if (pageNumber < pagesCount) {
+        pageNumber++;
+    }
+    btnPageNumber.innerText = `${pageNumber}`;
+    if (pageNumber > 1) {
+        btnLeftOne.classList.remove("pagination-buttons__btn_disable");
+        btnLeftEnd.classList.remove("pagination-buttons__btn_disable");
+    }
+    if (pageNumber <= pagesCount) {
+        getPaginaionCardsHtml(countOfPageElements, pageNumber);
+    }
+    if (pageNumber === pagesCount) {
+        btnRightOne.classList.add("pagination-buttons__btn_disable");
+        btnRightEnd.classList.add("pagination-buttons__btn_disable");
+        //   btnLeftOne.classList.toggle('pagination-buttons__btn_disable');
+    }
+});
