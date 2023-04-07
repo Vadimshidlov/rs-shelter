@@ -58,6 +58,28 @@ const dataPetsSlider = [
     },
 ];
 
+// ------------------------------------------------TRY_RESIZE------------------------------------------
+
+if (window.innerWidth === 900) {
+}
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth === 900) {
+        console.log('RESIZE');
+        getRandomCards();
+        getSliderHtmlParts();
+        getRandomCard();
+    }
+    if (window.innerWidth === 600) {
+        console.log('RESIZE');
+        getRandomCards();
+        getSliderHtmlParts();
+        getRandomCard();
+    }
+});
+
+// ------------------------------------------------TRY_RESIZE------------------------------------------
+
 // function get Random Pets Numbers (identeficators)
 function getRandomPetsNumbers() {
     const arr = [0, 1, 2, 3, 4, 5, 6, 7];
@@ -585,14 +607,31 @@ function getRandomCards() {
 }
 
 //  slider go
+// --------------------------------------------------------------------------------------old-version
 
-const arrOfRandomPetsNumbers = getRandomCards();
+/* const arrOfRandomPetsNumbers = getRandomCards();
 
 // reload page unique pets
 
 active.innerHTML = arrOfRandomPetsNumbers[1].innerHTML;
 itemLeft.innerHTML = arrOfRandomPetsNumbers[0].innerHTML;
-itemRight.innerHTML = arrOfRandomPetsNumbers[2].innerHTML;
+itemRight.innerHTML = arrOfRandomPetsNumbers[2].innerHTML; */
+
+// --------------------------------------------------------------------------------------old-version
+
+// --------------------------------------------------------------------------------------new version
+
+function getSliderHtmlParts() {
+    const arrOfRandomPetsNumbers = getRandomCards();
+    // reload page unique pets
+
+    active.innerHTML = arrOfRandomPetsNumbers[1].innerHTML;
+    itemLeft.innerHTML = arrOfRandomPetsNumbers[0].innerHTML;
+    itemRight.innerHTML = arrOfRandomPetsNumbers[2].innerHTML;
+}
+getSliderHtmlParts();
+
+// --------------------------------------------------------------------------------------new version
 const moveLeft = () => {
     slider.classList.add('transition-left');
     btnLeft.removeEventListener('click', moveLeft);
