@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c30c927e-b1dd-4785-aa77-2e3899c69361" name="Changes" comment="fix: fixed valid of html markup">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/main/modal-window.js" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/modal-window.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/main/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="c30c927e-b1dd-4785-aa77-2e3899c69361" name="Changes" comment="fix: fixed valid of html markup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +67,7 @@
       <workItem from="1680463433097" duration="1000" />
       <workItem from="1680630316498" duration="4498000" />
       <workItem from="1680709436582" duration="7629000" />
-      <workItem from="1680805095428" duration="3749000" />
+      <workItem from="1680805095428" duration="5545000" />
     </task>
     <servers />
   </component>

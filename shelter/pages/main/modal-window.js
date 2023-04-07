@@ -67,17 +67,6 @@ if (window.innerWidth < 768) {
     });
 }
 
-if (burgerBody.classList.contains('header__menu-item_active')) {
-    headerLogo.addEventListener('click', () => {
-        el.addEventListener('click', () => {
-            document.body.classList.remove('stop-scrolling');
-            blockHouse.classList.remove('burger_opacity');
-            burgerBtn.classList.remove('header__burger-button_active');
-            burgerBody.classList.remove('header__menu-item_active');
-            headerLogo.classList.toggle('burger-opacity-logo');
-        });
-    });
-}
 
 // MODAL-WINDOW
 
