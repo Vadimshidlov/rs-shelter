@@ -2397,7 +2397,7 @@ a {
     z-index: 3;
     max-width: 900px;
     margin: 0px auto;
-    margin-top: 18%;
+    margin-top: calc(30vh);
     display: flex;
     column-gap: 30px;
     background: #fafafa;
