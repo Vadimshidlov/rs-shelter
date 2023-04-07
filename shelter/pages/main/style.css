@@ -107,11 +107,9 @@ a {
     opacity: 0.5;
 }
 
-.header__menu-item_active-link__pointer{
+.header__menu-item_active-link__pointer {
     pointer-events: auto;
 }
-
-
 
 /* ----header----- */
 
@@ -335,27 +333,26 @@ a {
     color: #fafafa;
 }
 
-.header__menu-item_active-link{
+.header__menu-item_active-link {
     padding-bottom: 4px;
     border-bottom: 3px solid #f1cdb3;
 }
 
 @media (max-width: 375px) {
-    .header__menu-item_active-link{
+    .header__menu-item_active-link {
         padding-bottom: 0px;
         border-bottom: 3px solid #f1cdb3;
     }
 }
-
 
 @media (max-width: 320px) {
-    .header__menu-item_active-link{
+    .header__menu-item_active-link {
         padding-bottom: 0px;
         border-bottom: 3px solid #f1cdb3;
     }
 }
 
-.header__menu-item_active-link a{
+.header__menu-item_active-link a {
     padding-bottom: 4px;
     pointer-events: none;
 }
@@ -440,7 +437,7 @@ a {
         padding-top: 248px;
     }
 
-    .header__menu-item_active-link a{
+    .header__menu-item_active-link a {
         padding-bottom: 0px;
         pointer-events: none;
     }
@@ -1440,7 +1437,6 @@ a {
     height: 270px;
     border-top-right-radius: 9px;
     border-top-left-radius: 9px;
-
 }
 
 .block-friends__card-text {
@@ -2408,7 +2404,7 @@ a {
     z-index: 3;
     max-width: 900px;
     margin: 0px auto;
-    margin-top: 18%;
+    margin-top: calc(30vh);
     display: flex;
     column-gap: 30px;
     background: #fafafa;
@@ -2421,7 +2417,7 @@ a {
         z-index: 3;
         max-width: 630px;
         margin: 0px auto;
-        margin-top: 18%;
+        margin-top: calc(30vh);
         display: flex;
         column-gap: 10px;
         background: #fafafa;
