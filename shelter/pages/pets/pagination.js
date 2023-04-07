@@ -475,7 +475,7 @@ function getModal(id) {
     console.log(id);
     modalWindow.classList.add('block-friends__modal-window_active');
     document.body.classList.add('stop-scrolling');
-    if (window.innerWidth > 320) {
+    if (window.innerWidth > 425) {
         modalWindow.innerHTML = `
     <div class="modal-window__wrapper">
        <div class="modal-window__content">
@@ -503,30 +503,30 @@ function getModal(id) {
     `;
     }
 
-    if (window.innerWidth < 320) {
+    if (window.innerWidth <= 425) {
         modalWindow.innerHTML = `
-    <div class="modal-window__wrapper">
-       <div class="modal-window__content">
-          <button class="modal-window__button">X</button>
-          
-          <div class="modal-window__info">
-             <h3 class="modal-window__title">${dataModalWindowPets[id].name}</h3>
-             <h4 class="modal-window__subtitle">${dataModalWindowPets[id].type} - ${dataModalWindowPets[id].breed}</h4>
-             <div class="modal-window__text">
-             ${dataModalWindowPets[id].description}
-             </div>
-             <div class="modal-window__description">
-                <ul class="modal-window__list">
-                   <li class="modal-window__item">Age: ${dataModalWindowPets[id].age}</li>
-                   <li class="modal-window__item">Inoculations: ${dataModalWindowPets[id].inoculations}</li>
-                   <li class="modal-window__item">Diseases: ${dataModalWindowPets[id].diseases}</li>
-                   <li class="modal-window__item">Parasites: ${dataModalWindowPets[id].parasites}</li>
-                </ul>
-             </div>
-          </div>
-       </div>
-    </div>
-    `;
+        <div class="modal-window__wrapper">
+        <div class="modal-window__content">
+            <button class="modal-window__button">X</button>
+            
+            <div class="modal-window__info">
+                <h3 class="modal-window__title">${dataModalWindowPets[id].name}</h3>
+                <h4 class="modal-window__subtitle">${dataModalWindowPets[id].type} - ${dataModalWindowPets[id].breed}</h4>
+                <div class="modal-window__text">
+                ${dataModalWindowPets[id].description}
+                </div>
+                <div class="modal-window__description">
+                    <ul class="modal-window__list">
+                    <li class="modal-window__item">Age: ${dataModalWindowPets[id].age}</li>
+                    <li class="modal-window__item">Inoculations: ${dataModalWindowPets[id].inoculations}</li>
+                    <li class="modal-window__item">Diseases: ${dataModalWindowPets[id].diseases}</li>
+                    <li class="modal-window__item">Parasites: ${dataModalWindowPets[id].parasites}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+        `;
     }
 
     const hideModalBtn = document.querySelector('.modal-window__button');
