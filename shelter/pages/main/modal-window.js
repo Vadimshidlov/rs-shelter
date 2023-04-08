@@ -36,7 +36,6 @@ burgerBtn.addEventListener('click', () => {
 });
 
 window.addEventListener('click', e => {
-    console.log(e.target);
     if (burgerBody.classList.contains('header__menu-item_active')) {
         console.log(blockHouse);
         blockHouse.childNodes.forEach(el => {
@@ -162,7 +161,6 @@ function hideModal() {
 }
 
 window.addEventListener('click', e => {
-    console.log(e.target);
     if (e.target === modalWindow) {
         hideModal();
     }

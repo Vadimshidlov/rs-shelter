@@ -545,6 +545,7 @@ function getSliderHtmlParts() {
     itemLeft.innerHTML = arrOfRandomPetsNumbers[0].innerHTML;
     itemRight.innerHTML = arrOfRandomPetsNumbers[2].innerHTML;
 }
+
 getSliderHtmlParts();
 
 const moveLeft = () => {
@@ -781,6 +782,7 @@ slider.addEventListener('animationend', animationEvent => {
                 return res;
             }
         }
+
         const arrPrintId = careteArrPrintId();
         for (let i = 0; i < arrPrintId.length; i++) {
             let currId = arrPrintId[i];
@@ -797,6 +799,7 @@ slider.addEventListener('animationend', animationEvent => {
         itemLeft.innerHTML = '';
         itemLeft.innerHTML = getRandomCard().innerHTML;
         console.log(document.querySelector('#left-part').childNodes[1]);
+
         function careteArrPrintIdTwo() {
             if (window.innerWidth <= 600) {
                 const res = [];
@@ -902,7 +905,6 @@ slider.addEventListener('animationend', animationEvent => {
         }
 
         const arrPrintIdTwo = careteArrPrintIdTwo();
-        console.log(arrPrintIdTwo);
         if (window.innerWidth <= 900) {
             for (let i = 0; i < arrPrintIdTwo.length; i++) {
                 let currId = arrPrintIdTwo[i];
@@ -924,13 +926,12 @@ slider.addEventListener('animationend', animationEvent => {
             }
         }
     }
-    console.log(dataPetsSlider);
     dataPetsSlider.map(el => (el.isPrint = false));
 
     btnLeft.addEventListener('click', moveLeft);
     btnRight.addEventListener('click', moveRight);
 });
 
-// eventListener for braikPoints
+// eventListener for breakPoints
 const breakPointsWidth = window.matchMedia('(600px < width <= 900px)');
 breakPointsWidth.addEventListener('change', getSliderHtmlParts);

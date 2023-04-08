@@ -6,7 +6,7 @@ function getArrayOfPets() {
 
     const count = 8;
 
-    function getRandomArrayOfEightIdentifacators(arr) {
+    function getRandomArrayOfEightIdentifiers(arr) {
         const res = [];
         res.push(
             ...arr.sort(function () {
@@ -16,7 +16,7 @@ function getArrayOfPets() {
         return res;
     }
 
-    const arrOf48Pets = getRandomArrayOfEightIdentifacators(petCards);
+    const arrOf48Pets = getRandomArrayOfEightIdentifiers(petCards);
 
     function prepareForRandomCardsId(arr) {
         const res = [[], [], []];
@@ -57,7 +57,7 @@ function getArrayOfPets() {
 const arrOfIndexesPets = getArrayOfPets();
 
 /* -----------------RESIZE--------------- */
-// eventListener for braikPoints
+// eventListener for breakPoints
 const breakPointsWidth = window.matchMedia('(639px < width < 768px)');
 const callbackForResize = () => {
     console.log('resize');
