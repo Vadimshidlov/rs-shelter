@@ -2397,20 +2397,20 @@ a {
     z-index: 3;
     max-width: 900px;
     margin: 0px auto;
-    margin-top: calc(22vh);
+    margin-top: calc(24vh);
     display: flex;
     column-gap: 30px;
     background: #fafafa;
     border-radius: 9px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1279.98px) {
     .modal-window__content {
         position: relative;
         z-index: 3;
         max-width: 82vw;
         margin: 0px auto;
-        margin-top: calc(30vh);
+        margin-top: calc(24vh);
         display: flex;
         column-gap: 10px;
         background: #fafafa;
@@ -2418,19 +2418,11 @@ a {
     }
 }
 
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
     .modal-window__content {
-        position: relative;
-        z-index: 3;
-        max-width: 630px;
-        margin: 0px auto;
-        margin-top: calc(30vh);
-        display: flex;
-        column-gap: 10px;
-        background: #fafafa;
-        border-radius: 9px;
+        margin-top: calc(32vh);
     }
-} */
+}
 
 @media (max-width: 425px) {
     .modal-window__content {
@@ -2466,7 +2458,7 @@ a {
 
 @media (max-width: 768px) {
     .modal-window__image {
-        width: 500px;
+        width: 350px;
         height: 350px;
         border-radius: 9px;
     }
@@ -2501,8 +2493,8 @@ a {
 
 .modal-window__button {
     position: absolute;
-    top: -53px;
-    left: 99.5%;
+    top: -51px;
+    left: 99%;
     width: 52px;
     height: 52px;
     border: 2px solid #f1cdb3;
@@ -2511,7 +2503,21 @@ a {
     background: rgba(41, 41, 41, 0);
 }
 
-@media (min-width: 420px) and (max-width: 736px) {
+@media (max-width: 768px) {
+    .modal-window__button {
+        position: absolute;
+        top: -53px;
+        left: 98.5%;
+        width: 52px;
+        height: 52px;
+        border: 2px solid #f1cdb3;
+        border-radius: 100px;
+        cursor: pointer;
+        background: rgba(41, 41, 41, 0);
+    }
+}
+
+@media (min-width: 430px) and (max-width: 736px) {
     .modal-window__button {
         position: absolute;
         top: -53px;
@@ -2526,7 +2532,7 @@ a {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 429px) {
     .modal-window__button {
         position: absolute;
         top: -53px;

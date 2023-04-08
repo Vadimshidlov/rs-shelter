@@ -58,28 +58,6 @@ const dataPetsSlider = [
     },
 ];
 
-// ------------------------------------------------TRY_RESIZE------------------------------------------
-
-if (window.innerWidth === 900) {
-}
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth === 900) {
-        console.log('RESIZE');
-        getRandomCards();
-        getSliderHtmlParts();
-        getRandomCard();
-    }
-    if (window.innerWidth === 600) {
-        console.log('RESIZE');
-        getRandomCards();
-        getSliderHtmlParts();
-        getRandomCard();
-    }
-});
-
-// ------------------------------------------------TRY_RESIZE------------------------------------------
-
 // function get Random Pets Numbers (identeficators)
 function getRandomPetsNumbers() {
     const arr = [0, 1, 2, 3, 4, 5, 6, 7];
@@ -1033,3 +1011,7 @@ slider.addEventListener('animationend', animationEvent => {
     btnLeft.addEventListener('click', moveLeft);
     btnRight.addEventListener('click', moveRight);
 });
+
+// eventListener for braikPoints
+const braikPointsWidth = window.matchMedia('(600px < width <= 900px)');
+braikPointsWidth.addEventListener('change', getSliderHtmlParts);
