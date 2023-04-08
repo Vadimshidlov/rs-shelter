@@ -106,7 +106,9 @@ const dataPaginationTwo = [
     },
 ];
 
-const petCards = [1, 2, 3, 4, 5, 6, 7, 8];
+// ---------------------------------------------------OLD_ARRAY_GET-------------------------------------------
+
+/* const petCards = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const count = 8;
 
@@ -175,6 +177,96 @@ function getStartArrayOfPets() {
 
 const arrOfIndexesPets = getStartArrayOfPets();
 console.log(arrOfIndexesPets);
+ */
+// ---------------------------------------------------OLD_ARRAY_GET-------------------------------------------
+// ---------------------------------------------------NEW_ARRAY_GET-------------------------------------------
+
+function getArrayOfPets() {
+    const petCards = [1, 2, 3, 4, 5, 6, 7, 8];
+
+    const count = 8;
+
+    function getRandomArrayOfEightIdentifacators(arr) {
+        const res = [];
+        res.push(
+            ...arr.sort(function () {
+                return Math.random() - 0.5;
+            })
+        );
+        return res;
+    }
+
+    const arrOf48Pets = getRandomArrayOfEightIdentifacators(petCards);
+
+    function prepareForRandomCardsId(arr) {
+        const res = [[], [], []];
+
+        for (let i = 0; i < 3; i++) {
+            res[0].push(arr[i]);
+        }
+        for (let i = 3; i < 6; i++) {
+            res[1].push(arr[i]);
+        }
+        for (let i = 6; i < 8; i++) {
+            res[2].push(arr[i]);
+        }
+
+        return res;
+    }
+
+    const prepareArr = prepareForRandomCardsId(arrOf48Pets);
+
+    function getFinallArr(arr) {
+        const res = [];
+        for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < arr.length; i++) {
+                res.push(
+                    ...arr[i].sort(function () {
+                        return Math.random() - 0.5;
+                    })
+                );
+            }
+        }
+
+        return res;
+    }
+
+    return getFinallArr(prepareArr);
+}
+
+const arrOfIndexesPets = getArrayOfPets();
+
+/* -----------------RESIZE--------------- */
+// eventListener for braikPoints
+const breakPointsWidth = window.matchMedia('(639px < width < 768px)');
+const callbackForResize = () => {
+    console.log('resize');
+    getPaginaionCardsHtml(getCountOfPageElements(), 1);
+
+    pagesCount = getPages();
+    countOfPageElements = getCountOfPageElements();
+    pageNumber = 1;
+    btnPageNumber.innerText = pageNumber;
+
+    btnRightOne.classList.remove('pagination-buttons__btn_disable');
+    btnRightEnd.classList.remove('pagination-buttons__btn_disable');
+    btnLeftOne.classList.add('pagination-buttons__btn_disable');
+    btnLeftEnd.classList.add('pagination-buttons__btn_disable');
+
+    console.log(`----->`, pagesCount, pageNumber);
+    /* if (pageNumber <= pagesCount) {
+        getPaginaionCardsHtml(countOfPageElements, pageNumber);
+    }
+    if (pageNumber < pagesCount) {
+        btnLeftOne.classList.remove('pagination-buttons__btn_disable');
+        btnLeftEnd.classList.remove('pagination-buttons__btn_disable');
+    } */
+};
+breakPointsWidth.addEventListener('change', callbackForResize);
+
+/* -----------------RESIZE--------------- */
+
+// ---------------------------------------------------NEW_ARRAY_GET-------------------------------------------
 
 const btnRightOne = document.querySelector('#btn-page-right');
 const btnRightEnd = document.querySelector('#btn-page-right-end');
@@ -183,14 +275,12 @@ const btnLeftEnd = document.querySelector('#btn-page-left-start');
 const btnPageNumber = document.querySelector('#btn-page-count');
 
 function getPaginaionCardsHtml(pages, count) {
-    console.log('go', pages, count);
     const paginationBody = document.querySelector('.block-friends__cards');
     //    if (window.innerWidth > 1280) {
     /*let pages = pages
           let count = count*/
     let start = count * pages - pages;
     let end = count * pages;
-    console.log(arrOfIndexesPets);
     paginationBody.innerHTML = '';
 
     for (let i = start; i < end; i++) {
@@ -202,7 +292,6 @@ function getPaginaionCardsHtml(pages, count) {
         const blockFriendImg = document.createElement('img');
         blockFriendImg.classList.add('block-friends__card-picture');
 
-        console.log(arrOfIndexesPets[i] - 1);
         blockFriendImg.src = `${dataPaginationTwo[arrOfIndexesPets[i] - 1].img}`;
         const blockFriendCardName = document.createElement('div');
         blockFriendCardName.classList.add('block-friends__card-text');
@@ -216,11 +305,7 @@ function getPaginaionCardsHtml(pages, count) {
         paginationBody.appendChild(blockFriendCard);
 
         blockFriendCard.addEventListener('click', e => {
-            console.log('hello');
             if (e.target.className === 'block-friends__card') {
-                console.log('Click!');
-                console.log(e.target.id);
-
                 getModal(e.target.id);
             }
             if (e.target.className === 'block-friends__card-text') {
@@ -257,17 +342,18 @@ firstRender();
 
 function getPages() {
     let countOfPages;
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 768) {
         countOfPages = 6;
         return countOfPages;
     }
 
-    if (window.innerWidth < 640) {
+    if (window.innerWidth <= 640) {
+        //*** <
         countOfPages = 16;
         return countOfPages;
     }
 
-    if (window.innerWidth > 640 && window.innerWidth < 768) {
+    if (window.innerWidth > 640 && window.innerWidth <= 768) {
         countOfPages = 8;
         return countOfPages;
     }
@@ -275,7 +361,7 @@ function getPages() {
 
 function getCountOfPageElements() {
     let count;
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth > 768) {
         count = 8;
         return count;
     }
@@ -285,7 +371,7 @@ function getCountOfPageElements() {
         return count;
     }
 
-    if (window.innerWidth >= 640 && window.innerWidth < 768) {
+    if (window.innerWidth >= 640 && window.innerWidth <= 768) {
         count = 6;
         return count;
     }

@@ -1013,5 +1013,5 @@ slider.addEventListener('animationend', animationEvent => {
 });
 
 // eventListener for braikPoints
-const braikPointsWidth = window.matchMedia('(600px < width <= 900px)');
-braikPointsWidth.addEventListener('change', getSliderHtmlParts);
+const breakPointsWidth = window.matchMedia('(600px < width <= 900px)');
+breakPointsWidth.addEventListener('change', getSliderHtmlParts);
