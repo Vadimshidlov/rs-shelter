@@ -1,3 +1,92 @@
+import { arrayOfPetsData as dataPaginationTwo } from '../main/arrayOfPetsData.js';
+
+// PETS-MODAL-WINDOW--------------------
+
+const modalWindow = document.querySelector('.block-friends__modal-window');
+const petsPageCard = document.querySelectorAll('.block-friends__card');
+console.log(petsPageCard);
+
+export function getModal(id) {
+    console.log(id);
+    modalWindow.classList.add('block-friends__modal-window_active');
+    document.body.classList.add('stop-scrolling');
+    if (window.innerWidth > 425) {
+        modalWindow.innerHTML = `
+    <div class="modal-window__wrapper">
+       <div class="modal-window__content">
+          <button class="modal-window__button">X</button>
+          <div class="modal-window__image">
+             <img src=${dataPaginationTwo[id].img} alt="" />
+          </div>
+          <div class="modal-window__info">
+             <h3 class="modal-window__title">${dataPaginationTwo[id].name}</h3>
+             <h4 class="modal-window__subtitle">${dataPaginationTwo[id].type} - ${dataPaginationTwo[id].breed}</h4>
+             <div class="modal-window__text">
+             ${dataPaginationTwo[id].description}
+             </div>
+             <div class="modal-window__description">
+                <ul class="modal-window__list">
+                   <li class="modal-window__item">Age: ${dataPaginationTwo[id].age}</li>
+                   <li class="modal-window__item">Inoculations: ${dataPaginationTwo[id].inoculations}</li>
+                   <li class="modal-window__item">Diseases: ${dataPaginationTwo[id].diseases}</li>
+                   <li class="modal-window__item">Parasites: ${dataPaginationTwo[id].parasites}</li>
+                </ul>
+             </div>
+          </div>
+       </div>
+    </div>
+    `;
+    }
+
+    if (window.innerWidth <= 425) {
+        modalWindow.innerHTML = `
+        <div class="modal-window__wrapper">
+        <div class="modal-window__content">
+            <button class="modal-window__button">X</button>
+            
+            <div class="modal-window__info">
+                <h3 class="modal-window__title">${dataPaginationTwo[id].name}</h3>
+                <h4 class="modal-window__subtitle">${dataPaginationTwo[id].type} - ${dataPaginationTwo[id].breed}</h4>
+                <div class="modal-window__text">
+                ${dataPaginationTwo[id].description}
+                </div>
+                <div class="modal-window__description">
+                    <ul class="modal-window__list">
+                    <li class="modal-window__item">Age: ${dataPaginationTwo[id].age}</li>
+                    <li class="modal-window__item">Inoculations: ${dataPaginationTwo[id].inoculations}</li>
+                    <li class="modal-window__item">Diseases: ${dataPaginationTwo[id].diseases}</li>
+                    <li class="modal-window__item">Parasites: ${dataPaginationTwo[id].parasites}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+        `;
+    }
+
+    const hideModalBtn = document.querySelector('.modal-window__button');
+    hideModalBtn.addEventListener('click', () => {
+        hideModal();
+    });
+}
+
+function hideModal() {
+    modalWindow.classList.remove('block-friends__modal-window_active');
+    document.body.classList.remove('stop-scrolling');
+}
+
+window.addEventListener('click', e => {
+    console.log(e.target);
+    if (e.target === modalWindow) {
+        hideModal();
+    }
+});
+window.addEventListener('keydown', e => {
+    if (e.keyCode === 27) {
+        hideModal();
+    }
+});
+
 // --------BURGER-MENU--------
 
 const blockFriends = document.querySelector('.block-friends');
@@ -45,17 +134,6 @@ window.addEventListener('click', e => {
         });
     }
 });
-
-/* headerLinks.forEach(el => {
-    el.addEventListener('click', () => {
-        if (burgerBody.classList.contains('header__menu-item_active')) {
-            burgerBody.classList.remove('header__menu-item_active');
-            burgerBtn.classList.remove('header__burger-button_active');
-            blockFriends.classList.toggle('burger_opacity');
-            document.body.classList.toggle('stop-scrolling');
-        }
-    });
-}); */
 
 headerLinks.forEach(el => {
     el.addEventListener('click', () => {

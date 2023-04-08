@@ -1,3 +1,5 @@
+import { arrayOfPetsData as dataPetsSlider } from './arrayOfPetsData.js';
+
 //  ____________SLIDER_________________________________________________________________
 
 const btnLeft = document.querySelector('.block-friends__arrow');
@@ -6,57 +8,6 @@ const slider = document.querySelector('.block-friends__cards');
 const itemLeft = document.querySelector('#left-part');
 const itemRight = document.querySelector('#right-part');
 let active = document.querySelector('#active-part');
-
-const dataPetsSlider = [
-    {
-        name: 'Katrine',
-        img: '../../assets/images/friends/pets-katrine.jpg',
-        isPrint: false,
-        id: 0,
-    },
-    {
-        name: 'Jennifer',
-        img: '../../assets/images/friends/pets-jennifer.jpg',
-        isPrint: false,
-        id: 1,
-    },
-    {
-        name: 'Woody',
-        img: '../../assets/images/friends/pets-woody.jpg',
-        isPrint: false,
-        id: 2,
-    },
-    {
-        name: 'Sophia',
-        img: '../../assets/images/friends/sophia.jpg',
-        isPrint: false,
-        id: 3,
-    },
-    {
-        name: 'Timmy',
-        img: '../../assets/images/friends/pets-timmy.jpg',
-        isPrint: false,
-        id: 4,
-    },
-    {
-        name: 'Charly',
-        img: '../../assets/images/friends/pets-charly.jpg',
-        isPrint: false,
-        id: 5,
-    },
-    {
-        name: 'Scarlett',
-        img: '../../assets/images/friends/pets-scarlet.jpg',
-        isPrint: false,
-        id: 6,
-    },
-    {
-        name: 'Freddie',
-        img: '../../assets/images/friends/pets-freddie.jpg',
-        isPrint: false,
-        id: 7,
-    },
-];
 
 // function get Random Pets Numbers (identeficators)
 function getRandomPetsNumbers() {
@@ -585,19 +536,6 @@ function getRandomCards() {
 }
 
 //  slider go
-// --------------------------------------------------------------------------------------old-version
-
-/* const arrOfRandomPetsNumbers = getRandomCards();
-
-// reload page unique pets
-
-active.innerHTML = arrOfRandomPetsNumbers[1].innerHTML;
-itemLeft.innerHTML = arrOfRandomPetsNumbers[0].innerHTML;
-itemRight.innerHTML = arrOfRandomPetsNumbers[2].innerHTML; */
-
-// --------------------------------------------------------------------------------------old-version
-
-// --------------------------------------------------------------------------------------new version
 
 function getSliderHtmlParts() {
     const arrOfRandomPetsNumbers = getRandomCards();
@@ -609,7 +547,6 @@ function getSliderHtmlParts() {
 }
 getSliderHtmlParts();
 
-// --------------------------------------------------------------------------------------new version
 const moveLeft = () => {
     slider.classList.add('transition-left');
     btnLeft.removeEventListener('click', moveLeft);
@@ -624,13 +561,6 @@ const moveRight = () => {
 
 //create array with 3unique elements
 function getRandomNumbers() {
-    /* const arrLength = dataPetsSlider.filter(el => el.isPrint === true);
-    console.log(arrLength);
-    if (arrLength.length === 0) {
-       dataPetsSlider.map(el => (el.isPrint = false));
-    }
- 
-    const resTwo = []; */
     if (window.innerWidth > 900) {
         const res = [];
 
@@ -697,8 +627,6 @@ function getRandomCard() {
         newCard1.appendChild(img);
         newCard1.appendChild(div);
         newCard1.appendChild(btn);
-
-        // console.log(newCard1);
 
         //card_2
         const newCard2 = document.createElement('div');
@@ -771,8 +699,6 @@ function getRandomCard() {
         newCard1.appendChild(img);
         newCard1.appendChild(div);
         newCard1.appendChild(btn);
-
-        // console.log(newCard1);
 
         //card_2
         const newCard2 = document.createElement('div');
@@ -915,9 +841,6 @@ slider.addEventListener('animationend', animationEvent => {
 
         console.log(dataPetsSlider);
         dataPetsSlider.map(el => (el.isPrint = false));
-
-        // console.log(getRandomCard());
-        // console.log(window.innerWidth);
     } else {
         slider.classList.remove('transition-right');
         document.querySelector('#left-part').innerHTML = document.querySelector('#active-part').innerHTML;
@@ -953,10 +876,6 @@ slider.addEventListener('animationend', animationEvent => {
                 }
             }
         }
-
-        /* console.log(document.querySelector('#active-part').childNodes[0].id);
-        console.log(document.querySelector('#active-part').childNodes[1].id);
-        console.log(document.querySelector('#active-part').childNodes[2].id); */
 
         itemRight.innerHTML = '';
         itemRight.innerHTML = getRandomCard().innerHTML;
