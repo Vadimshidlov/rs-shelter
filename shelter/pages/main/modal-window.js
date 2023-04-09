@@ -1,20 +1,15 @@
 import { arrayOfPetsData as dataModalTwo } from './arrayOfPetsData.js';
 
 //  ---------BURGER-MENU__________________
-
 const blockHouse = document.querySelector('.block-house');
 const burgerBtn = document.querySelector('.header__burger-button');
-// const headerMenu = document.querySelector('.header__menu.header__menu-item_active');
 const burgerBody = document.querySelector('.header__menu');
-const html = document.querySelector('html');
-const body = document.querySelector('body');
-const headerLogo = document.querySelector('.header__logo');
 const headerLinks = document.querySelectorAll('.header__menu-item');
 const headerActiveLink = document.querySelector('.header__menu-item_active-link');
-const header = document.querySelector('.header');
+const headerBurgerOpacityBlock = document.querySelector('#burger-background');
 
 function showBurger() {
-    headerLogo.classList.toggle('burger-opacity-logo');
+    headerBurgerOpacityBlock.classList.toggle('block-friends__burger-opacity');
     document.body.classList.toggle('stop-scrolling');
     blockHouse.classList.toggle('burger_opacity');
     burgerBtn.classList.toggle('header__burger-button_active');
@@ -22,7 +17,7 @@ function showBurger() {
     headerActiveLink.classList.add('header__menu-item_active-link__pointer');
 }
 function hideBurger() {
-    headerLogo.classList.toggle('burger-opacity-logo');
+    headerBurgerOpacityBlock.classList.remove('block-friends__burger-opacity');
     blockHouse.classList.remove('burger_opacity');
     burgerBody.classList.remove('header__menu-item_active');
     burgerBtn.classList.toggle('header__burger-button_active');
@@ -40,11 +35,11 @@ window.addEventListener('click', e => {
         console.log(blockHouse);
         blockHouse.childNodes.forEach(el => {
             el.addEventListener('click', () => {
+                headerBurgerOpacityBlock.classList.remove('block-friends__burger-opacity');
                 document.body.classList.remove('stop-scrolling');
                 blockHouse.classList.remove('burger_opacity');
                 burgerBtn.classList.remove('header__burger-button_active');
                 burgerBody.classList.remove('header__menu-item_active');
-                headerLogo.classList.remove('burger-opacity-logo');
             });
         });
     }
@@ -53,15 +48,22 @@ window.addEventListener('click', e => {
 if (window.innerWidth < 768) {
     headerLinks.forEach(el => {
         el.addEventListener('click', () => {
+            headerBurgerOpacityBlock.classList.remove('block-friends__burger-opacity');
             burgerBody.classList.remove('header__menu-item_active');
             burgerBtn.classList.remove('header__burger-button_active');
             blockHouse.classList.toggle('burger_opacity');
             document.body.classList.toggle('stop-scrolling');
-            headerLogo.classList.toggle('burger-opacity-logo');
             headerActiveLink.classList.remove('header__menu-item_active-link__pointer');
         });
     });
 }
+
+window.addEventListener('click', e => {
+    console.log(e.target);
+    if (e.target === headerBurgerOpacityBlock) {
+        hideBurger();
+    }
+});
 
 // MODAL-WINDOW
 
