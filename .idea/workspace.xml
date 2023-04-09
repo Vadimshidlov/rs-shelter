@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c30c927e-b1dd-4785-aa77-2e3899c69361" name="Changes" comment="fix: fixed valid of html markup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/main/modal-window.js" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/modal-window.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/pages/main/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/pages/main/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/main/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/pages/pets/pets-modal-window.js" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/pages/pets/pets-modal-window.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +44,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "prettierjs.PrettierConfiguration.Package": "F:\\JS-learn-2.0\\RS-SCHOOL\\vadimshidlov-JSFE2023Q1\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.JavaScript",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -79,7 +78,8 @@
       <workItem from="1680985399145" duration="1794000" />
       <workItem from="1681032095917" duration="733000" />
       <workItem from="1681032850920" duration="920000" />
-      <workItem from="1681034320658" duration="6086000" />
+      <workItem from="1681034320658" duration="7278000" />
+      <workItem from="1681063103129" duration="948000" />
     </task>
     <servers />
   </component>
