@@ -97,8 +97,11 @@ const burgerBody = document.querySelector('.header__menu');
 const headerLinks = document.querySelectorAll('.header__menu-item');
 const headerLogo = document.querySelector('.header__logo');
 const header = document.querySelector('.header');
+const headerActiveLink = document.querySelector('.header__menu-item_active-link');
+const headerBurgerOpacityBlock = document.querySelector('#burger-background');
 
 function showBurger() {
+    headerBurgerOpacityBlock.classList.toggle('block-friends__burger-opacity');
     headerLogo.classList.toggle('burger-opacity-logo');
     document.body.classList.toggle('stop-scrolling');
     blockFriends.classList.toggle('burger_opacity');
@@ -108,11 +111,12 @@ function showBurger() {
 }
 
 function hideBurger() {
-    blockFriends.classList.remove('burger_opacity');
+    headerBurgerOpacityBlock.classList.remove('block-friends__burger-opacity');
     burgerBody.classList.remove('header__menu-item_active');
-    burgerBtn.classList.toggle('header__burger-button_active');
-    document.body.classList.remove('stop-scrolling');
-    headerLogo.classList.toggle('burger_opacity');
+    burgerBtn.classList.remove('header__burger-button_active');
+    blockFriends.classList.toggle('burger_opacity');
+    document.body.classList.toggle('stop-scrolling');
+    headerLogo.classList.toggle('burger-opacity-logo');
 }
 
 burgerBtn.addEventListener('click', () => {
@@ -125,6 +129,7 @@ window.addEventListener('click', e => {
     if (burgerBody.classList.contains('header__menu-item_active')) {
         blockFriends.childNodes.forEach(el => {
             el.addEventListener('click', () => {
+                headerBurgerOpacityBlock.classList.remove('block-friends__burger-opacity');
                 document.body.classList.remove('stop-scrolling');
                 blockFriends.classList.remove('burger_opacity');
                 headerLogo.classList.remove('burger-opacity-logo');
@@ -138,6 +143,7 @@ window.addEventListener('click', e => {
 headerLinks.forEach(el => {
     el.addEventListener('click', () => {
         if (burgerBody.classList.contains('header__menu-item_active')) {
+            headerBurgerOpacityBlock.classList.remove('block-friends__burger-opacity');
             burgerBody.classList.remove('header__menu-item_active');
             burgerBtn.classList.remove('header__burger-button_active');
             blockFriends.classList.toggle('burger_opacity');
@@ -149,7 +155,7 @@ headerLinks.forEach(el => {
 
 window.addEventListener('click', e => {
     console.log(e.target);
-    /*if (e.target.closest('.header__menu')) {
-      hideBurger();
-  }*/
+    if (e.target === headerBurgerOpacityBlock) {
+        hideBurger();
+    }
 });

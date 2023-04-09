@@ -284,6 +284,7 @@ body {
         visibility: visible;
         right: 20px;
         top: 48px;
+        z-index: 55;
     }
 
     .header__menu {
@@ -309,6 +310,7 @@ body {
         color: #fafafa;
         padding-bottom: 7px;
         border-bottom: 3px solid #f1cdb3;
+        z-index: 55;
     }
 
     .header__menu-list {
@@ -445,6 +447,18 @@ body {
 }
 
 /* ---BLOCK-FRIENDS--- */
+.block-friends__burger-opacity {
+    position: fixed;
+    z-index: 50;
+    transition: all 1s ease;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 41, 41, 0.6);
+}
+
+
 .block-friends {
     position: relative;
     z-index: 2;
