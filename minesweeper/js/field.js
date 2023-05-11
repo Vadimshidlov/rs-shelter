@@ -1,3 +1,5 @@
+// import { getItem } from "./fieldItem.js";
+
 let matrixField = [];
 
 function getRandomNubers(max, min) {
@@ -14,6 +16,15 @@ function getMatrixField(width = 10, height = 10, bombs = 10) {
   }
 
   getBobms(bombs);
+
+  // for (let i = 0; i < matrixField.length; i++) {
+  //   for (let j = 0; j < matrixField[i].length; j++) {
+  //     let isbomb = matrixField[j] == true ? true : false;
+  //     const newItem = getItem(isbomb, { j, i });
+
+  //     matrixField[i][j] = newItem;
+  //   }
+  // }
 
   return matrixField;
 }
@@ -35,4 +46,26 @@ function getBobms(bombs) {
   }
 }
 
-console.log(getMatrixField(5, 3, 5));
+function getStateOfArroundItems(palce) {
+  const { x, y } = palce;
+
+  const item_1 = matrixField[y]?.[x - 1];
+  const item_2 = matrixField[y - 1]?.[x - 1];
+  const item_3 = matrixField[y - 1]?.[x];
+  const item_4 = matrixField[y - 1]?.[x + 1];
+  const item_5 = matrixField[y]?.[x + 1];
+  const item_6 = matrixField[y + 1]?.[x + 1];
+  const item_7 = matrixField[y + 1]?.[x];
+  const item_8 = matrixField[y + 1]?.[x - 1];
+
+  const arr = [item_1, item_2, item_3, item_4, item_5, item_6, item_7, item_8];
+  arr.filter((item) => typeof item !== "undefined");
+  const count = arr.reduce((acc, el, i) => {
+    acc += el === 1 ? 1 : 0;
+    return acc;
+  }, 0);
+  matrixField[x][y] = count;
+}
+
+console.log(getMatrixField(3, 3, 3));
+console.log(getStateOfArroundItems({ x: 1, y: 1 }));
