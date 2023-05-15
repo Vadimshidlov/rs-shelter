@@ -1,4 +1,5 @@
 // import { getItem } from "./fieldItem.js";
+import { itemField } from "./fieldItem.js";
 
 function getRandomNubers(max, min) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -9,26 +10,16 @@ function getMatrixField(width = 10, height = 10, bombs = 10) {
   for (let i = 0; i < height; i++) {
     let curr = [];
     for (let j = 0; j < width; j++) {
-      curr[j] = 0;
+      curr[j] = new itemField(false, { i, j });
     }
     arr.push(curr);
   }
 
   const arrayWithBobms = getBobms(arr, bombs);
-  console.log(arrayWithBobms);
-
-  // for (let i = 0; i < matrixField.length; i++) {
-  //   for (let j = 0; j < matrixField[i].length; j++) {
-  //     let isbomb = matrixField[j] == true ? true : false;
-  //     const newItem = getItem(isbomb, { j, i });
-
-  //     matrixField[i][j] = newItem;
-  //   }
-  // }
 
   arrayWithBobms.forEach((el, x) => {
     el.forEach((el, y) => {
-      if (el !== "b") {
+      if (el.content !== "b") {
         getStateOfArroundItems(arrayWithBobms, { x, y });
       }
     });
@@ -48,8 +39,9 @@ function getBobms(arr, bombs) {
     const y = getRandomNubers(0, matrixFieldHeight);
     let current = arr[y][x];
 
-    if (!current) {
-      arr[y][x] = "b";
+    if (!current.isBomb) {
+      arr[y][x].content = "b";
+      arr[y][x].isBomb = true;
       bombsCount--;
     }
   }
@@ -83,14 +75,15 @@ function getStateOfArroundItems(arr, palce) {
   // console.log(arrayArround);
 
   count = arrayArround.reduce((acc, el, i) => {
-    acc += el === "b" ? 1 : 0;
+    acc += Boolean(el.isBomb) ? 1 : 0;
     return acc;
   }, 0);
-  arr[x][y] = count;
+  arr[x][y].content = count;
 }
 
 let matrixField = getMatrixField(10, 10, 8);
-console.log(matrixField);
+
+console.log(finallyArr);
 
 // console.log(getStateOfArroundItems({ x: 1, y: 1 }));
 // console.log(matrixField);
