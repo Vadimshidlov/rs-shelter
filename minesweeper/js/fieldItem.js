@@ -2,7 +2,11 @@ export class itemField {
   constructor(isBomb, place) {
     this.isBomb = isBomb;
     this.place = place;
-    this.content = isBomb !== true ? "" : "b";
+    this.content = isBomb !== true ? '' : 'b';
+  }
+
+  setBoxContent(value) {
+    this.content = value;
   }
 }
 

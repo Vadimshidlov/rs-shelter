@@ -1,15 +1,25 @@
 // import { getItem } from "./fieldItem.js";
-import { itemField } from "./fieldItem.js";
+import { itemField } from './fieldItem.js';
+const field = document.querySelector('.body__field');
+console.log(field);
 
-function getRandomNubers(max, min) {
+export function getRandomNubers(max, min) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-function getMatrixField(width = 10, height = 10, bombs = 10) {
+const stateOfItem = {
+  HIDDEN: 'hidden',
+  BOMB: 'bomb',
+  NUMBER: 'number',
+  FLAGGED: 'flagged',
+};
+
+export function getMatrixField(width = 10, height = 10, bombs = 10) {
   const arr = [];
   for (let i = 0; i < height; i++) {
     let curr = [];
     for (let j = 0; j < width; j++) {
+      const item = document.createElement('div');
       curr[j] = new itemField(false, { i, j });
     }
     arr.push(curr);
@@ -19,7 +29,7 @@ function getMatrixField(width = 10, height = 10, bombs = 10) {
 
   arrayWithBobms.forEach((el, x) => {
     el.forEach((el, y) => {
-      if (el.content !== "b") {
+      if (el.content !== 'b') {
         getStateOfArroundItems(arrayWithBobms, { x, y });
       }
     });
@@ -28,8 +38,9 @@ function getMatrixField(width = 10, height = 10, bombs = 10) {
   return arrayWithBobms;
 }
 
-function getBobms(arr, bombs) {
+export function getBobms(arr, bombs) {
   const arrayWithBobms = arr;
+  console.log(arr);
   let bombsCount = bombs;
   const matrixFieldHeight = arr.length;
   const matrixFieldWidth = arr[0].length;
@@ -40,16 +51,18 @@ function getBobms(arr, bombs) {
     let current = arr[y][x];
 
     if (!current.isBomb) {
-      arr[y][x].content = "b";
+      arr[y][x].content = 'b';
       arr[y][x].isBomb = true;
       bombsCount--;
+    } else {
+      arr[y][x].content = 0;
     }
   }
 
   return arrayWithBobms;
 }
 
-function getStateOfArroundItems(arr, palce) {
+export function getStateOfArroundItems(arr, palce) {
   const { x, y } = palce;
   let count = 0;
 
@@ -71,7 +84,7 @@ function getStateOfArroundItems(arr, palce) {
     item_6,
     item_7,
     item_8,
-  ].filter((item) => typeof item !== "undefined");
+  ].filter((item) => typeof item !== 'undefined');
   // console.log(arrayArround);
 
   count = arrayArround.reduce((acc, el, i) => {
@@ -81,9 +94,33 @@ function getStateOfArroundItems(arr, palce) {
   arr[x][y].content = count;
 }
 
-let matrixField = getMatrixField(10, 10, 8);
+export const getFinallyDomField = (array) => {
+  const arr = array.forEach((item) => {
+    item.forEach((itemInside) => {
+      const itemDom = document.createElement('div');
+      itemDom.innerHTML = itemInside.content;
+      field.append(itemDom);
+    });
+  });
 
-console.log(finallyArr);
+  return arr;
+};
+
+let matrixField = getMatrixField();
+getFinallyDomField(matrixField);
 
 // console.log(getStateOfArroundItems({ x: 1, y: 1 }));
 // console.log(matrixField);
+
+/* 
+    0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    0, 0, 0, 1, 1, 2, 1, 1, 0, 0
+    0, 0, 0, 1, 'b', 2, 'b', 1, 0, 0
+    2, 2, 2, 2, 2, 2, 1, 1, 0, 0
+    'b', 'b', 2, 'b', 1, 0, 0, 0, 0, 0
+    3, 3, 2, 2, 3, 2, 1, 0, 0, 0
+    'b', 1, 0, 2, 'b', 'b', 1, 0, 0, 0
+    1, 1, 0, 2, 'b', 3, 1, 0, 0, 0
+    0, 0, 0, 1, 1, 2, 1, 1, 0, 0
+    0, 0,   0, 0, 0, 1, 'b', 1, 0, 0
+*/
