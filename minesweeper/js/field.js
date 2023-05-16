@@ -171,7 +171,6 @@ class matrixField extends App {
     for (let i = 0; i < height; i++) {
       let curr = [];
       for (let j = 0; j < width; j++) {
-        const item = document.createElement("div");
         curr[j] = new itemField(false, { i, j });
         curr[j].content = "";
       }
@@ -189,9 +188,19 @@ class matrixField extends App {
     });
   }
 
-  getFinallyBattlefield() {}
+  getFinallyBattlefield() {
+    this.getMatrixField(10, 10, 10);
+    this.array.forEach((el) => {
+      el.forEach((elTwo) => {
+        const item = document.createElement("div");
+        item.classList.add("field-item");
+        item.innerHTML = elTwo.content;
+        this.field.append(item);
+      });
+    });
+  }
 }
 
-const finallyArray = new matrixField(10, 10, 3);
-finallyArray.getMatrixField(10, 10, 5);
+const finallyArray = new matrixField();
+finallyArray.getFinallyBattlefield();
 console.log(finallyArray.array);

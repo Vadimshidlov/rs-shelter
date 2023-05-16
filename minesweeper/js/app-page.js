@@ -14,6 +14,7 @@ export class App {
   getHtmlPage() {
     const HEADER_TITLE = document.createElement("h1");
     HEADER_TITLE.innerHTML = "RSSchool MINESWEEPER";
+    HEADER_TITLE.classList.add("header__title");
     this.header.classList.add("header");
     this.header.append(HEADER_TITLE);
     const MAIN_BODY = document.createElement("div");
@@ -21,7 +22,6 @@ export class App {
 
     const BODY_FIELD = document.createElement("div");
     BODY_FIELD.classList.add("body__field");
-    BODY_FIELD.classList.add("field");
     this.field = BODY_FIELD;
     MAIN_BODY.append(BODY_FIELD);
     const BODY_SCORE = document.createElement("div");

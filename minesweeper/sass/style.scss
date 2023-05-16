@@ -68,6 +68,7 @@ body {
 
 .header {
   margin-top: 30px;
+  margin-bottom: 60px;
   display: flex;
   justify-content: center;
   .header__title {
@@ -76,12 +77,28 @@ body {
 }
 
 .main {
+  .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .body__field {
+      display: flex;
+      flex-wrap: wrap;
+      width: 500px;
+      height: 500px;
+      .field-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+      }
+    }
+    .body__score {
+    }
+  }
 }
-.body {
-}
-.body__field {
-}
+
 .field {
-}
-.body__score {
 }
