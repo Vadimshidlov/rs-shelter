@@ -1,14 +1,15 @@
-import { itemField } from './fieldItem.js';
-import { App } from './app-page.js';
+import { ItemField } from "./fieldItem.js";
+import { App } from "./app-page.js";
 
 export function getRandomNubers(max, min) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
-class matrixField extends App {
+export class MatrixField extends App {
   constructor() {
     super();
     this.array = [];
+    this.arrayBombsPlace = [];
   }
 
   getBobms(arr, bombs) {
@@ -22,13 +23,15 @@ class matrixField extends App {
       let current = arr[y][x];
 
       if (!current.isBomb) {
-        arr[y][x].content = '💣';
+        arr[y][x].content = "💣";
         arr[y][x].isBomb = true;
+        this.arrayBombsPlace.push(arr[y][x]);
         bombsCount--;
       } else {
-        arr[y][x].content = '';
+        arr[y][x].content = "";
       }
     }
+    console.log(this.arrayBombsPlace);
   }
 
   getStateOfArroundItems(arr, palce) {
@@ -53,7 +56,7 @@ class matrixField extends App {
       item_6,
       item_7,
       item_8,
-    ].filter((item) => typeof item !== 'undefined');
+    ].filter((item) => typeof item !== "undefined");
 
     count = arrayArround.reduce((acc, el, i) => {
       acc += Boolean(el.isBomb) ? 1 : 0;
@@ -70,7 +73,7 @@ class matrixField extends App {
     for (let i = 0; i < height; i++) {
       let curr = [];
       for (let j = 0; j < width; j++) {
-        curr[j] = new itemField(false, { i, j });
+        curr[j] = new ItemField(false, { i, j }, this.arrayBombsPlace);
         // curr[j].element.classList.add('field-item');
       }
       this.array.push(curr);
@@ -80,7 +83,7 @@ class matrixField extends App {
 
     this.array.forEach((el, x) => {
       el.forEach((el, y) => {
-        if (el.content !== '💣') {
+        if (el.content !== "💣") {
           this.getStateOfArroundItems(this.array, { x, y });
         }
       });
@@ -91,20 +94,25 @@ class matrixField extends App {
     this.getMatrixField(10, 10, 10);
     this.array.forEach((el) => {
       el.forEach((elTwo) => {
-        const item = document.createElement('div');
-        item.classList.add('field-item');
-        item.dataset.content = elTwo.content;
-        item.dataset.isBomb = elTwo.isBomb;
-        item.dataset.place = elTwo.place;
-        // item.innerHTML = item.dataset.content;
-        this.field.append(item);
-        item.addEventListener('click', () => {
-          console.log(item.palce);
+        elTwo.moveToBattlefield();
+        //   window.addEventListener('click', () => {
+        //     item.innerHTML = item.dataset.content;
+        //   });
+        // });
 
-          window.addEventListener('click', () => {
-            item.innerHTML = item.dataset.content;
-          });
-        });
+        // const item = document.createElement('div');
+        // item.classList.add('field-item');
+        // item.dataset.content = elTwo.content;
+        // item.dataset.isBomb = elTwo.isBomb;
+        // item.dataset.place = elTwo.place;
+        // // item.innerHTML = item.dataset.content;
+        // this.field.append(item);
+        // item.addEventListener('click', () => {
+        //   console.log(item.palce);
+        //   window.addEventListener('click', () => {
+        //     item.innerHTML = item.dataset.content;
+        //   });
+        // });
       });
     });
   }
@@ -112,6 +120,6 @@ class matrixField extends App {
   getContent() {}
 }
 
-const finallyArray = new matrixField();
+const finallyArray = new MatrixField();
 finallyArray.getFinallyBattlefield();
 console.log(finallyArray.array);

@@ -9,6 +9,7 @@ export class App {
     this.footer = document.createElement("footer");
     this.footer.classList.add("footer");
     this.field = "";
+    this.intemField = "";
   }
 
   getHtmlPage() {
