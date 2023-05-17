@@ -98,6 +98,10 @@ body {
         height: 50px;
         border: 1px solid black;
         cursor: pointer;
+        background: gray;
+      }
+      .field-item__active {
+        background: burlywood;
       }
     }
     .body__score {

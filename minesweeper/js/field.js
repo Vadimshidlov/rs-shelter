@@ -1,5 +1,5 @@
-import { ItemField } from "./fieldItem.js";
-import { App } from "./app-page.js";
+import { App } from './app-page.js';
+import ItemField from './fieldItem.js';
 
 export function getRandomNubers(max, min) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -23,12 +23,12 @@ export class MatrixField extends App {
       let current = arr[y][x];
 
       if (!current.isBomb) {
-        arr[y][x].content = "💣";
+        arr[y][x].content = '💣';
         arr[y][x].isBomb = true;
         this.arrayBombsPlace.push(arr[y][x]);
         bombsCount--;
       } else {
-        arr[y][x].content = "";
+        arr[y][x].content = '';
       }
     }
     console.log(this.arrayBombsPlace);
@@ -56,7 +56,7 @@ export class MatrixField extends App {
       item_6,
       item_7,
       item_8,
-    ].filter((item) => typeof item !== "undefined");
+    ].filter((item) => typeof item !== 'undefined');
 
     count = arrayArround.reduce((acc, el, i) => {
       acc += Boolean(el.isBomb) ? 1 : 0;
@@ -83,7 +83,7 @@ export class MatrixField extends App {
 
     this.array.forEach((el, x) => {
       el.forEach((el, y) => {
-        if (el.content !== "💣") {
+        if (el.content !== '💣') {
           this.getStateOfArroundItems(this.array, { x, y });
         }
       });
@@ -91,28 +91,10 @@ export class MatrixField extends App {
   }
 
   getFinallyBattlefield() {
-    this.getMatrixField(10, 10, 10);
+    this.getMatrixField();
     this.array.forEach((el) => {
       el.forEach((elTwo) => {
         elTwo.moveToBattlefield();
-        //   window.addEventListener('click', () => {
-        //     item.innerHTML = item.dataset.content;
-        //   });
-        // });
-
-        // const item = document.createElement('div');
-        // item.classList.add('field-item');
-        // item.dataset.content = elTwo.content;
-        // item.dataset.isBomb = elTwo.isBomb;
-        // item.dataset.place = elTwo.place;
-        // // item.innerHTML = item.dataset.content;
-        // this.field.append(item);
-        // item.addEventListener('click', () => {
-        //   console.log(item.palce);
-        //   window.addEventListener('click', () => {
-        //     item.innerHTML = item.dataset.content;
-        //   });
-        // });
       });
     });
   }
@@ -121,5 +103,9 @@ export class MatrixField extends App {
 }
 
 const finallyArray = new MatrixField();
+
+// finallyArray.getMatrixField();
 finallyArray.getFinallyBattlefield();
 console.log(finallyArray.array);
+
+export default MatrixField;
