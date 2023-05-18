@@ -72,11 +72,11 @@ class ItemField extends App {
     });
   } */
 
-  setItemContent(item) {
-    item.dataset.content = this.content;
-    item.dataset.isBomb = this.isBomb;
-    item.dataset.place = this.place;
-  }
+  // setItemContent(item) {
+  //   item.dataset.content = this.content;
+  //   item.dataset.isBomb = this.isBomb;
+  //   item.dataset.place = this.place;
+  // }
 }
 
 export default ItemField;
