@@ -1,14 +1,9 @@
-// import MatrixField from './field.js';
-import { getApp } from './app-page.js';
 import {
   DATA,
-  getMatrixField,
-  getRandomNubers,
   matrixArray,
   showAllItems,
-  firstClickIsBomb,
   getFinallyBattlefield,
-  clicksCount, incrementClickCount,
+  incrementClickCount,
 } from './field.js';
 
 class ItemField {
@@ -21,74 +16,27 @@ class ItemField {
     this.element = document.createElement('div');
   }
 
-  /*getItemContent() {
-    if (this.element.dataset.opened || this.element.dataset.content === '💣') {
-      return;
-    }
-
-    console.log(`getItemContent`);
-    /!*if (this.element.dataset.content === '💣') {
-      DATA.clicksCount += 1;
-      showAllItems();
-      console.log('YOU ARE LOOOOSE! ;))');
-      return;
-    }*!/
-    if (this.element.dataset.content === '') {
-      const arr = this.getNeighborsOfItem(matrixArray, 1, 1);
-      console.log(arr, `arr`);
-      this.element.innerHTML = this.element.dataset.content;
-      this.element.dataset.opened = true;
-      this.element.classList.add('field-item__active');
-      arr.forEach(item => {
-        item.getItemContent()
-      })
-      /!*this.openItemsArround(
-        matrixArray,
-        this.element.dataset.placeX,
-        this.element.dataset.placeY
-      );*!/
-      return;
-    }
-    this.element.innerHTML = this.element.dataset.content;
-    this.element.dataset.opened = true;
-    this.element.classList.add('field-item__active');
-  }*/
-
   getItemContent(item) {
     console.log(item);
     if (item.dataset.opened || item.dataset.content === '💣') {
       return;
     }
 
-    /*item.innerHTML = this.element.dataset.content;
-    item.dataset.opened = true;
-    item.classList.add('field-item__active');*/
-
-    /*if (this.element.dataset.content === '💣') {
-      DATA.clicksCount += 1;
-      showAllItems();
-      console.log('YOU ARE LOOOOSE! ;))');
-      return;
-    }*/
     if (item.dataset.content === '') {
-      const arr = this.getNeighborsOfItem(matrixArray, item.dataset.placeX, item.dataset.placeX);
+      const arr = this.getNeighborsOfItem(
+        matrixArray,
+        item.dataset.placeX,
+        item.dataset.placeX
+      );
       console.log(arr, `arr`);
       item.innerHTML = this.element.dataset.content;
       item.dataset.opened = true;
       item.classList.add('field-item__active');
-      arr.forEach(item => {
-        this.getItemContent(item)
-      })
-      /*this.openItemsArround(
-        matrixArray,
-        this.element.dataset.placeX,
-        this.element.dataset.placeY
-      );*/
+      arr.forEach((item) => {
+        this.getItemContent(item);
+      });
       return;
     }
-    /*this.element.innerHTML = this.element.dataset.content;
-    this.element.dataset.opened = true;
-    this.element.classList.add('field-item__active');*/
   }
 
   showAllbombs() {
@@ -127,7 +75,6 @@ class ItemField {
   getSingleItemStateArround(arr, placeX, placeY) {
     const x = placeX;
     const y = placeY;
-    // console.log(`go`, x, y)
     let count = 0;
 
     const item_1 = arr[x]?.[y - 1];
@@ -177,18 +124,21 @@ class ItemField {
   }
 
   openContent() {
-    if (this.element.dataset.opened || this.element.dataset.content === '💣'){
-      return
+    if (this.element.dataset.opened || this.element.dataset.content === '💣') {
+      return;
     }
-    if (this.element.dataset.content === ''){
-      // incrementClickCount()
+    if (this.element.dataset.content === '') {
       this.element.innerHTML = this.element.dataset.content;
       this.element.dataset.opened = true;
       this.element.classList.add('field-item__active');
-      const arrNeighbors = this.getNeighborsOfItem(matrixArray, this.placeX, this.placeY)
-      arrNeighbors.forEach(item => {
-        item.openContent()
-      })
+      const arrNeighbors = this.getNeighborsOfItem(
+        matrixArray,
+        this.placeX,
+        this.placeY
+      );
+      arrNeighbors.forEach((item) => {
+        item.openContent();
+      });
     }
     // incrementClickCount()
     this.element.innerHTML = this.element.dataset.content;
@@ -219,26 +169,17 @@ class ItemField {
           // this.getItemContent();
           return;
         } else {
-          incrementClickCount()
+          incrementClickCount();
           if (e.target.dataset.content === '💣') {
             // DATA.clicksCount += 1;
             showAllItems();
             console.log('YOU ARE LOOOOSE! ;))');
             return;
           } else if (e.target.dataset.content === '') {
-            this.openContent()
-            /*const arr = this.getNeighborsOfItem(matrixArray, this.placeX, this.placeY)
-            console.log(arr);
-            arr.forEach(item => {
-              if (!item.element.dataset.opened && item.element.dataset.content !== '💣'){
-                item.openContent()
-              }
-            })*/
+            this.openContent();
           } else {
-            this.openContent()
+            this.openContent();
           }
-
-          // this.getItemContent(this.element);
         }
       }
     });

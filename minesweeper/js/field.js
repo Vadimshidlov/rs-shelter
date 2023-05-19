@@ -16,8 +16,8 @@ export const matrixArray = [];
 export let clicksCount = 0;
 
 export function incrementClickCount() {
-  const clickCountDom = document.querySelector('.header__clicks')
-  DATA.clicksCount += 1
+  const clickCountDom = document.querySelector('.header__clicks');
+  DATA.clicksCount += 1;
   clickCountDom.innerHTML = `Clicks count: ${DATA.clicksCount}`;
 }
 
@@ -50,7 +50,6 @@ function getBombs(arr, bombs, isFirstBombPlace) {
 function getStateOfArroundItems(arr, placeX, placeY) {
   const x = placeX;
   const y = placeY;
-  // console.log(`go`, x, y)
   let count = 0;
 
   const item_1 = arr[x]?.[y - 1];
@@ -96,7 +95,6 @@ export function getMatrixField(
     let curr = [];
     for (let j = 0; j < width; j++) {
       curr[j] = new ItemField(false, i, j, arrayBombsPlace);
-      // curr[j].element.classList.add('field-item');
     }
     matrixArray.push(curr);
   }
@@ -106,15 +104,11 @@ export function getMatrixField(
   matrixArray.forEach((el, x) => {
     el.forEach((el, y) => {
       if (el.content !== '💣') {
-        // this.getStateOfArroundItems(this.array, x, y);
         el.getSingleItemStateArround(matrixArray, x, y);
       }
       if (x === isFirstBombPlace?.x && y === isFirstBombPlace?.y) {
         matrixArray[x][y].element.classList.add('field-item__active');
         matrixArray[x][y].element.dataset.opened = true;
-        /* matrixArray[x][y].moveToBattlefield();
-        matrixArray[x][y].getSingleItemStateArround(matrixArray, x, y);
-        matrixArray[x][y].innerHTML = matrixArray[x][y].element.dataset.content; */
       }
     });
   });
@@ -123,21 +117,21 @@ export function getMatrixField(
 }
 
 export function showAllItems() {
-  const FIELD = document.querySelector('.body__field')
-  const HEADER = document.querySelector('.header')
-  const RESULT = document.createElement('div')
-  const BODY = document.querySelector('body')
-  RESULT.classList.add('header__result')
-  RESULT.innerHTML = `Game over. Try again!`
-  HEADER.append(RESULT)
-  const BUTTON_RESTART = document.createElement('button')
-  BUTTON_RESTART.classList.add('header__button')
-  BUTTON_RESTART.innerHTML = 'Restart!'
-  BUTTON_RESTART.addEventListener('click', ()=>{
+  const FIELD = document.querySelector('.body__field');
+  const HEADER = document.querySelector('.header');
+  const RESULT = document.createElement('div');
+  const BODY = document.querySelector('body');
+  RESULT.classList.add('header__result');
+  RESULT.innerHTML = `Game over. Try again!`;
+  HEADER.append(RESULT);
+  const BUTTON_RESTART = document.createElement('button');
+  BUTTON_RESTART.classList.add('header__button');
+  BUTTON_RESTART.innerHTML = 'Restart!';
+  BUTTON_RESTART.addEventListener('click', () => {
     BODY.innerHTML = '';
-    getFinallyBattlefield()
-  })
-  HEADER.append(BUTTON_RESTART)
+    getFinallyBattlefield();
+  });
+  HEADER.append(BUTTON_RESTART);
   matrixArray.forEach((el, i) => {
     el.forEach((el, j) => {
       el.element.classList.add('field-item__active');
@@ -145,9 +139,9 @@ export function showAllItems() {
     });
   });
   console.log(FIELD.childNodes);
-  FIELD.childNodes.forEach(item => {
-    item.classList.add("disable-item")
-  })
+  FIELD.childNodes.forEach((item) => {
+    item.classList.add('disable-item');
+  });
 }
 
 export function getFinallyBattlefield(width, height, bombsCount, data) {
@@ -157,7 +151,6 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
   matrixArray.forEach((el, i) => {
     el.forEach((elTwo, j) => {
       if (i === data?.x && j === data?.y) {
-        // elTwo.element.innerHTML = elTwo.element.dataset.content;
         const content = elTwo.content;
         elTwo.element.innerHTML = content;
         elTwo.element.dataset.opened = true;
@@ -174,7 +167,6 @@ export function firstClickIsBomb(array, x, y) {
   array.forEach((el, i) => {
     el.forEach((elTwo, j) => {
       if ((elTwo.content === '' && i !== x, j !== y)) {
-        // array[i][j].content = "💣";
         getStateOfArroundItems(array, i, j);
       }
     });

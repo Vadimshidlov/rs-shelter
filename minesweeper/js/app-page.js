@@ -1,4 +1,4 @@
-import { DATA } from "./field.js";
+import { DATA } from './field.js';
 
 export function getApp() {
   const container = document.createElement('div');
@@ -11,13 +11,6 @@ export function getApp() {
   main.classList.add('main');
   const footer = document.createElement('footer');
   footer.classList.add('footer');
-  const field = '';
-  const intemField = '';
-  const clicks = 0;
-  const firstClickPlace = [];
-  const arrayWithoutBombs = [];
-  const array = [];
-  const arrayBombsPlace = [];
 
   function getHtmlPage() {
     const HEADER_TITLE = document.createElement('h1');
@@ -25,22 +18,50 @@ export function getApp() {
     HEADER_TITLE.classList.add('header__title');
     header.classList.add('header');
     header.append(HEADER_TITLE);
-    const CLICKS_COUNT = document.createElement('div')
-    CLICKS_COUNT.classList.add('header__clicks')
+    const CLICKS_COUNT = document.createElement('div');
+    CLICKS_COUNT.classList.add('header__clicks');
     CLICKS_COUNT.innerHTML = `Clicks count: ${DATA.clicksCount}`;
     header.append(CLICKS_COUNT);
+    const HEADER_CLOCKS = document.createElement('div');
+    HEADER_CLOCKS.classList.add('header__clocks');
+
+    const HEADER_CLOCKS_MINUTES = document.createElement('span');
+    HEADER_CLOCKS_MINUTES.classList.add('header__mintutes');
+    HEADER_CLOCKS_MINUTES.innerHTML = `00`;
+    HEADER_CLOCKS.append(HEADER_CLOCKS_MINUTES);
+
+    const HEADER_CLOCKS_POINTS = document.createElement('span');
+    HEADER_CLOCKS_POINTS.classList.add('header__dubble-points');
+    HEADER_CLOCKS_POINTS.innerHTML = `:`;
+    HEADER_CLOCKS.append(HEADER_CLOCKS_POINTS);
+
+    const HEADER_CLOCKS_SECONDS = document.createElement('span');
+    HEADER_CLOCKS_SECONDS.classList.add('header__seconds');
+    HEADER_CLOCKS_SECONDS.innerHTML = `00`;
+    HEADER_CLOCKS.append(HEADER_CLOCKS_SECONDS);
+
+    /*  HEADER_CLOCKS.append(
+      (document
+        .createElement('span')
+        .classList.add('header__points').innerHTML = `:`)
+    );
+    HEADER_CLOCKS.append(
+      (document
+        .createElement('span')
+        .classList.add('header__seconds').innerHTML = `00`)
+    ); */
+    header.append(HEADER_CLOCKS);
+
     const MAIN_BODY = document.createElement('div');
     MAIN_BODY.classList.add('body');
 
     const BODY_FIELD = document.createElement('div');
     BODY_FIELD.classList.add('body__field');
-    // const field = BODY_FIELD;
     MAIN_BODY.append(BODY_FIELD);
     const BODY_SCORE = document.createElement('div');
     BODY_SCORE.classList.add('body__score');
     MAIN_BODY.append(BODY_SCORE);
 
-    // —-
     main.append(MAIN_BODY);
     container.append(header);
     container.append(main);
