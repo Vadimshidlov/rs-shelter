@@ -67,10 +67,31 @@ body {
   margin-top: 30px;
   margin-bottom: 60px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .header .header__title {
   font-size: 30px;
+  margin-bottom: 20px;
+}
+.header .header__clicks {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.header .header__result {
+  margin-bottom: 20px;
+  font-size: 30px;
+  color: red;
+}
+.header .header__button {
+  width: 200px;
+  height: 70px;
+  font-size: 30px;
+  border-radius: 20px;
+  color: red;
+  background-color: orange;
+  cursor: pointer;
 }
 
 .main .body {
@@ -99,6 +120,9 @@ body {
 }
 .main .body .body__field .field-item__active {
   background: burlywood;
+}
+.disable-item {
+  pointer-events: none;
 }
 
 /*# sourceMappingURL=style.css.map */

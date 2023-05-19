@@ -1,3 +1,5 @@
+import { DATA } from "./field.js";
+
 export function getApp() {
   const container = document.createElement('div');
   container.classList.add('_container');
@@ -23,6 +25,10 @@ export function getApp() {
     HEADER_TITLE.classList.add('header__title');
     header.classList.add('header');
     header.append(HEADER_TITLE);
+    const CLICKS_COUNT = document.createElement('div')
+    CLICKS_COUNT.classList.add('header__clicks')
+    CLICKS_COUNT.innerHTML = `Clicks count: ${DATA.clicksCount}`;
+    header.append(CLICKS_COUNT);
     const MAIN_BODY = document.createElement('div');
     MAIN_BODY.classList.add('body');
 

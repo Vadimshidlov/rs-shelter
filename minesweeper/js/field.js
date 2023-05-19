@@ -15,6 +15,12 @@ const arrayWithoutBombs = [];
 export const matrixArray = [];
 export let clicksCount = 0;
 
+export function incrementClickCount() {
+  const clickCountDom = document.querySelector('.header__clicks')
+  DATA.clicksCount += 1
+  clickCountDom.innerHTML = `Clicks count: ${DATA.clicksCount}`;
+}
+
 function getBombs(arr, bombs, isFirstBombPlace) {
   isFirstBombPlace = DATA;
   let bombsCount = bombs;
@@ -117,16 +123,36 @@ export function getMatrixField(
 }
 
 export function showAllItems() {
+  const FIELD = document.querySelector('.body__field')
+  const HEADER = document.querySelector('.header')
+  const RESULT = document.createElement('div')
+  const BODY = document.querySelector('body')
+  RESULT.classList.add('header__result')
+  RESULT.innerHTML = `Game over. Try again!`
+  HEADER.append(RESULT)
+  const BUTTON_RESTART = document.createElement('button')
+  BUTTON_RESTART.classList.add('header__button')
+  BUTTON_RESTART.innerHTML = 'Restart!'
+  BUTTON_RESTART.addEventListener('click', ()=>{
+    BODY.innerHTML = '';
+    getFinallyBattlefield()
+  })
+  HEADER.append(BUTTON_RESTART)
   matrixArray.forEach((el, i) => {
     el.forEach((el, j) => {
       el.element.classList.add('field-item__active');
       el.element.innerHTML = el.element.dataset.content;
     });
   });
+  console.log(FIELD.childNodes);
+  FIELD.childNodes.forEach(item => {
+    item.classList.add("disable-item")
+  })
 }
 
-export function getFinallyBattlefield(width, heigth, bombsCount, data) {
-  getMatrixField(width, heigth, bombsCount, data);
+export function getFinallyBattlefield(width, height, bombsCount, data) {
+  DATA.clicksCount = 0;
+  getMatrixField(width, height, bombsCount, data);
   getArrayWithoutBombs();
   matrixArray.forEach((el, i) => {
     el.forEach((elTwo, j) => {

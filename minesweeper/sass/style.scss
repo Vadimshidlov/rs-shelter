@@ -70,9 +70,32 @@ body {
   margin-top: 30px;
   margin-bottom: 60px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
   .header__title {
     font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .header__clicks {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+
+  .header__result {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: red;
+  }
+
+  .header__button {
+    width: 200px;
+    height: 70px;
+    font-size: 30px;
+    border-radius: 20px;
+    color: red;
+    background-color: orange;
+    cursor: pointer;
   }
 }
 
@@ -107,6 +130,10 @@ body {
     .body__score {
     }
   }
+}
+
+.disable-item{
+  pointer-events: none;
 }
 
 .field {

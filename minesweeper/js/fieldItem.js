@@ -8,7 +8,7 @@ import {
   showAllItems,
   firstClickIsBomb,
   getFinallyBattlefield,
-  clicksCount,
+  clicksCount, incrementClickCount,
 } from './field.js';
 
 class ItemField {
@@ -21,18 +21,18 @@ class ItemField {
     this.element = document.createElement('div');
   }
 
-  getItemContent() {
-    if (this.element.dataset.opened || this.element.dataset.content === '💣'){
+  /*getItemContent() {
+    if (this.element.dataset.opened || this.element.dataset.content === '💣') {
       return;
     }
 
     console.log(`getItemContent`);
-    /*if (this.element.dataset.content === '💣') {
+    /!*if (this.element.dataset.content === '💣') {
       DATA.clicksCount += 1;
       showAllItems();
       console.log('YOU ARE LOOOOSE! ;))');
       return;
-    }*/
+    }*!/
     if (this.element.dataset.content === '') {
       const arr = this.getNeighborsOfItem(matrixArray, 1, 1);
       console.log(arr, `arr`);
@@ -40,7 +40,44 @@ class ItemField {
       this.element.dataset.opened = true;
       this.element.classList.add('field-item__active');
       arr.forEach(item => {
-          item.getItemContent()
+        item.getItemContent()
+      })
+      /!*this.openItemsArround(
+        matrixArray,
+        this.element.dataset.placeX,
+        this.element.dataset.placeY
+      );*!/
+      return;
+    }
+    this.element.innerHTML = this.element.dataset.content;
+    this.element.dataset.opened = true;
+    this.element.classList.add('field-item__active');
+  }*/
+
+  getItemContent(item) {
+    console.log(item);
+    if (item.dataset.opened || item.dataset.content === '💣') {
+      return;
+    }
+
+    /*item.innerHTML = this.element.dataset.content;
+    item.dataset.opened = true;
+    item.classList.add('field-item__active');*/
+
+    /*if (this.element.dataset.content === '💣') {
+      DATA.clicksCount += 1;
+      showAllItems();
+      console.log('YOU ARE LOOOOSE! ;))');
+      return;
+    }*/
+    if (item.dataset.content === '') {
+      const arr = this.getNeighborsOfItem(matrixArray, item.dataset.placeX, item.dataset.placeX);
+      console.log(arr, `arr`);
+      item.innerHTML = this.element.dataset.content;
+      item.dataset.opened = true;
+      item.classList.add('field-item__active');
+      arr.forEach(item => {
+        this.getItemContent(item)
       })
       /*this.openItemsArround(
         matrixArray,
@@ -49,9 +86,9 @@ class ItemField {
       );*/
       return;
     }
-    this.element.innerHTML = this.element.dataset.content;
+    /*this.element.innerHTML = this.element.dataset.content;
     this.element.dataset.opened = true;
-    this.element.classList.add('field-item__active');
+    this.element.classList.add('field-item__active');*/
   }
 
   showAllbombs() {
@@ -126,7 +163,7 @@ class ItemField {
 
   // TODO !!!
   openItemsArround(placeX, placeY) {
-    const arrayArround = this.getNeighborsOfItem(matrixArray, placeY,placeX);
+    const arrayArround = this.getNeighborsOfItem(matrixArray, placeY, placeX);
     console.log(arrayArround, `arrayArround`);
     arrayArround.forEach((item) => {
       item.openItemsArround(
@@ -137,6 +174,26 @@ class ItemField {
     if (this.element.dataset.opened || this.element.dataset.content === '💣') {
       return;
     }
+  }
+
+  openContent() {
+    if (this.element.dataset.opened || this.element.dataset.content === '💣'){
+      return
+    }
+    if (this.element.dataset.content === ''){
+      // incrementClickCount()
+      this.element.innerHTML = this.element.dataset.content;
+      this.element.dataset.opened = true;
+      this.element.classList.add('field-item__active');
+      const arrNeighbors = this.getNeighborsOfItem(matrixArray, this.placeX, this.placeY)
+      arrNeighbors.forEach(item => {
+        item.openContent()
+      })
+    }
+    // incrementClickCount()
+    this.element.innerHTML = this.element.dataset.content;
+    this.element.dataset.opened = true;
+    this.element.classList.add('field-item__active');
   }
 
   moveToBattlefield() {
@@ -160,11 +217,28 @@ class ItemField {
           body.innerHTML = '';
           getFinallyBattlefield(10, 10, 10, DATA.firstBombPlace);
           // this.getItemContent();
-          DATA.clicksCount += 1;
           return;
         } else {
-          DATA.clicksCount += 1;
-          this.getItemContent();
+          incrementClickCount()
+          if (e.target.dataset.content === '💣') {
+            // DATA.clicksCount += 1;
+            showAllItems();
+            console.log('YOU ARE LOOOOSE! ;))');
+            return;
+          } else if (e.target.dataset.content === '') {
+            this.openContent()
+            /*const arr = this.getNeighborsOfItem(matrixArray, this.placeX, this.placeY)
+            console.log(arr);
+            arr.forEach(item => {
+              if (!item.element.dataset.opened && item.element.dataset.content !== '💣'){
+                item.openContent()
+              }
+            })*/
+          } else {
+            this.openContent()
+          }
+
+          // this.getItemContent(this.element);
         }
       }
     });
