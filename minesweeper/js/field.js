@@ -16,6 +16,37 @@ const arrayWithoutBombs = [];
 export const matrixArray = [];
 export let clicksCount = 0;
 
+let minutes = 0;
+let seconds = 0;
+export let interval;
+
+export function getWatch() {
+  const HEADER_MINUTES = document.querySelector('.header__mintutes');
+  const HEADER_SECONDS = document.querySelector('.header__seconds');
+  seconds++;
+  HEADER_SECONDS.innerHTML = `0` + seconds;
+
+  if (seconds > 9) {
+    HEADER_SECONDS.innerHTML = seconds;
+  }
+  if (seconds > 58) {
+    seconds = 0;
+    minutes += 1;
+    HEADER_MINUTES.innerHTML = `0` + minutes;
+  }
+
+  if (minutes > 9) {
+    HEADER_MINUTES.innerHTML = minutes;
+  }
+}
+
+export function startWatch() {
+  interval = setInterval(getWatch, 1000);
+}
+export function stopWatch() {
+  clearInterval(interval);
+}
+
 export function incrementClickCount() {
   const clickCountDom = document.querySelector('.header__clicks');
   DATA.clicksCount += 1;
@@ -146,12 +177,24 @@ export function gameOver() {
 }
 
 export function winGame() {
+  stopWatch();
   const FIELD = document.querySelector('.body__field');
   const HEADER = document.querySelector('.header');
   const RESULT = document.createElement('div');
   const BODY = document.querySelector('body');
   RESULT.classList.add('header__result');
-  RESULT.innerHTML = `Hooray! You found all mines in ## seconds and ${DATA.clicksCount} moves!"`;
+
+  const minutesResult = document.querySelector('.header__mintutes').innerHTML;
+  const secondsResult = document.querySelector('.header__seconds').innerHTML;
+  let time =
+    minutesResult !== `00`
+      ? Number(minutesResult) +
+        ` minutes, ` +
+        Number(secondsResult) +
+        ' seconds '
+      : Number(secondsResult) + ' seconds ';
+
+  RESULT.innerHTML = `Hooray! You found all mines in ${time}  and ${DATA.clicksCount} moves!"`;
   HEADER.append(RESULT);
   /* const BUTTON_RESTART = document.createElement('button');
   BUTTON_RESTART.classList.add('header__button');
@@ -229,3 +272,8 @@ function getArrayWithoutBombs() {
 }
 
 getFinallyBattlefield();
+// startWatch();
+
+/* window.addEventListener('click', () => {
+  stopWatch();
+}); */

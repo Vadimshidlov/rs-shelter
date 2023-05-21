@@ -5,6 +5,9 @@ import {
   getFinallyBattlefield,
   incrementClickCount,
   checkItemsCount,
+  startWatch,
+  stopWatch,
+  // interval,
 } from './field.js';
 
 class ItemField {
@@ -15,6 +18,7 @@ class ItemField {
     this.placeY = placeY;
     this.content = '';
     this.element = document.createElement('div');
+    // this.interval = interval;
   }
 
   getItemContent(item) {
@@ -161,6 +165,9 @@ class ItemField {
 
     this.element.addEventListener('click', (e) => {
       if (e.target === this.element) {
+        if (DATA.clicksCount === 0) {
+          startWatch();
+        }
         if (e.target.dataset.content === '💣' && DATA.clicksCount === 0) {
           const body = document.querySelector('body');
           DATA.firstBombPlace.x = x;
@@ -174,6 +181,7 @@ class ItemField {
           incrementClickCount();
           if (e.target.dataset.content === '💣') {
             // DATA.clicksCount += 1;
+            stopWatch();
             gameOver();
             console.log('YOU ARE LOOOOSE! ;))');
             return;
