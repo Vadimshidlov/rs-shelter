@@ -164,7 +164,8 @@ class ItemField {
     battleField.append(this.element);
 
     this.element.addEventListener('click', (e) => {
-      if (e.target === this.element) {
+      if (e.target === this.element && e.target.innerHTML !== '🚩') {
+        console.log(e.target);
         if (DATA.clicksCount === 0) {
           startWatch();
         }

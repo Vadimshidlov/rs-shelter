@@ -13,11 +13,11 @@ export function getApp() {
   footer.classList.add('footer');
 
   function getHtmlPage() {
-    const HEADER_TITLE = document.createElement('h1');
+    /* const HEADER_TITLE = document.createElement('h1');
     HEADER_TITLE.innerHTML = 'RSSchool MINESWEEPER';
-    HEADER_TITLE.classList.add('header__title');
+    HEADER_TITLE.classList.add('header__title'); */
     header.classList.add('header');
-    header.append(HEADER_TITLE);
+    // header.append(HEADER_TITLE);
     const CLICKS_COUNT = document.createElement('div');
     CLICKS_COUNT.classList.add('header__clicks');
     CLICKS_COUNT.innerHTML = `Moves count: ${DATA.clicksCount}`;
@@ -47,16 +47,52 @@ export function getApp() {
     <span class="header__seconds">00</span>
   `
     );
-    header.append(HEADER_CLOCKS);
+    const HEADER_INFO = document.createElement('div');
+    HEADER_INFO.classList.add('header__info');
 
     const RESTART = document.createElement('button');
     RESTART.classList.add('header__button');
     RESTART.innerHTML = 'New Game';
     RESTART.addEventListener('click', () => {
       body.innerHTML = ``;
-      getFinallyBattlefield();
+      getFinallyBattlefield(
+        DATA.gameSettings.fieldsize,
+        DATA.gameSettings.fieldsize,
+        DATA.gameSettings.mines,
+        DATA.firstBombPlace
+      );
     });
-    header.append(RESTART);
+    HEADER_INFO.append(HEADER_CLOCKS);
+    HEADER_INFO.append(RESTART);
+
+    header.append(HEADER_INFO);
+
+    const MINES_FORM = `
+           
+    <form action="#" id="game-settings" class="header__form-settings form-settings">
+    <div class="form-settings__item"> 
+      <label>
+        Mines count (10-99) :
+        <input type="number" min="10" max="99" name="mines" id="mines" placeholder="">
+      </label>
+    </div>
+    <div class="form-settings__item">
+      <label>
+        Battlefield size:
+        <select name="fieldsize" id="fieldsize">
+          <option value="10" >10</option>
+          <option value="15">15</option>
+          <option value="25">25</option>
+        </select>
+      </label>
+    </div>
+    <div class="form-settings__item">
+      <button type="submit" class="header__start-game">Set Settings</button>
+    </div>
+  </form>
+
+    `;
+    header.insertAdjacentHTML('beforeend', MINES_FORM);
 
     const MAIN_BODY = document.createElement('div');
     MAIN_BODY.classList.add('body');

@@ -9,6 +9,10 @@ export const DATA = {
   firstBombPlace: {},
   clicksCount: 0,
   notBombItemsCount: 90,
+  gameSettings: {
+    mines: '10',
+    fieldsize: '10',
+  },
 };
 
 const arrayBombsPlace = [];
@@ -218,7 +222,72 @@ export function winGame() {
 
 export function getFinallyBattlefield(width, height, bombsCount, data) {
   DATA.clicksCount = 0;
-  getMatrixField(width, height, bombsCount, data);
+  getMatrixField(
+    DATA.gameSettings.fieldsize,
+    DATA.gameSettings.fieldsize,
+    DATA.gameSettings.mines,
+    DATA.firstBombPlace
+  );
+
+  const FORM_SETTINGS = document.getElementById('game-settings');
+  FORM_SETTINGS.addEventListener('submit', handleFormSubmit);
+
+  function handleFormSubmit(event) {
+    // Просим форму не отправлять данные самостоятельно
+    event.preventDefault();
+    console.log('Отправка!');
+    serializeForm(FORM_SETTINGS);
+  }
+
+  function serializeForm(formNode) {
+    console.log('go');
+    const body = document.querySelector('body');
+    const { elements } = formNode;
+    const data = Array.from(elements)
+      .filter((item) => !!item.name)
+      .map((element) => {
+        const { name, value } = element;
+
+        return { name, value };
+      });
+
+    console.log(data);
+    data.forEach((el) => {
+      DATA.gameSettings[el.name] = el.value;
+    });
+
+    console.log(`DATA.gameSettings`, DATA.gameSettings);
+    body.innerHTML = '';
+
+    // BODY_FIELD.style.width = `${40 * DATA.gameSettings.fieldsize}px`;
+
+    getFinallyBattlefield(
+      DATA.gameSettings.fieldsize,
+      DATA.gameSettings.fieldsize,
+      DATA.gameSettings.mines,
+      DATA.firstBombPlace
+    );
+
+    if (DATA.gameSettings.fieldsize === '25') {
+      /* document.querySelectorAll('.field-item').forEach((item) => {
+        item.classList.add('field-item__large');
+      }); */
+
+      document.querySelector('.body__field').style.width = 1200 + 'px';
+      document.querySelector('.body__field').style.height = 1200 + 'px';
+    }
+    if (DATA.gameSettings.fieldsize === '15') {
+      // document.querySelectorAll('.field-item').forEach((item) => {
+      //   item.classList.add('field-item__medium');
+      // });
+      document.querySelector('.body__field').style.width = 610 + 'px';
+      document.querySelector('.body__field').style.height = 610 + 'px';
+    }
+
+    // document.querySelector('.body__field').style.width = `${widthTo}px`;
+    // BODY_FIELD.style.width = widthTo + 'px';
+  }
+
   getArrayWithoutBombs();
   matrixArray.forEach((el, i) => {
     el.forEach((elTwo, j) => {
