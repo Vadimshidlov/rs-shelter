@@ -161,7 +161,6 @@ body {
   border: 1px solid black;
   cursor: pointer;
   background: gray;
-  border-radius: 10px;
 }
 .main .body .body__field .field-item__active {
   background: #70c88f;

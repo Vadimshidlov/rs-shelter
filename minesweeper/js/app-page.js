@@ -73,13 +73,13 @@ export function getApp() {
     <div class="form-settings__item"> 
       <label>
         Mines count (10-99) :
-        <input type="number" min="10" max="99" name="mines" id="mines" placeholder="">
+        <input type="number" min="10" max="99" name="mines" id="mines" placeholder="10" required>
       </label>
     </div>
     <div class="form-settings__item">
       <label>
         Battlefield size:
-        <select name="fieldsize" id="fieldsize">
+        <select name="fieldsize" id="fieldsize" required>
           <option value="10" >10</option>
           <option value="15">15</option>
           <option value="25">25</option>

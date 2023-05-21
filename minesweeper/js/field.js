@@ -273,15 +273,23 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
         item.classList.add('field-item__large');
       }); */
 
-      document.querySelector('.body__field').style.width = 1200 + 'px';
-      document.querySelector('.body__field').style.height = 1200 + 'px';
+      document.querySelector('.body__field').style.width = 643 + 'px';
+      document.querySelector('.body__field').style.height = 643 + 'px';
+      document.querySelectorAll('.field-item').forEach((item) => {
+        item.style.width = 20 + `px`;
+        item.style.height = 20 + `px`;
+      });
     }
     if (DATA.gameSettings.fieldsize === '15') {
       // document.querySelectorAll('.field-item').forEach((item) => {
       //   item.classList.add('field-item__medium');
       // });
-      document.querySelector('.body__field').style.width = 610 + 'px';
-      document.querySelector('.body__field').style.height = 610 + 'px';
+      document.querySelector('.body__field').style.width = 482 + 'px';
+      document.querySelector('.body__field').style.height = 482 + 'px';
+      document.querySelectorAll('.field-item').forEach((item) => {
+        item.style.width = 25 + `px`;
+        item.style.height = 25 + `px`;
+      });
     }
 
     // document.querySelector('.body__field').style.width = `${widthTo}px`;
