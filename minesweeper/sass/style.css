@@ -48,7 +48,7 @@ body {
   background: #fafafa;
   font-family: Monaco, sans-serif;
   font-weight: 500;
-  background: #b6c2bf;
+  background: #9da1a0;
 }
 
 .wrapper {
@@ -85,13 +85,30 @@ body {
   color: red;
 }
 .header .header__button {
+  margin-bottom: 20px;
   width: 200px;
   height: 70px;
   font-size: 30px;
   border-radius: 20px;
-  color: red;
-  background-color: orange;
+  color: #2a2d2b;
+  background-color: #70c88f;
   cursor: pointer;
+  transition: all 0.5s;
+}
+.header .header__button:hover {
+  background-color: #2eb75e;
+}
+.header .header__button:active {
+  opacity: 0.5;
+}
+.header .header__clocks {
+  margin-bottom: 40px;
+  padding: 10px;
+  display: flex;
+  margin-right: 20px;
+  font-size: 40px;
+  border: 1px solid black;
+  color: #3e684d;
 }
 
 .main .body {
@@ -119,7 +136,7 @@ body {
   background: gray;
 }
 .main .body .body__field .field-item__active {
-  background: burlywood;
+  background: #70c88f;
 }
 .disable-item {
   pointer-events: none;

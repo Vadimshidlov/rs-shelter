@@ -1,4 +1,4 @@
-import { DATA } from './field.js';
+import { DATA, getFinallyBattlefield } from './field.js';
 
 export function getApp() {
   const container = document.createElement('div');
@@ -20,7 +20,7 @@ export function getApp() {
     header.append(HEADER_TITLE);
     const CLICKS_COUNT = document.createElement('div');
     CLICKS_COUNT.classList.add('header__clicks');
-    CLICKS_COUNT.innerHTML = `Clicks count: ${DATA.clicksCount}`;
+    CLICKS_COUNT.innerHTML = `Moves count: ${DATA.clicksCount}`;
     header.append(CLICKS_COUNT);
     const HEADER_CLOCKS = document.createElement('div');
     HEADER_CLOCKS.classList.add('header__clocks');
@@ -28,29 +28,35 @@ export function getApp() {
     const HEADER_CLOCKS_MINUTES = document.createElement('span');
     HEADER_CLOCKS_MINUTES.classList.add('header__mintutes');
     HEADER_CLOCKS_MINUTES.innerHTML = `00`;
-    HEADER_CLOCKS.append(HEADER_CLOCKS_MINUTES);
+    // HEADER_CLOCKS.append(HEADER_CLOCKS_MINUTES);
 
     const HEADER_CLOCKS_POINTS = document.createElement('span');
     HEADER_CLOCKS_POINTS.classList.add('header__dubble-points');
     HEADER_CLOCKS_POINTS.innerHTML = `:`;
-    HEADER_CLOCKS.append(HEADER_CLOCKS_POINTS);
+    // HEADER_CLOCKS.append(HEADER_CLOCKS_POINTS);
 
     const HEADER_CLOCKS_SECONDS = document.createElement('span');
     HEADER_CLOCKS_SECONDS.classList.add('header__seconds');
     HEADER_CLOCKS_SECONDS.innerHTML = `00`;
-    HEADER_CLOCKS.append(HEADER_CLOCKS_SECONDS);
-
-    /*  HEADER_CLOCKS.append(
-      (document
-        .createElement('span')
-        .classList.add('header__points').innerHTML = `:`)
+    // HEADER_CLOCKS.append(HEADER_CLOCKS_SECONDS);
+    HEADER_CLOCKS.insertAdjacentHTML(
+      'afterbegin',
+      `
+    <span class="header__mintutes">00</span>
+    <span class="header__dubble-points">:</span>
+    <span class="header__seconds">00</span>
+  `
     );
-    HEADER_CLOCKS.append(
-      (document
-        .createElement('span')
-        .classList.add('header__seconds').innerHTML = `00`)
-    ); */
     header.append(HEADER_CLOCKS);
+
+    const RESTART = document.createElement('button');
+    RESTART.classList.add('header__button');
+    RESTART.innerHTML = 'New Game';
+    RESTART.addEventListener('click', () => {
+      body.innerHTML = ``;
+      getFinallyBattlefield();
+    });
+    header.append(RESTART);
 
     const MAIN_BODY = document.createElement('div');
     MAIN_BODY.classList.add('body');

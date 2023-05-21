@@ -8,6 +8,7 @@ export function getRandomNubers(max, min) {
 export const DATA = {
   firstBombPlace: {},
   clicksCount: 0,
+  notBombItemsCount: 90,
 };
 
 const arrayBombsPlace = [];
@@ -116,7 +117,7 @@ export function getMatrixField(
   return matrixArray;
 }
 
-export function showAllItems() {
+export function gameOver() {
   const FIELD = document.querySelector('.body__field');
   const HEADER = document.querySelector('.header');
   const RESULT = document.createElement('div');
@@ -124,14 +125,42 @@ export function showAllItems() {
   RESULT.classList.add('header__result');
   RESULT.innerHTML = `Game over. Try again!`;
   HEADER.append(RESULT);
-  const BUTTON_RESTART = document.createElement('button');
+  /* const BUTTON_RESTART = document.createElement('button');
   BUTTON_RESTART.classList.add('header__button');
   BUTTON_RESTART.innerHTML = 'Restart!';
   BUTTON_RESTART.addEventListener('click', () => {
     BODY.innerHTML = '';
     getFinallyBattlefield();
   });
-  HEADER.append(BUTTON_RESTART);
+  HEADER.append(BUTTON_RESTART); */
+  matrixArray.forEach((el, i) => {
+    el.forEach((el, j) => {
+      el.element.classList.add('field-item__active');
+      el.element.innerHTML = el.element.dataset.content;
+    });
+  });
+  console.log(FIELD.childNodes);
+  FIELD.childNodes.forEach((item) => {
+    item.classList.add('disable-item');
+  });
+}
+
+export function winGame() {
+  const FIELD = document.querySelector('.body__field');
+  const HEADER = document.querySelector('.header');
+  const RESULT = document.createElement('div');
+  const BODY = document.querySelector('body');
+  RESULT.classList.add('header__result');
+  RESULT.innerHTML = `Hooray! You found all mines in ## seconds and ${DATA.clicksCount} moves!"`;
+  HEADER.append(RESULT);
+  /* const BUTTON_RESTART = document.createElement('button');
+  BUTTON_RESTART.classList.add('header__button');
+  BUTTON_RESTART.innerHTML = 'Restart!';
+  BUTTON_RESTART.addEventListener('click', () => {
+    BODY.innerHTML = '';
+    getFinallyBattlefield();
+  });
+  HEADER.append(BUTTON_RESTART); */
   matrixArray.forEach((el, i) => {
     el.forEach((el, j) => {
       el.element.classList.add('field-item__active');
@@ -160,6 +189,22 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
       elTwo.moveToBattlefield();
     });
   });
+}
+
+export function checkItemsCount() {
+  let count = 0;
+  const FIELD = document.getElementsByClassName('body__field');
+  console.log(FIELD);
+  FIELD[0].childNodes.forEach((item) => {
+    if (item.dataset.opened && item.dataset.content !== '💣') {
+      count += 1;
+    }
+  });
+  DATA.notBombItemsCount = count;
+  if (DATA.notBombItemsCount === 90) {
+    winGame();
+  }
+  console.log(DATA.notBombItemsCount, `DATA.notBombItemsCount`);
 }
 
 export function firstClickIsBomb(array, x, y) {

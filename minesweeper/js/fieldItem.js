@@ -1,9 +1,10 @@
 import {
   DATA,
   matrixArray,
-  showAllItems,
+  gameOver,
   getFinallyBattlefield,
   incrementClickCount,
+  checkItemsCount,
 } from './field.js';
 
 class ItemField {
@@ -166,22 +167,33 @@ class ItemField {
           DATA.firstBombPlace.y = y;
           body.innerHTML = '';
           getFinallyBattlefield(10, 10, 10, DATA.firstBombPlace);
+          incrementClickCount();
           // this.getItemContent();
           return;
         } else {
           incrementClickCount();
           if (e.target.dataset.content === '💣') {
             // DATA.clicksCount += 1;
-            showAllItems();
+            gameOver();
             console.log('YOU ARE LOOOOSE! ;))');
             return;
           } else if (e.target.dataset.content === '') {
             this.openContent();
+            checkItemsCount();
           } else {
             this.openContent();
+            checkItemsCount();
           }
         }
       }
+    });
+    this.element.addEventListener('contextmenu', (e) => {
+      e.preventDefault();
+      if (this.element.innerHTML === '🚩') {
+        this.element.innerHTML = '';
+        return;
+      }
+      this.element.innerHTML = '🚩';
     });
   }
 
