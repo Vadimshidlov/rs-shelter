@@ -321,30 +321,61 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
   setFieldSize();
 }
 
+// export function setFieldSize() {
+//   if (DATA.gameSettings.fieldsize === "25") {
+//     /* document.querySelectorAll('.field-item').forEach((item) => {
+//       item.classList.add('field-item__large');
+//     }); */
+
+//     document.querySelector(".body__field").style.width = 643 + "px";
+//     document.querySelector(".body__field").style.height = 643 + "px";
+//     document.querySelectorAll(".field-item").forEach((item) => {
+//       item.style.width = 20 + `px`;
+//       item.style.height = 20 + `px`;
+//       item.style.fontSize = 14 + `px`;
+//     });
+//   }
+//   if (DATA.gameSettings.fieldsize === "15") {
+//     // document.querySelectorAll('.field-item').forEach((item) => {
+//     //   item.classList.add('field-item__medium');
+//     // });
+//     document.querySelector(".body__field").style.width = 482 + "px";
+//     document.querySelector(".body__field").style.height = 482 + "px";
+//     document.querySelectorAll(".field-item").forEach((item) => {
+//       item.style.width = 25 + `px`;
+//       item.style.height = 25 + `px`;
+//       item.style.fontSize = 18 + `px`;
+//     });
+//   }
+// }
+
 export function setFieldSize() {
   if (DATA.gameSettings.fieldsize === "25") {
     /* document.querySelectorAll('.field-item').forEach((item) => {
       item.classList.add('field-item__large');
     }); */
 
-    document.querySelector(".body__field").style.width = 643 + "px";
-    document.querySelector(".body__field").style.height = 643 + "px";
+    document.querySelector(".body__field").classList.add("field__large");
     document.querySelectorAll(".field-item").forEach((item) => {
-      item.style.width = 20 + `px`;
-      item.style.height = 20 + `px`;
-      item.style.fontSize = 14 + `px`;
+      item.classList.add("field__item__small");
     });
   }
   if (DATA.gameSettings.fieldsize === "15") {
     // document.querySelectorAll('.field-item').forEach((item) => {
     //   item.classList.add('field-item__medium');
     // });
-    document.querySelector(".body__field").style.width = 482 + "px";
-    document.querySelector(".body__field").style.height = 482 + "px";
+    document.querySelector(".body__field").classList.add("field__medium");
     document.querySelectorAll(".field-item").forEach((item) => {
-      item.style.width = 25 + `px`;
-      item.style.height = 25 + `px`;
-      item.style.fontSize = 18 + `px`;
+      item.classList.add("field__item__medium");
+    });
+  }
+  if (DATA.gameSettings.fieldsize === "10") {
+    // document.querySelectorAll('.field-item').forEach((item) => {
+    //   item.classList.add('field-item__medium');
+    // });
+    document.querySelector(".body__field").classList.add("field__small");
+    document.querySelectorAll(".field-item").forEach((item) => {
+      item.classList.add("field__item__large");
     });
   }
 }

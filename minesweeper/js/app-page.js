@@ -9,6 +9,7 @@ export function getApp() {
   const header = document.createElement("header");
   const main = document.createElement("main");
   main.classList.add("main");
+  main.classList.add("_container");
   const footer = document.createElement("footer");
   footer.classList.add("footer");
 
@@ -17,6 +18,7 @@ export function getApp() {
     HEADER_TITLE.innerHTML = 'RSSchool MINESWEEPER';
     HEADER_TITLE.classList.add('header__title'); */
     header.classList.add("header");
+    header.classList.add("_container");
     // header.append(HEADER_TITLE);
     const CLICKS_COUNT = document.createElement("div");
     CLICKS_COUNT.classList.add("header__clicks");
@@ -90,8 +92,6 @@ export function getApp() {
     </div>
   </form>
     `;
-
-    
 
     header.insertAdjacentHTML("beforeend", MINES_FORM);
 
