@@ -1,4 +1,4 @@
-<https://www.youtube.com/watch?v=cDU_NU6R2jM>
+[Youtube video](https://www.youtube.com/watch?v=cDU_NU6R2jM)
 
 Text version:
 
