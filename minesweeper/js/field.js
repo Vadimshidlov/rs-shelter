@@ -86,8 +86,6 @@ function getBombs(arr, bombs, isFirstBombPlace) {
     //   arr[y][x].content = '';
     // }
   }
-
-  console.log(arrayBombsPlace.length, `bombs-lengths`);
 }
 
 function getStateOfArroundItems(arr, placeX, placeY) {
@@ -171,6 +169,30 @@ export function gameOver() {
     el.forEach((el, j) => {
       el.element.classList.add('field-item__active');
       el.element.innerHTML = el.element.dataset.content;
+      if (el.element.innerHTML === '1') {
+        el.element.classList.add('field-item_color-1');
+      }
+      if (el.element.innerHTML === '2') {
+        el.element.classList.add('field-item_color-2');
+      }
+      if (el.element.innerHTML === '3') {
+        el.element.classList.add('field-item_color-3');
+      }
+      if (el.element.innerHTML === '4') {
+        el.element.classList.add('field-item_color-4');
+      }
+      if (el.element.innerHTML === '5') {
+        el.element.classList.add('field-item_color-5');
+      }
+      if (el.element.innerHTML === '6') {
+        el.element.classList.add('field-item_color-6');
+      }
+      if (el.element.innerHTML === '7') {
+        el.element.classList.add('field-item_color-7');
+      }
+      if (el.element.innerHTML === '8') {
+        el.element.classList.add('field-item_color-8');
+      }
     });
   });
   FIELD.childNodes.forEach((item) => {

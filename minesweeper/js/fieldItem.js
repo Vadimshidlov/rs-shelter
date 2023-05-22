@@ -47,6 +47,30 @@ class ItemField {
     this.bombsArray.forEach((item) => {
       item.element.innerHTML = this.element.dataset.content;
       item.element.classList.add('field-item__active');
+      if (item.element.innerHTML === '1') {
+        item.element.classList.add('field-item_color-1');
+      }
+      if (item.element.innerHTML === '2') {
+        item.element.classList.add('field-item_color-2');
+      }
+      if (item.element.innerHTML === '3') {
+        item.element.classList.add('field-item_color-3');
+      }
+      if (item.element.innerHTML === '4') {
+        item.element.classList.add('field-item_color-4');
+      }
+      if (item.element.innerHTML === '5') {
+        item.element.classList.add('field-item_color-5');
+      }
+      if (item.element.innerHTML === '6') {
+        item.element.classList.add('field-item_color-6');
+      }
+      if (item.element.innerHTML === '7') {
+        item.element.classList.add('field-item_color-7');
+      }
+      if (item.element.innerHTML === '8') {
+        item.element.classList.add('field-item_color-8');
+      }
     });
   }
 
@@ -141,12 +165,60 @@ class ItemField {
       );
       arrNeighbors.forEach((item) => {
         item.openContent();
+        if (item.element.innerHTML === '1') {
+          item.element.classList.add('field-item_color-1');
+        }
+        if (item.element.innerHTML === '2') {
+          item.element.classList.add('field-item_color-2');
+        }
+        if (item.element.innerHTML === '3') {
+          item.element.classList.add('field-item_color-3');
+        }
+        if (item.element.innerHTML === '4') {
+          item.element.classList.add('field-item_color-4');
+        }
+        if (item.element.innerHTML === '5') {
+          item.element.classList.add('field-item_color-5');
+        }
+        if (item.element.innerHTML === '6') {
+          item.element.classList.add('field-item_color-6');
+        }
+        if (item.element.innerHTML === '7') {
+          item.element.classList.add('field-item_color-7');
+        }
+        if (item.element.innerHTML === '8') {
+          item.element.classList.add('field-item_color-8');
+        }
       });
     }
     // incrementClickCount()
     this.element.innerHTML = this.element.dataset.content;
     this.element.dataset.opened = true;
     this.element.classList.add('field-item__active');
+    if (this.element.innerHTML === '1') {
+      this.element.classList.add('field-item_color-1');
+    }
+    if (this.element.innerHTML === '2') {
+      this.element.classList.add('field-item_color-2');
+    }
+    if (this.element.innerHTML === '3') {
+      this.element.classList.add('field-item_color-3');
+    }
+    if (this.element.innerHTML === '4') {
+      this.element.classList.add('field-item_color-4');
+    }
+    if (this.element.innerHTML === '5') {
+      this.element.classList.add('field-item_color-5');
+    }
+    if (this.element.innerHTML === '6') {
+      this.element.classList.add('field-item_color-6');
+    }
+    if (this.element.innerHTML === '7') {
+      this.element.classList.add('field-item_color-7');
+    }
+    if (this.element.innerHTML === '8') {
+      this.element.classList.add('field-item_color-8');
+    }
   }
 
   moveToBattlefield() {
