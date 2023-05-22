@@ -189,6 +189,9 @@ body {
     border: 1px solid black;
     color: #3e684d;
   }
+  .header .header__flags-count {
+    font-size: 17px;
+  }
 }
 .header .header__info {
   margin-bottom: 25px;
