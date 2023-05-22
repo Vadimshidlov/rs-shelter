@@ -1,5 +1,5 @@
-import { getApp } from './app-page.js';
-import ItemField from './fieldItem.js';
+import { getApp } from "./app-page.js";
+import ItemField from "./fieldItem.js";
 
 export function getRandomNubers(max, min) {
   return Math.floor(Math.random() * (max - min) + min);
@@ -10,8 +10,8 @@ export const DATA = {
   clicksCount: 0,
   notBombItemsCount: 90,
   gameSettings: {
-    mines: '10',
-    fieldsize: '10',
+    mines: "10",
+    fieldsize: "10",
   },
 };
 
@@ -25,8 +25,8 @@ let seconds = 0;
 export let interval;
 
 export function getWatch() {
-  const HEADER_MINUTES = document.querySelector('.header__mintutes');
-  const HEADER_SECONDS = document.querySelector('.header__seconds');
+  const HEADER_MINUTES = document.querySelector(".header__mintutes");
+  const HEADER_SECONDS = document.querySelector(".header__seconds");
   seconds++;
   HEADER_SECONDS.innerHTML = `0` + seconds;
 
@@ -52,7 +52,7 @@ export function stopWatch() {
 }
 
 export function incrementClickCount() {
-  const clickCountDom = document.querySelector('.header__clicks');
+  const clickCountDom = document.querySelector(".header__clicks");
   DATA.clicksCount += 1;
   clickCountDom.innerHTML = `Clicks count: ${DATA.clicksCount}`;
 }
@@ -73,12 +73,12 @@ function getBombs(arr, bombs, isFirstBombPlace) {
       x !== isFirstBombPlace.x &&
       y !== isFirstBombPlace.y
     ) {
-      arr[y][x].content = '💣';
+      arr[y][x].content = "💣";
       arr[y][x].isBomb = true;
       arrayBombsPlace.push(arr[y][x]);
       bombsCount--;
     } else {
-      arr[y][x].content = '';
+      arr[y][x].content = "";
     }
   }
 }
@@ -106,7 +106,7 @@ function getStateOfArroundItems(arr, placeX, placeY) {
     item_6,
     item_7,
     item_8,
-  ].filter((item) => typeof item !== 'undefined');
+  ].filter((item) => typeof item !== "undefined");
 
   count = arrayArround.reduce((acc, el, i) => {
     acc += Boolean(el.isBomb) ? 1 : 0;
@@ -139,11 +139,11 @@ export function getMatrixField(
 
   matrixArray.forEach((el, x) => {
     el.forEach((el, y) => {
-      if (el.content !== '💣') {
+      if (el.content !== "💣") {
         el.getSingleItemStateArround(matrixArray, x, y);
       }
       if (x === isFirstBombPlace?.x && y === isFirstBombPlace?.y) {
-        matrixArray[x][y].element.classList.add('field-item__active');
+        matrixArray[x][y].element.classList.add("field-item__active");
         matrixArray[x][y].element.dataset.opened = true;
       }
     });
@@ -153,11 +153,11 @@ export function getMatrixField(
 }
 
 export function gameOver() {
-  const FIELD = document.querySelector('.body__field');
-  const HEADER = document.querySelector('.header');
-  const RESULT = document.createElement('div');
-  const BODY = document.querySelector('body');
-  RESULT.classList.add('header__result');
+  const FIELD = document.querySelector(".body__field");
+  const HEADER = document.querySelector(".header");
+  const RESULT = document.createElement("div");
+  const BODY = document.querySelector("body");
+  RESULT.classList.add("header__result");
   RESULT.innerHTML = `Game over. Try again!`;
   HEADER.append(RESULT);
   /* const BUTTON_RESTART = document.createElement('button');
@@ -170,33 +170,33 @@ export function gameOver() {
   HEADER.append(BUTTON_RESTART); */
   matrixArray.forEach((el, i) => {
     el.forEach((el, j) => {
-      el.element.classList.add('field-item__active');
+      el.element.classList.add("field-item__active");
       el.element.innerHTML = el.element.dataset.content;
     });
   });
   console.log(FIELD.childNodes);
   FIELD.childNodes.forEach((item) => {
-    item.classList.add('disable-item');
+    item.classList.add("disable-item");
   });
 }
 
 export function winGame() {
   stopWatch();
-  const FIELD = document.querySelector('.body__field');
-  const HEADER = document.querySelector('.header');
-  const RESULT = document.createElement('div');
-  const BODY = document.querySelector('body');
-  RESULT.classList.add('header__result');
+  const FIELD = document.querySelector(".body__field");
+  const HEADER = document.querySelector(".header");
+  const RESULT = document.createElement("div");
+  const BODY = document.querySelector("body");
+  RESULT.classList.add("header__result");
 
-  const minutesResult = document.querySelector('.header__mintutes').innerHTML;
-  const secondsResult = document.querySelector('.header__seconds').innerHTML;
+  const minutesResult = document.querySelector(".header__mintutes").innerHTML;
+  const secondsResult = document.querySelector(".header__seconds").innerHTML;
   let time =
     minutesResult !== `00`
       ? Number(minutesResult) +
         ` minutes, ` +
         Number(secondsResult) +
-        ' seconds '
-      : Number(secondsResult) + ' seconds ';
+        " seconds "
+      : Number(secondsResult) + " seconds ";
 
   RESULT.innerHTML = `Hooray! You found all mines in ${time}  and ${DATA.clicksCount} moves!"`;
   HEADER.append(RESULT);
@@ -210,13 +210,13 @@ export function winGame() {
   HEADER.append(BUTTON_RESTART); */
   matrixArray.forEach((el, i) => {
     el.forEach((el, j) => {
-      el.element.classList.add('field-item__active');
+      el.element.classList.add("field-item__active");
       el.element.innerHTML = el.element.dataset.content;
     });
   });
   console.log(FIELD.childNodes);
   FIELD.childNodes.forEach((item) => {
-    item.classList.add('disable-item');
+    item.classList.add("disable-item");
   });
 }
 
@@ -229,19 +229,50 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
     DATA.firstBombPlace
   );
 
-  const FORM_SETTINGS = document.getElementById('game-settings');
-  FORM_SETTINGS.addEventListener('submit', handleFormSubmit);
+  const fieldsizeSelcect = document.getElementById("fieldsize");
+  if (DATA.gameSettings.fieldsize === "15") {
+    fieldsizeSelcect.innerHTML = "";
+    fieldsizeSelcect.insertAdjacentHTML(
+      "beforeend",
+      `
+    Battlefield size:
+    <select name="fieldsize" id="fieldsize" required>
+      <option value="10" >10</option>
+      <option value="15" selected>15</option>
+      <option value="25">25</option>
+    </select>
+  </label>
+    `
+    );
+  } else if (DATA.gameSettings.fieldsize === "25") {
+    fieldsizeSelcect.innerHTML = "";
+    fieldsizeSelcect.insertAdjacentHTML(
+      "beforeend",
+      `
+      Battlefield size:
+      <select name="fieldsize" id="fieldsize" required>
+        <option value="10" >10</option>
+        <option value="15" >15</option>
+        <option value="25" selected>25</option>
+      </select>
+    </label>
+    `
+    );
+  }
+
+  const FORM_SETTINGS = document.getElementById("game-settings");
+  FORM_SETTINGS.addEventListener("submit", handleFormSubmit);
 
   function handleFormSubmit(event) {
     // Просим форму не отправлять данные самостоятельно
     event.preventDefault();
-    console.log('Отправка!');
+    console.log("Отправка!");
     serializeForm(FORM_SETTINGS);
   }
 
   function serializeForm(formNode) {
-    console.log('go');
-    const body = document.querySelector('body');
+    console.log("go");
+    const body = document.querySelector("body");
     const { elements } = formNode;
     const data = Array.from(elements)
       .filter((item) => !!item.name)
@@ -257,7 +288,7 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
     });
 
     console.log(`DATA.gameSettings`, DATA.gameSettings);
-    body.innerHTML = '';
+    body.innerHTML = "";
 
     // BODY_FIELD.style.width = `${40 * DATA.gameSettings.fieldsize}px`;
 
@@ -268,29 +299,7 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
       DATA.firstBombPlace
     );
 
-    if (DATA.gameSettings.fieldsize === '25') {
-      /* document.querySelectorAll('.field-item').forEach((item) => {
-        item.classList.add('field-item__large');
-      }); */
-
-      document.querySelector('.body__field').style.width = 643 + 'px';
-      document.querySelector('.body__field').style.height = 643 + 'px';
-      document.querySelectorAll('.field-item').forEach((item) => {
-        item.style.width = 20 + `px`;
-        item.style.height = 20 + `px`;
-      });
-    }
-    if (DATA.gameSettings.fieldsize === '15') {
-      // document.querySelectorAll('.field-item').forEach((item) => {
-      //   item.classList.add('field-item__medium');
-      // });
-      document.querySelector('.body__field').style.width = 482 + 'px';
-      document.querySelector('.body__field').style.height = 482 + 'px';
-      document.querySelectorAll('.field-item').forEach((item) => {
-        item.style.width = 25 + `px`;
-        item.style.height = 25 + `px`;
-      });
-    }
+    setFieldSize();
 
     // document.querySelector('.body__field').style.width = `${widthTo}px`;
     // BODY_FIELD.style.width = widthTo + 'px';
@@ -303,35 +312,67 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
         const content = elTwo.content;
         elTwo.element.innerHTML = content;
         elTwo.element.dataset.opened = true;
-        elTwo.element.classList.add('field-item__active');
+        elTwo.element.classList.add("field-item__active");
       }
 
       elTwo.moveToBattlefield();
     });
   });
+  setFieldSize();
+}
+
+export function setFieldSize() {
+  if (DATA.gameSettings.fieldsize === "25") {
+    /* document.querySelectorAll('.field-item').forEach((item) => {
+      item.classList.add('field-item__large');
+    }); */
+
+    document.querySelector(".body__field").style.width = 643 + "px";
+    document.querySelector(".body__field").style.height = 643 + "px";
+    document.querySelectorAll(".field-item").forEach((item) => {
+      item.style.width = 20 + `px`;
+      item.style.height = 20 + `px`;
+      item.style.fontSize = 14 + `px`;
+    });
+  }
+  if (DATA.gameSettings.fieldsize === "15") {
+    // document.querySelectorAll('.field-item').forEach((item) => {
+    //   item.classList.add('field-item__medium');
+    // });
+    document.querySelector(".body__field").style.width = 482 + "px";
+    document.querySelector(".body__field").style.height = 482 + "px";
+    document.querySelectorAll(".field-item").forEach((item) => {
+      item.style.width = 25 + `px`;
+      item.style.height = 25 + `px`;
+      item.style.fontSize = 18 + `px`;
+    });
+  }
 }
 
 export function checkItemsCount() {
   let count = 0;
-  const FIELD = document.getElementsByClassName('body__field');
+  const FIELD = document.getElementsByClassName("body__field");
   console.log(FIELD);
   FIELD[0].childNodes.forEach((item) => {
-    if (item.dataset.opened && item.dataset.content !== '💣') {
+    if (item.dataset.opened && item.dataset.content !== "💣") {
       count += 1;
     }
   });
   DATA.notBombItemsCount = count;
-  if (DATA.notBombItemsCount === 90) {
+  if (
+    DATA.notBombItemsCount ===
+    Number(DATA.gameSettings.fieldsize) ** 2 - Number(DATA.gameSettings.mines)
+  ) {
     winGame();
   }
   console.log(DATA.notBombItemsCount, `DATA.notBombItemsCount`);
 }
 
 export function firstClickIsBomb(array, x, y) {
-  array[x][y].content = '';
+  array[x][y].content = "";
   array.forEach((el, i) => {
     el.forEach((elTwo, j) => {
-      if ((elTwo.content === '' && i !== x, j !== y)) {
+      if ((elTwo.content === "" && i !== x, j !== y)) {
         getStateOfArroundItems(array, i, j);
       }
     });
@@ -341,7 +382,7 @@ export function firstClickIsBomb(array, x, y) {
 function getArrayWithoutBombs() {
   matrixArray.forEach((el, i) => {
     el.forEach((el, j) => {
-      if (el.content === '') {
+      if (el.content === "") {
         arrayWithoutBombs.push(el);
       }
     });
