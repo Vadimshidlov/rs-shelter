@@ -9,7 +9,7 @@ import {
   stopWatch,
   setFlagCount,
   // interval,
-} from "./field.js";
+} from './field.js';
 
 class ItemField {
   constructor(isBomb, placeX, placeY, bombsArray) {
@@ -17,27 +17,25 @@ class ItemField {
     this.bombsArray = bombsArray;
     this.placeX = placeX;
     this.placeY = placeY;
-    this.content = "";
-    this.element = document.createElement("div");
+    this.content = '';
+    this.element = document.createElement('div');
     // this.interval = interval;
   }
 
   getItemContent(item) {
-    console.log(item);
-    if (item.dataset.opened || item.dataset.content === "💣") {
+    if (item.dataset.opened || item.dataset.content === '💣') {
       return;
     }
 
-    if (item.dataset.content === "") {
+    if (item.dataset.content === '') {
       const arr = this.getNeighborsOfItem(
         matrixArray,
         item.dataset.placeX,
         item.dataset.placeX
       );
-      console.log(arr, `arr`);
       item.innerHTML = this.element.dataset.content;
       item.dataset.opened = true;
-      item.classList.add("field-item__active");
+      item.classList.add('field-item__active');
       arr.forEach((item) => {
         this.getItemContent(item);
       });
@@ -48,7 +46,7 @@ class ItemField {
   showAllbombs() {
     this.bombsArray.forEach((item) => {
       item.element.innerHTML = this.element.dataset.content;
-      item.element.classList.add("field-item__active");
+      item.element.classList.add('field-item__active');
     });
   }
 
@@ -74,7 +72,7 @@ class ItemField {
       item_6,
       item_7,
       item_8,
-    ].filter((item) => typeof item !== "undefined");
+    ].filter((item) => typeof item !== 'undefined');
     return arrayArround;
   }
 
@@ -101,7 +99,7 @@ class ItemField {
       item_6,
       item_7,
       item_8,
-    ].filter((item) => typeof item !== "undefined");
+    ].filter((item) => typeof item !== 'undefined');
 
     count = arrayArround.reduce((acc, el, i) => {
       acc += Boolean(el.isBomb) ? 1 : 0;
@@ -117,26 +115,25 @@ class ItemField {
   // TODO !!!
   openItemsArround(placeX, placeY) {
     const arrayArround = this.getNeighborsOfItem(matrixArray, placeY, placeX);
-    console.log(arrayArround, `arrayArround`);
     arrayArround.forEach((item) => {
       item.openItemsArround(
         item.element.dataset.placeY,
         item.element.dataset.placeX
       );
     });
-    if (this.element.dataset.opened || this.element.dataset.content === "💣") {
+    if (this.element.dataset.opened || this.element.dataset.content === '💣') {
       return;
     }
   }
 
   openContent() {
-    if (this.element.dataset.opened || this.element.dataset.content === "💣") {
+    if (this.element.dataset.opened || this.element.dataset.content === '💣') {
       return;
     }
-    if (this.element.dataset.content === "") {
+    if (this.element.dataset.content === '') {
       this.element.innerHTML = this.element.dataset.content;
       this.element.dataset.opened = true;
-      this.element.classList.add("field-item__active");
+      this.element.classList.add('field-item__active');
       const arrNeighbors = this.getNeighborsOfItem(
         matrixArray,
         this.placeX,
@@ -149,51 +146,46 @@ class ItemField {
     // incrementClickCount()
     this.element.innerHTML = this.element.dataset.content;
     this.element.dataset.opened = true;
-    this.element.classList.add("field-item__active");
+    this.element.classList.add('field-item__active');
   }
 
   moveToBattlefield() {
     const x = this.placeX;
     const y = this.placeY;
 
-    const battleField = document.querySelector(".body__field");
-    this.element.classList.add("field-item");
+    const battleField = document.querySelector('.body__field');
+    this.element.classList.add('field-item');
     this.element.dataset.content = this.content;
     this.element.dataset.isBomb = this.isBomb;
     this.element.dataset.placeX = x;
     this.element.dataset.placeY = y;
     battleField.append(this.element);
 
-    this.element.addEventListener("click", (e) => {
+    this.element.addEventListener('click', (e) => {
       if (
         e.target === this.element &&
-        e.target.innerHTML !== "🚩" &&
+        e.target.innerHTML !== '🚩' &&
         !e.target.dataset.opened
       ) {
-        console.log(e.target);
         if (DATA.clicksCount === 0) {
           startWatch();
-          console.log(DATA.flagsCount, `DATA.flagsCount`);
         }
-        if (e.target.dataset.content === "💣" && DATA.clicksCount === 0) {
-          const body = document.querySelector("body");
+        if (e.target.dataset.content === '💣' && DATA.clicksCount === 0) {
+          const body = document.querySelector('body');
           DATA.firstBombPlace.x = x;
           DATA.firstBombPlace.y = y;
-          body.innerHTML = "";
+          body.innerHTML = '';
           getFinallyBattlefield(10, 10, 10, DATA.firstBombPlace);
           incrementClickCount();
-          // this.getItemContent();
           return;
         } else {
           incrementClickCount();
 
-          if (e.target.dataset.content === "💣") {
-            // DATA.clicksCount += 1;
+          if (e.target.dataset.content === '💣') {
             stopWatch();
             gameOver();
-            console.log("YOU ARE LOOOOSE! ;))");
             return;
-          } else if (e.target.dataset.content === "") {
+          } else if (e.target.dataset.content === '') {
             this.openContent();
             checkItemsCount();
           } else {
@@ -203,10 +195,10 @@ class ItemField {
         }
       }
     });
-    this.element.addEventListener("contextmenu", (e) => {
+    this.element.addEventListener('contextmenu', (e) => {
       e.preventDefault();
       if (!this.element.dataset.opened) {
-        if (this.element.innerHTML === "🚩") {
+        if (this.element.innerHTML === '🚩') {
           DATA.flagsCount += 1;
           setFlagCount();
           this.deleteFlag();
@@ -221,10 +213,10 @@ class ItemField {
   }
 
   setFlag() {
-    this.element.innerHTML = "🚩";
+    this.element.innerHTML = '🚩';
   }
   deleteFlag() {
-    this.element.innerHTML = "";
+    this.element.innerHTML = '';
   }
 
   setItemContent(item) {
