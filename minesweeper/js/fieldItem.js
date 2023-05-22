@@ -7,6 +7,7 @@ import {
   checkItemsCount,
   startWatch,
   stopWatch,
+  setFlagCount,
   // interval,
 } from "./field.js";
 
@@ -164,10 +165,15 @@ class ItemField {
     battleField.append(this.element);
 
     this.element.addEventListener("click", (e) => {
-      if (e.target === this.element && e.target.innerHTML !== "🚩") {
+      if (
+        e.target === this.element &&
+        e.target.innerHTML !== "🚩" &&
+        !e.target.dataset.opened
+      ) {
         console.log(e.target);
         if (DATA.clicksCount === 0) {
           startWatch();
+          console.log(DATA.flagsCount, `DATA.flagsCount`);
         }
         if (e.target.dataset.content === "💣" && DATA.clicksCount === 0) {
           const body = document.querySelector("body");
@@ -199,12 +205,26 @@ class ItemField {
     });
     this.element.addEventListener("contextmenu", (e) => {
       e.preventDefault();
-      if (this.element.innerHTML === "🚩") {
-        this.element.innerHTML = "";
-        return;
+      if (!this.element.dataset.opened) {
+        if (this.element.innerHTML === "🚩") {
+          DATA.flagsCount += 1;
+          setFlagCount();
+          this.deleteFlag();
+          return;
+        } else if (DATA.flagsCount !== 0) {
+          DATA.flagsCount -= 1;
+          setFlagCount();
+          this.setFlag();
+        }
       }
-      this.element.innerHTML = "🚩";
     });
+  }
+
+  setFlag() {
+    this.element.innerHTML = "🚩";
+  }
+  deleteFlag() {
+    this.element.innerHTML = "";
   }
 
   setItemContent(item) {

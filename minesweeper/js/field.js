@@ -10,9 +10,10 @@ export const DATA = {
   clicksCount: 0,
   notBombItemsCount: 90,
   gameSettings: {
-    mines: "10",
+    mines: "50",
     fieldsize: "10",
   },
+  flagsCount: 10,
 };
 
 const arrayBombsPlace = [];
@@ -54,7 +55,7 @@ export function stopWatch() {
 export function incrementClickCount() {
   const clickCountDom = document.querySelector(".header__clicks");
   DATA.clicksCount += 1;
-  clickCountDom.innerHTML = `Clicks count: ${DATA.clicksCount}`;
+  clickCountDom.innerHTML = `Moves count: ${DATA.clicksCount}`;
 }
 
 function getBombs(arr, bombs, isFirstBombPlace) {
@@ -287,6 +288,8 @@ export function getFinallyBattlefield(width, height, bombsCount, data) {
       DATA.gameSettings[el.name] = el.value;
     });
 
+    DATA.flagsCount = DATA.gameSettings.mines;
+
     console.log(`DATA.gameSettings`, DATA.gameSettings);
     body.innerHTML = "";
 
@@ -422,6 +425,13 @@ function getArrayWithoutBombs() {
 
 getFinallyBattlefield();
 // startWatch();
+
+export function setFlagCount() {
+  const flaggetDom = document.querySelector(".header__flags-count");
+  flaggetDom.innerHTML = `🚩: ${DATA.flagsCount}`;
+}
+
+console.log(getStateOfArroundItems(matrixArray, 1, 2));
 
 /* window.addEventListener('click', () => {
   stopWatch();

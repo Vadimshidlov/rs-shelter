@@ -172,10 +172,12 @@ body {
 .header .header__clocks {
   padding: 10px;
   display: flex;
-  margin-right: 20px;
   font-size: 25px;
   border: 1px solid black;
   color: #3e684d;
+}
+.header .header__flags-count {
+  font-size: 25px;
 }
 @media (max-width: 420px) {
   .header .header__clocks {
@@ -191,7 +193,7 @@ body {
   margin-bottom: 25px;
   display: flex;
   align-items: center;
-  row-gap: 30px;
+  column-gap: 30px;
 }
 
 .main .body {
@@ -231,7 +233,7 @@ body {
 
 .field__large {
   width: 651px;
-  height: 520px;
+  height: 620px;
 }
 
 .field__item__small {

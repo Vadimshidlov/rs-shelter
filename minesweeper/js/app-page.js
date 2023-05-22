@@ -64,8 +64,14 @@ export function getApp() {
         DATA.firstBombPlace
       );
     });
+
+    const FLAGS_COUNT = document.createElement("div");
+    FLAGS_COUNT.classList.add("header__flags-count");
+    FLAGS_COUNT.innerHTML = `🚩: ${DATA.flagsCount}`;
+
     HEADER_INFO.append(HEADER_CLOCKS);
     HEADER_INFO.append(RESTART);
+    HEADER_INFO.append(FLAGS_COUNT);
 
     header.append(HEADER_INFO);
 
