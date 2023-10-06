@@ -1,5 +1,9 @@
 # Shelter
 
+## Deploy link
+
+[shelter](https://vadimshidlov.github.io/rs-shelter/shelter/pages/main/)
+
 ## Описание проекта
 
 Shelter - это проект, в котором вам предстоит сверстать сайт, состоящий из двух страниц, сделать его адаптивным и интерактивным.
