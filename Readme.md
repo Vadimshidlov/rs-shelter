@@ -2,7 +2,7 @@
 
 ## Deploy link
 
-[shelter](https://vadimshidlov.github.io/rs-shelter/shelter/pages/main/)
+[Shelter](https://vadimshidlov.github.io/rs-shelter/shelter/pages/main/)
 
 ## Описание проекта
 
